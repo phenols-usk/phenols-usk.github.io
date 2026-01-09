@@ -30,7 +30,7 @@ body {
   position: absolute;
   inset: 0;
   background-image: url("noise.png");
-  opacity: 0.08;
+  opacity: 0.2;
   mix-blend-mode: overlay;
 }
 
@@ -75,5 +75,5 @@ body {
 }
 
 .enter a:hover {
-  opacity: 0.081;
+  opacity: 0.08;
 }
