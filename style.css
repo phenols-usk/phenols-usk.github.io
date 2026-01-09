@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", serif;
+  background: #0f0f0f;
+  color: #eae6df;
+}
+
+/* --- HERO --- */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background:
+    linear-gradient(
+      180deg,
+      #1a140f 0%,
+      #0f0f0f 40%,
+      #0b0b0b 100%
+    );
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("noise.png");
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
+/* --- TEXT --- */
+
+.text {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+}
+
+.text h1 {
+  font-size: clamp(36px, 6vw, 72px);
+  letter-spacing: 0.12em;
+  font-weight: 400;
+}
+
+.text p {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.75;
+}
+
+/* --- ENTER --- */
+
+.enter {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enter a {
+  text-decoration: none;
+  color: #eae6df;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(234,230,223,0.4);
+  transition: all 0.3s ease;
+}
+
+.enter a:hover {
+  opacity: 0.6;
+}
