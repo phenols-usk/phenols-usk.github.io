@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: #eae6df;
+  font-family: "Times New Roman", serif;
+}
+
+header {
+  padding: 40px;
+}
+
+header a {
+  color: #eae6df;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  padding: 0 40px 80px;
+}
+
+.item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.thumb {
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #1a140f, #0b0b0b);
+  margin-bottom: 12px;
+}
+
+.item span {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
