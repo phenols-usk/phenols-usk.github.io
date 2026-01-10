@@ -30,8 +30,11 @@ body {
   position: absolute;
   inset: 0;
   background-image: url("./noise.png");
-  opacity: 0.08;
+  background-repeat: repeat;
+  opacity: 0.3 !important; /* 強くして確認 */
   mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* --- TEXT --- */
