@@ -29,7 +29,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("noise.png");
+  background-image: url("./noise.png");
   opacity: 0.2;
   mix-blend-mode: overlay;
 }
