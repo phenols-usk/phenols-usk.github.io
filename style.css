@@ -16,3 +16,7 @@
   </section>
 </body>
 </html>
+.hero::after {
+  background: red !important;
+  opacity: 0.3 !important;
+}
