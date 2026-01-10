@@ -1,79 +1,79 @@
+/* ===== 全体リセット ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===== body ===== */
 body {
-  font-family: "Times New Roman", serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   background: #0f0f0f;
-  color: #eae6df;
+  color: #eaeaea;
+  line-height: 1.6;
 }
 
-/* --- HERO --- */
-
+/* ===== HERO SECTION ===== */
 .hero {
   position: relative;
-  height: 100vh;
-  background:
-    linear-gradient(
-      180deg,
-      #1a140f 0%,
-      #0f0f0f 40%,
-      #0b0b0b 100%
-    );
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(
+    circle at top,
+    #1a1a1a 0%,
+    #0f0f0f 70%
+  );
   overflow: hidden;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("./noise.png");
-  opacity: 0.2;
-  mix-blend-mode: overlay;
-}
-
-/* --- TEXT --- */
-
-.text {
-  position: absolute;
-  bottom: 15%;
-  left: 10%;
-}
-
-.text h1 {
-  font-size: clamp(36px, 6vw, 72px);
-  letter-spacing: 0.12em;
-  font-weight: 400;
-}
-
-.text p {
-  margin-top: 24px;
-  font-size: 14px;
-  line-height: 1.8;
-  opacity: 0.75;
-}
-
-/* --- ENTER --- */
-
-.enter {
-  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.enter a {
-  text-decoration: none;
-  color: #eae6df;
-  font-size: 14px;
-  letter-spacing: 0.15em;
-  padding-bottom: 6px;
-  border-bottom: 1px solid rgba(234,230,223,0.4);
-  transition: all 0.3s ease;
+/* ===== NOISE OVERLAY ===== */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./noise.png");
+  background-repeat: repeat;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.enter a:hover {
-  opacity: 0.08;
+/* ===== HERO CONTENT ===== */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+}
+
+.hero-content p {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  opacity: 0.7;
+}
+
+/* ===== WORKS LINK ===== */
+.hero-content a {
+  display: inline-block;
+  margin-top: 3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-decoration: none;
+  color: #eaeaea;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.hero-content a:hover {
+  opacity: 1;
 }
