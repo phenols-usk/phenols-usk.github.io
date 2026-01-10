@@ -77,3 +77,7 @@ body {
 .hero-content a:hover {
   opacity: 1;
 }
+.hero::after {
+  background: red !important;
+  opacity: 0.3 !important;
+}
