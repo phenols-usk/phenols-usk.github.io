@@ -9,7 +9,7 @@
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: #0f0f0f;
-  color: #eaeaea;
+  color: #ffffff; /* すべて白色 */
   line-height: 1.6;
 }
 
@@ -51,9 +51,19 @@ body {
   padding: 0 1rem;
 }
 
+/* ===== TITLE ===== */
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: #ffffff; /* タイトルも白 */
+  margin-bottom: 2rem;
+}
+
+/* ===== HERO TEXT ===== */
 .hero-text {
   font-size: clamp(1rem, 1.5vw, 1.5rem);
-  color: #eaeaea; /* 明るい文字色 */
+  color: #ffffff; /* すべて白色 */
   letter-spacing: 0.03em;
   line-height: 1.8;
 }
