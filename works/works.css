@@ -120,3 +120,12 @@
   object-fit: contain;
 }
 
+/* 背景を作品ページにも適用 */
+body {
+  background:
+    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
+    url("./noise.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 220px 220px;
+  color: #ffffff;
+}
