@@ -115,8 +115,8 @@
 }
 
 .work-figure img {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 72vw;
+  max-height: 72vh;
   object-fit: contain;
 }
 
