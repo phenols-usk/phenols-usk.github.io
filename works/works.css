@@ -139,3 +139,30 @@ body {
   opacity: 0.6;
 }
 
+/* ===== WORK THUMBNAILS ===== */
+
+.work-item {
+  background-size: cover;
+  background-position: center;
+}
+
+/* LB-0000 thumbnail */
+.work-item.lb-0000 {
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.6)
+    ),
+    url("./images/LB-0000.jpg");
+}
+
+/* LB-0001 thumbnail */
+.work-item.lb-0001 {
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.55)
+    ),
+    url("./images/LB-0001.jpg");
+}
+
