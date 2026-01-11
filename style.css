@@ -1,6 +1,7 @@
 /* ===== BASE ===== */
 
 body {
+  color: rgba(255, 255, 255, 0.82)
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont,
                "Helvetica Neue", Arial, sans-serif;
@@ -82,7 +83,7 @@ html, body {
 ========================= */
 .hero h1 {
   margin: 0 0 32px;
-  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-size: clamp(2.1rem, 3.4vw, 2.8rem);
   letter-spacing: 0.14em;
   font-weight: 500;
 }
@@ -140,6 +141,6 @@ html, body {
 .copyright {
   font-size: 0.7rem;
   letter-spacing: 0.3em;
-  opacity: 0.6;
+  opacity: 0.45;
 }
 
