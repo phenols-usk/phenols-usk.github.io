@@ -128,3 +128,18 @@ html, body {
   font-size: 1.8rem;
   letter-spacing: 0.1em;
 }
+/* ===== FOOTER ===== */
+
+.site-footer {
+  position: relative;
+  padding: 80px 8vw 40px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.copyright {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  opacity: 0.6;
+}
+
