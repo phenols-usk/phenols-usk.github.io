@@ -55,12 +55,13 @@ html, body {
    HERO INNER（左寄せの正体）
 ========================= */
 .hero-inner {
+  transform: translateX(4vw);
   position: relative;
   z-index: 2;
 
   max-width: 900px;
-  padding-left: 6vw;
-  padding-right: 30px;
+  padding-left: 8vw;
+  padding-right: 24px;
 
   text-align: left;
 }
