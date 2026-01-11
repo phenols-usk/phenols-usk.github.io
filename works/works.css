@@ -105,3 +105,18 @@
   letter-spacing: 0.15em;
   opacity: 0.75;
 }
+/* ===== SINGLE WORK PAGE ===== */
+
+.work-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-figure img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
