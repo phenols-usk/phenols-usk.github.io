@@ -5,56 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Works | Leather BONSAI</title>
 
-  <!-- フォント（トップと合わせる） -->
+  <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- works専用CSS -->
+  <!-- css -->
   <link rel="stylesheet" href="../works.css" />
 </head>
 
 <body>
 
-  <section id="works" class="works">
-    <div class="works-inner">
-      <h2 class="works-title">Works</h2>
+<section id="works" class="works">
+  <div class="works-inner">
+    <h2 class="works-title">Works</h2>
 
-      <!-- ★ JSがここに自動で入れる -->
-      <div class="works-grid" id="worksGrid"></div>
-    </div>
-  </section>
+    <!-- JSで自動生成 -->
+    <div class="works-grid" id="worksGrid"></div>
+  </div>
+</section>
 
-  <!-- ===== JS：作品一覧自動生成 ===== -->
-  <script>
-    const works = [
-      {
-        id: "0000",
-        title: "Leather BONSAI #0000",
-        link: "LB-0000.html"
-      },
-      {
-        id: "0001",
-        title: "Leather BONSAI #0001",
-        link: "LB-0001.html"
-      }
-    ];
+<script>
+  const works = [
+    {
+      id: "0000",
+      title: "Leather BONSAI #0000",
+      image: "images/LB-0000.jpg",
+      link: "LB-0000.html"
+    },
+    {
+      id: "0001",
+      title: "Leather BONSAI #0001",
+      image: "images/LB-0001.jpg",
+      link: "LB-0001.html"
+    }
+  ];
 
-    const grid = document.getElementById("worksGrid");
+  const grid = document.getElementById("worksGrid");
 
-    works.forEach(work => {
-      const a = document.createElement("a");
-      a.className = "work-item lb-" + work.id;
-      a.href = work.link;
+  works.forEach(work => {
+    const a = document.createElement("a");
+    a.className = "work-item lb-" + work.id;
+    a.href = work.link;
 
-      const title = document.createElement("span");
-      title.className = "work-title";
-      title.textContent = work.title;
+    a.style.backgroundImage = `url(${work.image})`;
 
-      a.appendChild(title);
-      grid.appendChild(a);
-    });
-  </script>
+    const title = document.createElement("span");
+    title.className = "work-title";
+    title.textContent = work.title;
+
+    a.appendChild(title);
+    grid.appendChild(a);
+  });
+</script>
 
 </body>
 </html>
