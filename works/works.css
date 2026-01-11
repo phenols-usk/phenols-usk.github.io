@@ -1,40 +1,91 @@
-body {
-  margin: 0;
-  background: #0f0f0f;
-  color: #eae6df;
-  font-family: "Times New Roman", serif;
+/* ===== WORKS SECTION ===== */
+
+.works {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 140px 8vw;
+  color: #ffffff;
+
+  /* レザーの暗部 */
+  background:
+    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
+    url("./noise.png");
+
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position: center;
+  overflow: hidden;
 }
 
-header {
-  padding: 40px;
+/* 革の陰影 */
+.works::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at top left,
+    rgba(255,255,255,0.06),
+    rgba(0,0,0,0.5)
+  );
+  z-index: 0;
 }
 
-header a {
-  color: #eae6df;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  font-size: 14px;
+/* 微細ノイズ */
+.works::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("./noise.png");
+  background-repeat: repeat;
+  background-size: 220px 220px;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.gallery {
+/* 中身 */
+.works-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* タイトル */
+.works-title {
+  font-size: 1.4rem;
+  letter-spacing: 0.25em;
+  margin-bottom: 80px;
+  font-weight: 400;
+}
+
+/* グリッド */
+.works-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
-  padding: 0 40px 80px;
+  gap: 48px;
 }
 
-.item {
-  text-decoration: none;
-  color: inherit;
+/* 作品カード（革の塊として） */
+.work-item {
+  aspect-ratio: 4 / 5;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.06),
+      rgba(0,0,0,0.4)
+    ),
+    url("./noise.png");
+
+  background-size: cover, 300px 300px;
+  background-repeat: no-repeat, repeat;
+  border-radius: 2px;
+
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-.thumb {
-  aspect-ratio: 1 / 1;
-  background: linear-gradient(135deg, #1a140f, #0b0b0b);
-  margin-bottom: 12px;
-}
-
-.item span {
-  font-size: 13px;
-  letter-spacing: 0.08em;
+/* hover：革が浮く */
+.work-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
