@@ -50,6 +50,28 @@
 <footer class="site-footer">
   <p class="copyright">© phenols</p>
 </footer>
+<script>
+  let lastScrollY = window.scrollY;
+  let lastTime = performance.now();
+
+  const hero = document.querySelector('.hero');
+
+  window.addEventListener('scroll', () => {
+    const now = performance.now();
+    const deltaTime = now - lastTime;
+    const deltaScroll = Math.abs(window.scrollY - lastScrollY);
+
+    const speed = deltaScroll / deltaTime; // px per ms
+
+    // つやの強さ（上限を厳しく）
+    const shine = Math.min(speed * 6, 0.35);
+
+    hero.style.setProperty('--leather-shine', shine);
+
+    lastScrollY = window.scrollY;
+    lastTime = now;
+  });
+</script>
 
 </body>
 </html>
