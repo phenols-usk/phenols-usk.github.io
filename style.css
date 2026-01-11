@@ -85,14 +85,17 @@ html, body {
    VIEW WORKS
 ========================= */
 .view-works {
-  display: inline-block;
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
+  display: block;          /* インラインをブロック化 */
+  width: fit-content;      /* 文字幅だけにする */
+  margin: 48px auto 0;     /* 左右autoで中央寄せ */
   color: #ffffff;
   text-decoration: none;
-  padding-bottom: 4px;
-  border-bottom: 1px solid rgba(255,255,255,0.6);
+  letter-spacing: 0.15em;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 2;
 }
+
 
 .view-works:hover {
   border-bottom-color: rgba(255,255,255,1);
