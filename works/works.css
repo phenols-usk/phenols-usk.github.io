@@ -7,18 +7,15 @@
   padding: 80px 1vw;
   color: #ffffff;
 
-  /* レザーの暗部 */
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
     url("./noise.png");
-
   background-repeat: no-repeat, no-repeat;
   background-size: cover, cover;
   background-position: center;
   overflow: hidden;
 }
 
-/* 革の陰影 */
 .works::before {
   content: "";
   position: absolute;
@@ -31,7 +28,6 @@
   z-index: 0;
 }
 
-/* 微細ノイズ */
 .works::after {
   content: "";
   position: absolute;
@@ -45,13 +41,11 @@
   z-index: 1;
 }
 
-/* 中身 */
 .works-inner {
   position: relative;
   z-index: 2;
 }
 
-/* タイトル */
 .works-title {
   font-size: 1.4rem;
   letter-spacing: 0.25em;
@@ -66,22 +60,16 @@
   gap: 48px;
 }
 
-/* 作品カード（革の塊として） */
+/* 作品カード */
 .work-item {
   position: relative;
+  display: block;
   aspect-ratio: 4 / 5;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,0.06),
-      rgba(0,0,0,0.4)
-    ),
-    url("./noise.png");
-
-  background-size: cover, 300px 300px;
-  background-repeat: no-repeat, repeat;
   border-radius: 2px;
+  overflow: hidden;
 
+  background-size: cover;
+  background-position: center;
   transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
@@ -90,21 +78,40 @@
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
-/* aタグでもカードとして成立させる */
-.work-item {
-  display: block;
+
+/* サムネイル暗め＋グラデーション */
+.work-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  pointer-events: none;
 }
 
-/* 作品タイトル */
+.work-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.55)
+  );
+  pointer-events: none;
+}
+
+/* タイトルを下に固定 */
 .work-title {
   position: absolute;
-  bottom: 18px;
-  left: 18px;
-
+  bottom: 16px;
+  left: 16px;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  opacity: 0.75;
+  color: rgba(255,255,255,0.85);
+  z-index: 2;
+  pointer-events: none;
 }
+
 /* ===== SINGLE WORK PAGE ===== */
 
 .work-page {
@@ -120,86 +127,6 @@
   object-fit: contain;
 }
 
-/* 背景を作品ページにも適用 */
 body {
   background:
-    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("./noise.png");
-  background-repeat: no-repeat, repeat;
-  background-size: cover, 220px 220px;
-  color: #ffffff;
-}
-/* ===== ARCHIVE LABEL ===== */
-
-.work-caption {
-  margin-top: 14px;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-align: center;
-  opacity: 0.6;
-}
-
-/* ===== WORK THUMBNAILS ===== */
-
-.work-item {
-  background-size: cover;
-  background-position: center;
-}
-
-/* LB-0000 thumbnail */
-.work-item.lb-0000 {
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0.6)
-    ),
-    url("./images/LB-0000.jpg");
-}
-
-/* LB-0001 thumbnail */
-.work-item.lb-0001 {
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,0.25),
-      rgba(0,0,0,0.55)
-    ),
-    url("./images/LB-0001.jpg");
-}
-
-/* サムネイル画像表示 */
-.work-item {
-  background-size: cover;
-  background-position: center;
-}
-
-/* タイトルを下に固定 */
-.work-title {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.85);
-}
-
-/* サムネイルを暗くする */
-.work-item::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  pointer-events: none;
-}
-
-
-.work-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.55)
-  );
-  pointer-events: none;
-}
+    radial-gradient(circle at top, #1a1a1a 0%
