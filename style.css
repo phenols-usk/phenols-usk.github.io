@@ -45,6 +45,22 @@ html, body {
   display: flex;
   align-items: center;
 }
+/* 革のつやレイヤー */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.04),
+    rgba(0,0,0,0.0)
+  );
+  opacity: 0;               /* ← JSで制御 */
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 1;
+}
 
 /* 2層目ノイズ（必ず見える設定） */
 .hero::after {
