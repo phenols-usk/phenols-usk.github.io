@@ -166,3 +166,19 @@ body {
     url("./images/LB-0001.jpg");
 }
 
+/* サムネイル画像表示 */
+.work-item {
+  background-size: cover;
+  background-position: center;
+}
+
+/* タイトルを下に固定 */
+.work-title {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.85);
+}
+
