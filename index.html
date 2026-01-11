@@ -11,6 +11,20 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
+  <script>
+  const heroInner = document.querySelector('.hero-inner');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const max = 300;
+
+    const progress = Math.min(scrollY / max, 1);
+
+    heroInner.style.transform = `translateY(${progress * 40}px)`;
+    heroInner.style.opacity = `${1 - progress * 0.35}`;
+  });
+</script>
+
 <body>
 
   <section class="hero">
