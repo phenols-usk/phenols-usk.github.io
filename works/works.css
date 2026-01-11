@@ -94,3 +94,13 @@
   display: block;
 }
 
+/* 作品タイトル */
+.work-title {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  opacity: 0.75;
+}
