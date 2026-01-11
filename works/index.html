@@ -52,14 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     title.textContent = work.title;
     a.appendChild(title);
 
-    // ステータスラベル（非販売作品は表示）
-    if(work.status !== "available") {
-      const statusLabel = document.createElement("span");
-      statusLabel.className = "work-status " + work.status;
-      statusLabel.textContent = work.status === "archive" ? "展示用" : "SOLD";
-      a.appendChild(statusLabel);
-    }
-
     grid.appendChild(a);
   });
 
