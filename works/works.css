@@ -1,9 +1,9 @@
 /* ===== BODY & HTML ===== */
-body, html {
+html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%; /* ← 高さをページ内容に合わせて伸ばす */
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
     url("./noise.png");
@@ -12,6 +12,7 @@ body, html {
   background-position: center, top left;
   color: #ffffff;
 }
+
 
 /* ===== WORKS SECTION ===== */
 .works {
