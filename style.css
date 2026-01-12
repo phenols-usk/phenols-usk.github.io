@@ -88,12 +88,12 @@ html, body {
   z-index: 2;
 
   max-width: 600px;
-  margin-left: 20vw;   /* 左マージンで右にずらす */
-  margin-right: auto;
+  margin:0auto;
 
   text-align: left;   /* 左揃えに戻す */
-}
 
+color: rgba(255,255,255,0.7);  /* 文字を薄く */
+}
 /* =========================
    TEXT
 ========================= */
