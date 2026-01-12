@@ -63,7 +63,7 @@ html, body {
 .works-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
+  gap: 18px;
 }
 
 /* 作品カード */
@@ -113,7 +113,7 @@ html, body {
   left: 16px;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.55);
   z-index: 2;
   pointer-events: none;
 }
