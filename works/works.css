@@ -1,3 +1,18 @@
+/* ===== BODY & HTML ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
+    url("./noise.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, auto;
+  background-position: center, top left;
+  color: #ffffff;
+}
+
 /* ===== WORKS SECTION ===== */
 .works {
   position: relative;
@@ -5,12 +20,9 @@
   width: 100%;
   padding: 50px 1vw;
   color: #ffffff;
-  background:
-    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("./noise.png");
-  background-repeat: no-repeat, no-repeat;
-  background-size: cover, cover;       /* ← cover にしてページ全体に広げる */
-  background-position: center, center; /* ← center にして中央基準 */
+  background: none;  /* ← body 背景を透過して見せる */
+  overflow: hidden;
+}
 
 .works::before {
   content: "";
