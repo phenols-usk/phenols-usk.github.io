@@ -8,12 +8,9 @@
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
     url("./noise.png");
-  background-color: #0f0f0f;
   background-repeat: no-repeat, no-repeat;
-  background-size: cover, cover;
-  background-position: center;
-  overflow: hidden;
-}
+  background-size: cover, cover;       /* ← cover にしてページ全体に広げる */
+  background-position: center, center; /* ← center にして中央基準 */
 
 .works::before {
   content: "";
