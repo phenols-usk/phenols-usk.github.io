@@ -117,7 +117,7 @@ html, body {
 .view-works {
   display: block;          /* インラインをブロック化 */
   width: fit-content;      /* 文字幅だけにする */
-  margin: 48px 0 0 20vw;
+  margin: 48px 0 0 18vw;
   color: rgba(255, 255, 255, 0.8);  /* 文字を少し薄く */
   text-decoration: none;
   letter-spacing: 0.15em;
@@ -125,7 +125,6 @@ html, body {
   position: relative;
   z-index: 2;
 }
-
 
 .view-works:hover {
   border-bottom-color: rgba(255,255,255,1);
