@@ -82,17 +82,17 @@ html, body {
   pointer-events: none;
   z-index: 1;
 }
+
 .hero-inner {
   position: relative;
   z-index: 2;
 
   max-width: 600px;
-  margin-left:auto;
-  margin-right: 2vw;
+  margin-left: 4vw;   /* 左マージンで右にずらす */
+  margin-right: auto;
 
-  text-align: right;
+  text-align: left;   /* 左揃えに戻す */
 }
-
 
 /* =========================
    TEXT
