@@ -155,6 +155,19 @@ html, body {
 /* ===== VERIFY PAGE ADJUSTMENTS ===== */
 .verify h1,
 .verify p {
-  letter-spacing: 0.02em; /* 文字間を狭く */
+  letter-spacing: 0.01em; /* 文字間を狭く */
   color: rgba(255, 255, 255, 0.85); /* 文字を少し薄く */
 }
+
+/* ===== VERIFY PAGE BACKGROUND ===== */
+.verify {
+  min-height: 100vh;              /* ページ全体に広げる */
+  background:
+    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
+    url("./noise.png");           /* noise.png は verify.html からの相対パス */
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 220px 220px;
+  background-position: center, center;
+  color: #ffffff;                 /* 文字色を白系に */
+}
+
