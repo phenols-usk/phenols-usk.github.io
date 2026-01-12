@@ -3,7 +3,7 @@
   position: relative;
   min-height: 100vh;
   width: 100%;
-  padding: 80px 1vw;
+  padding: 50px 1vw;
   color: #ffffff;
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
@@ -44,8 +44,8 @@
 
 .works-title {
   font-size: 1.4rem;
-  letter-spacing: 0.25em;
-  margin-bottom: 80px;
+  letter-spacing: 0.20em;
+  margin-bottom: 50px;
   font-weight: 400;
 }
 
