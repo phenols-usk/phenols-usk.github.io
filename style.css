@@ -87,13 +87,14 @@ html, body {
   position: relative;
   z-index: 2;
 
-  max-width: 600px;
-  margin:0auto;
+  max-width: 600px;            /* ブロック幅を制限 */
+  margin: 0 auto;              /* ブロック全体を画面中央に寄せる */
+  padding-left: 4vw;           /* 左から少し余白を作る（微調整用） */
 
-  text-align: left;   /* 左揃えに戻す */
-
-color: rgba(255,255,255,0.7);  /* 文字を薄く */
+  text-align: left;            /* 文字は左揃え */
+  color: rgba(255,255,255,0.6); /* 文字を薄くする */
 }
+
 /* =========================
    TEXT
 ========================= */
