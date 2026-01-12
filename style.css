@@ -117,8 +117,8 @@ html, body {
 .view-works {
   display: block;          /* インラインをブロック化 */
   width: fit-content;      /* 文字幅だけにする */
-  margin: 48px 0 0 10vw;
-  color: rgba(255, 255, 255, 0.7);  /* 文字を少し薄く */
+  margin: 48px 0 0 20vw;
+  color: rgba(255, 255, 255, 0.8);  /* 文字を少し薄く */
   text-decoration: none;
   letter-spacing: 0.15em;
   font-size: 0.9rem;
