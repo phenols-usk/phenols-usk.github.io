@@ -58,7 +58,7 @@
   position: relative;
   display: block;
   aspect-ratio: 4 / 5;
-  max-height: 50%;     /* ← 追加: 高さを半分に制限 */
+  max-height: 70%;     /* ← 追加: 高さを半分に制限 */
   border-radius: 2px;
   overflow: hidden;
   background-size: cover;
