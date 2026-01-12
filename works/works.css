@@ -3,7 +3,7 @@
   position: relative;
   min-height: 100vh;
   width: 100%;
-  padding: 60px 1vw;
+  padding: 80px 1vw;
   color: #ffffff;
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
@@ -60,7 +60,7 @@
   position: relative;
   display: block;
   aspect-ratio: 4 / 5;
-  max-width: 200px;  /* サムネイルサイズ調整 */
+  max-width: 240px;
   margin: 0 auto;
   border-radius: 2px;
   overflow: hidden;
@@ -77,4 +77,57 @@
 
 /* サムネイル暗め */
 .work-item::after {
-  content:
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);  /* ← 暗さをここで調整可能 */
+  pointer-events: none;
+}
+
+.work-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.55)
+  );
+  pointer-events: none;
+}
+
+/* タイトル */
+.work-title {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.85);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ===== SINGLE WORK PAGE ===== */
+.work-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-figure img {
+  max-width: 72vw;
+  max-height: 72vh;
+  object-fit: contain;
+}
+
+/* 背景を作品ページにも適用 */
+body {
+  background:
+    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
+    url("./noise.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 220px 220px;
+  color: #ffffff;
+}
