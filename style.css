@@ -165,16 +165,3 @@ html, body {
   opacity: 0.45;
 }
 
-.instagram-link {
-  display: block;
-  margin-top: 24px;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  color: rgba(255,255,255,0.45);
-  text-decoration: none;
-}
-
-.instagram-link:hover {
-  color: rgba(255,255,255,0.75);
-}
-
