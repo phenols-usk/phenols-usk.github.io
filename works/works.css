@@ -50,7 +50,10 @@ html, body {
   z-index: 1;
 }
 
-.works-inner { position: relative; z-index: 2; }
+.works-inner { 
+  position: relative; z-index: 2;
+   margin-left: 5vw; /* 左余白を増やして全体を右へ */
+}           
 
 .works-title {
   font-size: 1.4rem;
