@@ -62,7 +62,7 @@ body, html {
 .works-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 48px;
+  gap: 24px;
 }
 
 /* 作品カード */
