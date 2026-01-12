@@ -63,7 +63,7 @@ html, body {
 .works-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 18px;
+  gap: 8px;
 }
 
 /* 作品カード */
@@ -71,7 +71,7 @@ html, body {
   position: relative;
   display: block;
   aspect-ratio: 5 / 5;
-  max-height: 70%;     /* ← 追加: 高さを半分に制限 */
+  max-height: 75%;     /* ← 追加: 高さを半分に制限 */
   border-radius: 2px;
   overflow: hidden;
   background-size: cover;
@@ -90,7 +90,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.35);
   pointer-events: none;
 }
 
