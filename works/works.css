@@ -70,7 +70,7 @@ html, body {
 .work-item {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 5;
   max-height: 70%;     /* ← 追加: 高さを半分に制限 */
   border-radius: 2px;
   overflow: hidden;
