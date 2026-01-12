@@ -134,3 +134,20 @@ body, html {
 
 .work-status.sold { background-color: rgba(255,0,0,0.85); }
 .work-status.archive { background-color: rgba(128,128,128,0.85); }
+
+/* ===== SINGLE WORK PAGE ===== */
+.work-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* 作品画像 */
+.work-figure img {
+  max-width: 72vw;   /* 横幅をブラウザの72%までに制限 */
+  max-height: 72vh;  /* 高さも72%までに制限 */
+  object-fit: contain; /* 縦横比を維持 */
+}
+
