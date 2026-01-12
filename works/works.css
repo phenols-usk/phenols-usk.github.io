@@ -3,7 +3,7 @@
   position: relative;
   min-height: 100vh;
   width: 100%;
-  padding: 80px 1vw;
+  padding: 60px 1vw;
   color: #ffffff;
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
@@ -60,7 +60,7 @@
   position: relative;
   display: block;
   aspect-ratio: 4 / 5;
-  max-width: 180px;  /* サムネイルサイズ調整 */
+  max-width: 200px;  /* サムネイルサイズ調整 */
   margin: 0 auto;
   border-radius: 2px;
   overflow: hidden;
