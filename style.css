@@ -124,10 +124,12 @@ html, body {
   font-size: 0.9rem;
   position: relative;
   z-index: 2;
+  transition: color 0.3s ease, transform 0.3s ease; /* ホバーアニメ用 */
 }
 
 .view-works:hover {
-  border-bottom-color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);   /* 文字を明るく */
+  transform: translateY(-2px);     /* 軽く上に浮かせる */
 }
 
 /* =========================
