@@ -1,7 +1,7 @@
 /* ===== BASE ===== */
 
 body {
-  color: rgba(255, 255, 255, 0.4)
+  color: rgba(255, 255, 255, 0.7)
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont,
                "Helvetica Neue", Arial, sans-serif;
@@ -91,11 +91,11 @@ html, body {
   position: relative;
   z-index: 2;
 
-  max-width: 900px;
-  padding-left: 8vw;
-  padding-right: 24px;
+  max-width: 600px;
+  margin-left:auto;
+  margin-right: 2vw;
 
-  text-align: left;
+  text-align: right;
 }
 
 /* =========================
