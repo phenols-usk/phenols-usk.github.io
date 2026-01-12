@@ -82,12 +82,7 @@ html, body {
   pointer-events: none;
   z-index: 1;
 }
-
-/* =========================
-   HERO INNER（左寄せの正体）
-========================= */
 .hero-inner {
-  transform: translateX(4vw);
   position: relative;
   z-index: 2;
 
@@ -97,6 +92,7 @@ html, body {
 
   text-align: right;
 }
+
 
 /* =========================
    TEXT
