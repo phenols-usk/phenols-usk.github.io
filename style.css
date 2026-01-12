@@ -117,7 +117,7 @@ html, body {
 .view-works {
   display: block;          /* インラインをブロック化 */
   width: fit-content;      /* 文字幅だけにする */
-  margin: 48px auto 0;     /* 左右autoで中央寄せ */
+  margin: 48px 0 0 10vw;
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 0.15em;
