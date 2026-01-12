@@ -48,20 +48,18 @@
   font-weight: 400;
 }
 
-/* ===== GRID ===== */
+/* グリッド */
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 48px;
 }
 
-/* ===== WORK ITEM / サムネイル ===== */
+/* 作品カード */
 .work-item {
   position: relative;
   display: block;
   aspect-ratio: 4 / 5;
-  max-width: 240px;
-  margin: 0 auto;
   border-radius: 2px;
   overflow: hidden;
   background-size: cover;
@@ -69,7 +67,7 @@
   transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-/* hover：革が浮く */
+/* hover */
 .work-item:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
@@ -80,7 +78,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.65);  /* ← 暗さをここで調整可能 */
+  background: rgba(0,0,0,0.65);
   pointer-events: none;
 }
 
@@ -108,26 +106,20 @@
   pointer-events: none;
 }
 
-/* ===== SINGLE WORK PAGE ===== */
-.work-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ステータスラベル */
+.work-status {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  color: #fff;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.work-figure img {
-  max-width: 72vw;
-  max-height: 72vh;
-  object-fit: contain;
-}
-
-/* 背景を作品ページにも適用 */
-body {
-  background:
-    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("./noise.png");
-  background-repeat: no-repeat, repeat;
-  background-size: cover, 220px 220px;
-  color: #ffffff;
-}
+.work-status.sold { background-color: rgba(255,0,0,0.85); }
+.work-status.archive { background-color: rgba(128,128,128,0.85); }
