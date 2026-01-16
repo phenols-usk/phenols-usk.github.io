@@ -162,4 +162,31 @@ html, body {
   letter-spacing: 0.3em;
   opacity: 0.45;
 }
+/* ===== WORK BACKGROUND (SUBTLE) ===== */
+body.verify::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--work-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;           /* ← 重要：見えすぎない */
+  filter: blur(10px);      /* ← 鑑賞させない */
+  z-index: 0;
+  pointer-events: none;
+}
 
+/* テキストを前面に */
+.verify-box {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== WORK IMAGE MAP ===== */
+body.verify[data-work="LB-0001"] {
+  --work-image: url("../LB-0001.jpg");
+}
+
+body.verify[data-work="LB-0002"] {
+  --work-image: url("../LB-0002.jpg");
+}
