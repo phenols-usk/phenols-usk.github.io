@@ -33,6 +33,7 @@
     }
 
     .verify-box {
+      position: relative;
       max-width: 600px;
       background: rgba(0,0,0,0.5);
       padding: 32px;
@@ -51,26 +52,19 @@
       opacity: 0.85;
       margin-bottom: 12px;
     }
-    /* ===== WORK BACKGROUND (SUBTLE) ===== */
-body.verify::before {
+ /* ===== VERIFY BOX INNER IMAGE ===== */
+.verify-box::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   background-image: var(--work-image);
   background-size: cover;
   background-position: center;
-  opacity: 0.06;
-  filter: blur(10px);
+  opacity: 0.08;        /* ← 透過の強さ（ここが調整ポイント） */
+  filter: blur(6px);    /* ← 鑑賞させないため */
   z-index: 0;
   pointer-events: none;
 }
-
-/* テキストを前面に */
-.verify-box {
-  position: relative;
-  z-index: 1;
-}
-
   </style>
 </head>
 <body class="verify" style="--work-image: url('../../images/LB-0002.jpg');">
