@@ -182,11 +182,3 @@ body.verify::before {
   z-index: 1;
 }
 
-/* ===== WORK IMAGE MAP ===== */
-body.verify[data-work="LB-0001"] {
- --work-image: url("../../images/LB-0001.jpg");
-}
-
-body.verify[data-work="LB-0002"] {
-　--work-image: url("../../images/LB-0002.jpg");
-}
