@@ -164,3 +164,9 @@ body.verify::before {
   z-index: 1;
 }
 
+/* ===== SECTION BACKGROUND TRANSPARENT ===== */
+.hero,
+.works,
+.work-page {
+  background: none;
+}
