@@ -162,7 +162,7 @@ html, body {
   letter-spacing: 0.3em;
   opacity: 0.45;
 }
-/* ===== BASE BACKGROUND (TOP / WORKS) ===== */
+/* ===== BASE BACKGROUND (TOP / WORKS 共通) ===== */
 body.base-bg {
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont,
@@ -170,13 +170,13 @@ body.base-bg {
 
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("../../noise.png");
+    url("/noise.png");
 
   background-repeat: no-repeat, repeat;
   background-size: cover, 220px 220px;
+  background-attachment: fixed;
 
   color: #ffffff;
-  min-height: 100vh;
 }
 
 
