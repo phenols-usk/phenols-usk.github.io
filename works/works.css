@@ -31,18 +31,6 @@ html, body {
   z-index: 0;
 }
 
-.works::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../noise.png");
-  background-repeat: repeat;
-  background-size: 220px 220px;
-  opacity: 0.08;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  z-index: 1;
-}
 
 .works-inner { 
   position: relative; z-index: 2;
@@ -156,17 +144,6 @@ html, body {
   color: rgba(255, 255, 255, 0.85); /* 文字を少し薄く */
 }
 
-/* ===== VERIFY PAGE BACKGROUND ===== */
-.verify {
-  min-height: 100vh;              /* ページ全体に広げる */
-  background:
-    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("../noise.png");           /* noise.png は verify.html からの相対パス */
-  background-repeat: no-repeat, repeat;
-  background-size: cover, 220px 220px;
-  background-position: center, center;
-  color: #ffffff;                 /* 文字色を白系に */
-}
 
 /* ===== BASE BACKGROUND (TOP / WORKS 共通) ===== */
 body.base-bg {
