@@ -4,12 +4,6 @@ html, body {
   padding: 0;
   width: 100%;
   min-height: 100%; /* ← 高さをページ内容に合わせて伸ばす */
-  background:
-    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("./noise.png");
-  background-repeat: no-repeat, repeat;
-  background-size: cover, auto;
-  background-position: center, top left;
   color: #ffffff;
 }
 
@@ -174,3 +168,12 @@ html, body {
   color: #ffffff;                 /* 文字色を白系に */
 }
 
+/* ===== BASE BACKGROUND (TOP / WORKS 共通) ===== */
+body.base-bg {
+  background:
+    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
+    url("./noise.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 220px 220px;
+  background-position: center, top left;
+}
