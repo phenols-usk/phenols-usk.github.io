@@ -161,7 +161,7 @@ html, body {
   min-height: 100vh;              /* ページ全体に広げる */
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("./noise.png");           /* noise.png は verify.html からの相対パス */
+    url("../noise.png");           /* noise.png は verify.html からの相対パス */
   background-repeat: no-repeat, repeat;
   background-size: cover, 220px 220px;
   background-position: center, center;
@@ -172,7 +172,7 @@ html, body {
 body.base-bg {
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("./noise.png");
+    url("../noise.png");
   background-repeat: no-repeat, repeat;
   background-size: cover, 220px 220px;
   background-position: center, top left;
