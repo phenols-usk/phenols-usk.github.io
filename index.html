@@ -11,8 +11,21 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
+  <script>
+  const heroInner = document.querySelector('.hero-inner');
 
-<body class="base-bg top">
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const max = 300;
+
+    const progress = Math.min(scrollY / max, 1);
+
+    heroInner.style.transform = `translateY(${progress * 40}px)`;
+    heroInner.style.opacity = `${1 - progress * 0.35}`;
+  });
+</script>
+
+<body class="base-bg top">>
 
   <section class="hero">
     <div class="hero-inner">
@@ -29,45 +42,33 @@
     </div>
   </section>
 
-  <footer class="site-footer">
-    <p class="copyright">© phenols</p>
-  </footer>
 
-  <!-- hero inner motion -->
-  <script>
-    const heroInner = document.querySelector('.hero-inner');
+<footer class="site-footer">
+  <p class="copyright">© phenols</p>
+　  
+</footer>
+<script>
+  let lastScrollY = window.scrollY;
+  let lastTime = performance.now();
 
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const max = 300;
-      const progress = Math.min(scrollY / max, 1);
+  const hero = document.querySelector('.hero');
 
-      heroInner.style.transform = `translateY(${progress * 40}px)`;
-      heroInner.style.opacity = `${1 - progress * 0.35}`;
-    });
-  </script>
+  window.addEventListener('scroll', () => {
+    const now = performance.now();
+    const deltaTime = now - lastTime;
+    const deltaScroll = Math.abs(window.scrollY - lastScrollY);
 
-  <!-- leather shine -->
-  <script>
-    let lastScrollY = window.scrollY;
-    let lastTime = performance.now();
+    const speed = deltaScroll / deltaTime; // px per ms
 
-    const hero = document.querySelector('.hero');
+    // つやの強さ（上限を厳しく）
+    const shine = Math.min(speed * 6, 0.35);
 
-    window.addEventListener('scroll', () => {
-      const now = performance.now();
-      const deltaTime = now - lastTime;
-      const deltaScroll = Math.abs(window.scrollY - lastScrollY);
+    hero.style.setProperty('--leather-shine', shine);
 
-      const speed = deltaScroll / deltaTime;
-      const shine = Math.min(speed * 6, 0.35);
-
-      hero.style.setProperty('--leather-shine', shine);
-
-      lastScrollY = window.scrollY;
-      lastTime = now;
-    });
-  </script>
+    lastScrollY = window.scrollY;
+    lastTime = now;
+  });
+</script>
 
 </body>
 </html>
