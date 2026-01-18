@@ -35,7 +35,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("./noise.png");
+  background: url("../noise.png");
   background-repeat: repeat;
   background-size: 220px 220px;
   opacity: 0.08;
