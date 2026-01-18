@@ -1,14 +1,15 @@
 /* ===== BASE ===== */
+
 body {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7)
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont,
                "Helvetica Neue", Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 0.02em;
   background-color: #000;
+  color: #ffffff;
 }
-
 /* =========================
    RESET
 ========================= */
@@ -35,6 +36,7 @@ html, body {
   min-height: 100vh;
   width: 100%;
 
+  /* 1枚の革として使う */
   background-image: url("./noise.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,7 +45,6 @@ html, body {
   display: flex;
   align-items: center;
 }
-
 /* 革のつやレイヤー */
 .hero::after {
   content: "";
@@ -55,34 +56,43 @@ html, body {
     rgba(255,255,255,0.04),
     rgba(0,0,0,0.0)
   );
-  opacity: var(--leather-shine, 0);
+  opacity: 0;               /* ← JSで制御 */
   transition: opacity 0.2s ease;
   pointer-events: none;
   z-index: 1;
 }
 
-/* 2層目ノイズ */
-.hero::before {
+.hero::after {
+  opacity: var(--leather-shine, 0);
+}
+
+/* 2層目ノイズ（必ず見える設定） */
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
+
   background-image: url("./noise.png");
   background-repeat: no-repeat;
   background-size: cover;
+
   opacity: 1;
   mix-blend-mode: overlay;
+
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 600px;
-  margin: 0 auto;
-  padding-left: 4vw;
-  text-align: left;
-  color: rgba(255,255,255,0.6);
+
+  max-width: 600px;            /* ブロック幅を制限 */
+  margin: 0 auto;              /* ブロック全体を画面中央に寄せる */
+  padding-left: 4vw;           /* 左から少し余白を作る（微調整用） */
+
+  text-align: left;            /* 文字は左揃え */
+  color: rgba(255,255,255,0.6); /* 文字を薄くする */
 }
 
 /* =========================
@@ -105,21 +115,21 @@ html, body {
    VIEW WORKS
 ========================= */
 .view-works {
-  display: block;
-  width: fit-content;
+  display: block;          /* インラインをブロック化 */
+  width: fit-content;      /* 文字幅だけにする */
   margin: 48px 0 0 18vw;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);  /* 文字を少し薄く */
   text-decoration: none;
   letter-spacing: 0.15em;
   font-size: 0.9rem;
   position: relative;
   z-index: 2;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease; /* ホバーアニメ用 */
 }
 
 .view-works:hover {
-  color: rgba(255, 255, 255, 1);
-  transform: translateY(-2px);
+  color: rgba(255, 255, 255, 1);   /* 文字を明るく */
+  transform: translateY(-2px);     /* 軽く上に浮かせる */
 }
 
 /* =========================
@@ -139,6 +149,7 @@ html, body {
 }
 
 /* ===== FOOTER ===== */
+
 .site-footer {
   position: relative;
   padding: 80px 8vw 40px;
@@ -151,19 +162,26 @@ html, body {
   letter-spacing: 0.3em;
   opacity: 0.45;
 }
-
 /* ===== BASE BACKGROUND (TOP / WORKS 共通) ===== */
 body.base-bg {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont,
+               "Helvetica Neue", Arial, sans-serif;
+
   background:
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
     url("/noise.png");
+
   background-repeat: no-repeat, repeat;
   background-size: cover, 220px 220px;
   background-attachment: fixed;
+
   color: #ffffff;
 }
 
-/* ===== WORK BACKGROUND (VERIFY) ===== */
+
+
+/* ===== WORK BACKGROUND (SUBTLE) ===== */
 body.verify::before {
   content: "";
   position: fixed;
@@ -171,13 +189,15 @@ body.verify::before {
   background-image: var(--work-image);
   background-size: cover;
   background-position: center;
-  opacity: 0.06;
-  filter: blur(10px);
+  opacity: 0.06;           /* ← 重要：見えすぎない */
+  filter: blur(10px);      /* ← 鑑賞させない */
   z-index: 0;
   pointer-events: none;
 }
 
+/* テキストを前面に */
 .verify-box {
   position: relative;
   z-index: 1;
 }
+
