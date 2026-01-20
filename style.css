@@ -35,16 +35,7 @@ html, body {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  background: transparent; /* 背景指定を消すか透明にする */
-  display: flex;
-  align-items: center;
-
-  /* 1枚の革として使う */
-  background-image: url("./noise.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
+  background: transparent; /* 背景を透明にして下のbodyを見せる */
   display: flex;
   align-items: center;
 }
@@ -168,9 +159,9 @@ html, body {
 body.base-bg {
   margin: 0;
   background-color: #000;
-  background:
+  background-image: 
     radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("./noise.png");
+    url("noise.png"); /* TOPと同じ階層 */
   background-repeat: no-repeat, repeat;
   background-size: cover, 220px 220px;
   background-attachment: fixed;
