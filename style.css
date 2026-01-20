@@ -60,22 +60,6 @@ html, body {
   opacity: var(--leather-shine, 0);
 }
 
-/* 2層目ノイズ（必ず見える設定） */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: url("/noise.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  opacity: 1;
-  mix-blend-mode: overlay;
-
-  pointer-events: none;
-  z-index: 1;
-}
 
 .hero-inner {
   position: relative;
