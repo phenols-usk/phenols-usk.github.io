@@ -129,12 +129,13 @@ html, body {
 body.base-bg {
   margin: 0;
   background-color: #000;
-  background-image: url("/noise.png"); /* TOPと同じパスで試してみてください */
+  /* 相対パスで一つ上の階層の画像を指定 */
+  background-image: url("../noise.png"); 
   
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;        /* 小さな画像が並ぶのを防ぎ、画面一杯に広げる */
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed;  /* 背景を固定して高級感を出す */
   
   color: #ffffff;
 }
