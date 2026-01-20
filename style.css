@@ -159,14 +159,16 @@ html, body {
 body.base-bg {
   margin: 0;
   background-color: #000;
-  /* グラデーションを消して画像だけにする、または順番を入れ替える */
-  background-image: url("/noise.png"); 
-  background-repeat: repeat; /* ノイズなのでリピートさせる */
-  background-size: 220px 220px;
-  background-attachment: fixed;
+  background-image: url("/noise.png"); /* ルートパスで表示されたならこれでOK */
+  
+  /* 繰り返しを禁止し、画面いっぱいに広げる設定 */
+  background-repeat: no-repeat;
+  background-size: cover;      /* 画面の隙間を埋めるように拡大 */
+  background-position: center; /* 中央に配置 */
+  background-attachment: fixed; /* スクロールしても動かない（高級感が出ます） */
+  
   color: #ffffff;
 }
-
 
 /* ===== WORK BACKGROUND (SUBTLE) ===== */
 body.verify::before {
