@@ -18,11 +18,20 @@
       margin: 0;
       font-family: "Inter", -apple-system, BlinkMacSystemFont,
                    "Helvetica Neue", Arial, sans-serif;
-      background:
+      /* 背景色を黒に固定 */
+      background-color: #000;
+      
+      /* 背景画像の設定 */
+      background-image: 
         radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-        url("../../noise.png");
-      background-repeat: no-repeat, repeat;
-      background-size: cover, 220px 220px;
+        url("../../../noise.png"); /* ←ここを "../../" から "../../../" に変更しました */
+        
+      /* 表示形式をTOP/Worksと統一 */
+      background-repeat: no-repeat;
+      background-size: cover;      /* 小さな画像が並ぶのを防ぎます */
+      background-position: center;
+      background-attachment: fixed; /* 背景を固定します */
+
       color: #ffffff;
       display: flex;
       justify-content: center;
@@ -34,40 +43,49 @@
 
     .verify-box {
       position: relative;
+      z-index: 1; /* 重なり順を整理 */
       max-width: 600px;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.6); /* 少し暗くして文字を見やすく */
       padding: 32px;
       border-radius: 4px;
+      overflow: hidden;
     }
 
     h1 {
+      position: relative;
+      z-index: 2;
       margin-bottom: 24px;
       font-size: 1.6rem;
       letter-spacing: 0.1em;
     }
 
     p {
+      position: relative;
+      z-index: 2;
       font-size: 0.8rem;
       line-height: 1.5;
       opacity: 0.85;
       margin-bottom: 12px;
     }
- 
-/* ===== VERIFY BOX INNER IMAGE ===== */
-.verify-box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--work-image);
-  background-size: cover;
-  background-position: center;
-  opacity: 0.08;        /* ← 透過の強さ（ここが調整ポイント） */
-  filter: blur(6px);    /* ← 鑑賞させないため */
-  z-index: 0;
-  pointer-events: none;
-}
 
+    .info {
+      position: relative;
+      z-index: 2;
+    }
 
+    /* 作品のボケ背景 */
+    .verify-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--work-image);
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15; /* 少しだけ見えるように調整 */
+      filter: blur(10px);
+      z-index: 0; /* ボックス内の背景として配置 */
+      pointer-events: none;
+    }
   </style>
 </head>
 <body class="verify" style="--work-image: url('../../images/LB-0001.jpg');">
