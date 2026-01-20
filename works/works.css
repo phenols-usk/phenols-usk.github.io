@@ -129,11 +129,12 @@ html, body {
 body.base-bg {
   margin: 0;
   background-color: #000;
-  background-image: 
-    radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-    url("../noise.png"); /* 1つ上の階層を見に行く */
-  background-repeat: no-repeat, repeat;
-  background-size: cover, 220px 220px;
+  background-image: url("/noise.png"); /* TOPと同じパスで試してみてください */
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
+  
   color: #ffffff;
 }
