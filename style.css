@@ -66,7 +66,7 @@ html, body {
   position: absolute;
   inset: 0;
 
-  background-image: url("./noise.png");
+  background-image: url("/noise.png");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -160,7 +160,7 @@ body.base-bg {
   margin: 0;
   background-color: #000;
   /* グラデーションを消して画像だけにする、または順番を入れ替える */
-  background-image: url("./noise.png"); 
+  background-image: url("/noise.png"); 
   background-repeat: repeat; /* ノイズなのでリピートさせる */
   background-size: 220px 220px;
   background-attachment: fixed;
