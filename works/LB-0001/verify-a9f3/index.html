@@ -18,19 +18,17 @@
       margin: 0;
       font-family: "Inter", -apple-system, BlinkMacSystemFont,
                    "Helvetica Neue", Arial, sans-serif;
-      /* 背景色を黒に固定 */
       background-color: #000;
       
-      /* 背景画像の設定 */
+      /* ルートパス（先頭に / ）を指定することで、どの階層からでも画像を探せます */
       background-image: 
         radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
-        url("../../../noise.png"); /* ←ここを "../../" から "../../../" に変更しました */
+        url("/noise.png"); 
         
-      /* 表示形式をTOP/Worksと統一 */
       background-repeat: no-repeat;
-      background-size: cover;      /* 小さな画像が並ぶのを防ぎます */
+      background-size: cover;      
       background-position: center;
-      background-attachment: fixed; /* 背景を固定します */
+      background-attachment: fixed; 
 
       color: #ffffff;
       display: flex;
