@@ -154,7 +154,7 @@ html, body {
   /* 3. 作品カード自体のマージンをオートにして中央へ */
   .work-item {
     margin: 0 auto;
-    width: 60%;
+    width: 75%;
     max-width: 260px; 
     
     /* aspect-ratio: auto のままでOKですが、高さを指定します */
