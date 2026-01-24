@@ -124,9 +124,12 @@ html, body {
 
 /* 作品画像 */
 .work-figure img {
-  max-width: 72vw;   /* 横幅をブラウザの72%までに制限 */
-  max-height: 100vh;  /* 高さも100%までに制限 */
-  object-fit: contain; /* 縦横比を維持 */
+  max-width: 54vw;   /* 横幅をブラウザの72%までに制限 */
+  max-height: 75vh;  /* 高さも100%までに制限 */
+  object-fit: contain; /* 縦横比を維持 *
+  /* 盆栽を浮かび上がらせるため、少し重厚な影を追加 */
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6); 
+  border-radius: 2px;
 }
 
 
