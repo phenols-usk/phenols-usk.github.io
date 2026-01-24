@@ -6,7 +6,7 @@ body.base-bg, body.verify {
   /* ルートパス「/」を使うことでどの階層からでも同じ画像を見に行きます */
   background-image: 
     radial-gradient(circle at top, rgba(20, 20, 20, 0.8) 0%, rgba(0, 0, 0, 0.95) 80%),
-    url("/noise.png");
+    url("./noise.png");
     
   background-repeat: no-repeat;
   background-size: cover;
