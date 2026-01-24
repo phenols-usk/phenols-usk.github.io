@@ -144,11 +144,31 @@ body.base-bg {
   color: #ffffff;
 }
 
-/* スマホやタブレット（画面幅1024px以下）での修正 */
+/* スマホやタブレットでの修正 */
 @media (max-width: 1024px) {
   body.base-bg {
-    /* スマホのボケ防止：固定を解除 */
-    background-attachment: scroll !important; 
+    background-attachment: scroll !important;
     background-size: cover;
+  }
+
+  /* 1. 全体を包む要素の左余白を消して中央に */
+  .works-inner {
+    margin-left: 0 !important;
+    padding: 0 20px; /* 左右に少しだけ隙間を作る */
+    text-align: center; /* タイトルなども中央寄せにしたい場合 */
+  }
+
+  /* 2. グリッド自体を中央に寄せる */
+  .works-grid {
+    justify-content: center; /* 中身を中央に配置 */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* 幅を少し広げると安定します */
+    gap: 16px; /* スマホでは少し隙間を広げると見やすいです */
+  }
+
+  /* 3. 作品カード自体のマージンをオートにして中央へ */
+  .work-item {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px; /* スマホで大きくなりすぎないよう制限 */
   }
 }
