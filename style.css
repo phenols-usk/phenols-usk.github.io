@@ -115,5 +115,23 @@ html, body {
   letter-spacing: 0.3em;
   opacity: 0.45;
 }
+/* スマホ・タブレット用の文字中央寄せ設定 */
+@media (max-width: 1024px) {
+  .hero-inner {
+    margin-left: 0 !important; /* PC用の左マージンを解除 */
+    padding: 0 32px;           /* 左右に程よい余白を作る */
+    text-align: center;        /* テキストを中央揃えに */
+    width: 100%;               /* 幅をいっぱいまで使う */
+  }
 
-/* 下にあった body.base-bg の重複設定はすべて削除しました */
+  /* 「View Works」ボタンを中央に配置 */
+  .view-works {
+    margin: 48px auto 0 !important; /* 左寄せの margin-left: 18vw を解除して中央へ */
+    display: inline-block;          /* ボタンとして中央配置しやすくする */
+  }
+
+  /* テキストの折り返しを調整（スマホで読みやすく） */
+  .hero p br {
+    display: none; /* PC用の改行をスマホでは無視して、自然に折り返す */
+  }
+}
