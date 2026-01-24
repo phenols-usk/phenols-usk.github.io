@@ -122,7 +122,7 @@ html, body {
 /* 作品画像 */
 .work-figure img {
   max-width: 72vw;   /* 横幅をブラウザの72%までに制限 */
-  max-height: 72vh;  /* 高さも72%までに制限 */
+  max-height: 100vh;  /* 高さも100%までに制限 */
   object-fit: contain; /* 縦横比を維持 */
 }
 
