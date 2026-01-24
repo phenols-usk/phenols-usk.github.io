@@ -143,14 +143,15 @@ html, body {
 body.base-bg {
   margin: 0;
   background-color: #000;
-  background-image: url("/noise.png"); /* ルートパスで表示されたならこれでOK */
+  background-image: 
+    radial-gradient(circle at top, rgba(20, 20, 20, 0.7) 0%, rgba(0, 0, 0, 0.95) 80%),
+    url("noise.png"); /* TOPと同じ階層 */
   
-  /* 繰り返しを禁止し、画面いっぱいに広げる設定 */
   background-repeat: no-repeat;
-  background-size: cover;      /* 画面の隙間を埋めるように拡大 */
-  background-position: center; /* 中央に配置 */
-  background-attachment: fixed; /* スクロールしても動かない（高級感が出ます） */
-  
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: multiply; /* これで画像を暗く沈ませます */
   color: #ffffff;
 }
 
