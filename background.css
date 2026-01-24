@@ -5,7 +5,7 @@ body.base-bg, body.verify {
   background-color: #111; 
   background-image: 
     radial-gradient(circle at top, rgba(30, 30, 30, 0.7) 0%, rgba(0, 0, 0, 0.9) 80%),
-    url("/noise.png"); /* スラッシュありの方が全階層で安定します */
+    url("noise.png"); 
     
   background-repeat: no-repeat;
   background-size: cover;
