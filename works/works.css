@@ -130,25 +130,25 @@ html, body {
 /* ===== BASE BACKGROUND (TOP / WORKS 共通) ===== */
 body.base-bg {
   margin: 0;
-  background-color: #000;
-  /* 相対パスで一つ上の階層の画像を指定 */
-  background-image: url("../noise.png"); 
+  /* 真っ黒(#000)より少しグレーにするとノイズが綺麗に見えます */
+  background-color: #111; 
+  background-image: 
+    radial-gradient(circle at top, rgba(30, 30, 30, 0.7) 0%, rgba(0, 0, 0, 0.9) 80%),
+    url("../noise.png");
   
   background-repeat: no-repeat;
-  background-size: cover;        /* 小さな画像が並ぶのを防ぎ、画面一杯に広げる */
+  background-size: cover;
   background-position: center;
-  background-attachment: fixed;  /* 背景を固定して高級感を出す */
-  
+  background-attachment: fixed;
+  background-blend-mode: multiply; /* 暗くシブい質感にする魔法 */
   color: #ffffff;
-background-attachment: fixed;
 }
 
 /* スマホやタブレット（画面幅1024px以下）での修正 */
 @media (max-width: 1024px) {
   body.base-bg {
-    /* 固定を解除して、背景がコンテンツと一緒に動くようにする */
-    background-attachment: scroll; 
-    /* 画像が引き伸ばされないようサイズを調整 */
+    /* スマホのボケ防止：固定を解除 */
+    background-attachment: scroll !important; 
     background-size: cover;
   }
 }
