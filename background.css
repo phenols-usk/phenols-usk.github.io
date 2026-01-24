@@ -1,11 +1,14 @@
-/* ===== 全ページ共通の背景設定 ===== */
 /* background.css */
-body.base-bg, body.verify {
+
+/* base-bg（TOP/Works一覧）と verify（認証ページ）の両方に適用 */
+body.base-bg, body.top, body.verify {
   margin: 0;
-  background-color: #111; 
+  /* 背景を少し明るくして、画像が見えるようにする */
+  background-color: #1a1a1a !important; 
+  
   background-image: 
-    radial-gradient(circle at top, rgba(30, 30, 30, 0.7) 0%, rgba(0, 0, 0, 0.9) 80%),
-    url("./noise.png"); 
+    radial-gradient(circle at top, rgba(45, 45, 45, 0.7) 0%, rgba(0, 0, 0, 0.9) 80%),
+    url("/noise.jpg") !important; /* 先頭に / をつけると、どの階層からでもルートを探しに行きます */
     
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,4 +16,12 @@ body.base-bg, body.verify {
   background-attachment: fixed;
   background-blend-mode: multiply;
   color: #ffffff;
+}
+
+/* スマホ用の背景固定解除（共通設定） */
+@media (max-width: 1024px) {
+  body.base-bg, body.top, body.verify {
+    background-attachment: scroll !important;
+    background-size: cover;
+  }
 }
