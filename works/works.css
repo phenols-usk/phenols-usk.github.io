@@ -152,24 +152,30 @@ html, body {
   }
 
   /* 3. 作品カード自体のマージンをオートにして中央へ */
+  /* 3. 作品カード自体の調整 */
   .work-item {
     margin: 0 auto;
     width: 75%;
-    max-width: 260px; 
+    max-width: 260px;
+    aspect-ratio: 1 / 1;
     
-    /* aspect-ratio: auto のままでOKですが、高さを指定します */
-    aspect-ratio: 1 / 1; /* 比率を固定して安定させます */
     background-size: contain;
-    background-color: transparent !important; /* 黒い背景を完全に排除 */
     background-repeat: no-repeat;
     background-position: center;
+    
+    /* 背景色を完全に透明化（これで「黒」や「濁り」が消えます） */
+    background-color: transparent !important; 
+    
+    /* PC版の影やボーダーをリセット */
+    box-shadow: none !important;
     padding: 0; 
-    box-shadow: none;    /* スマホでは影を消すとスッキリします */
   }
-  /* 両端の黒い影（グラデーション）をスマホでは消す */
+
+  /* サムネイルを暗くしていたレイヤーを「完全に無効化」する */
   .work-item::before,
   .work-item::after {
-    display: none !important; /* これで写真横の黒い帯が消えます */
+    content: none !important; /* contentをnoneにすれば、レイヤー自体が消滅します */
+    display: none !important;
   }
 
   /* 作品番号（タイトル）の調整 */
