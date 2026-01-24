@@ -154,18 +154,22 @@ html, body {
   /* 3. 作品カード自体のマージンをオートにして中央へ */
   .work-item {
     margin: 0 auto;
-    width: 92%;
-    max-width: 320px; 
+    width: 60%;
+    max-width: 260px; 
     
     /* aspect-ratio: auto のままでOKですが、高さを指定します */
-    aspect-ratio: auto; 
-    min-height: 300px; /* ← 【追加】これで画像が表示される領域を確保します */
-    
+    aspect-ratio: 1 / 1; /* 比率を固定して安定させます */
     background-size: contain;
-    background-color: transparent;
+    background-color: transparent !important; /* 黒い背景を完全に排除 */
     background-repeat: no-repeat;
     background-position: center;
     padding: 0; 
+    box-shadow: none;    /* スマホでは影を消すとスッキリします */
+  }
+  /* 両端の黒い影（グラデーション）をスマホでは消す */
+  .work-item::before,
+  .work-item::after {
+    display: none !important; /* これで写真横の黒い帯が消えます */
   }
 
   /* 作品番号（タイトル）の調整 */
