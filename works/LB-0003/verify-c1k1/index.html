@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leather BONSAI Verification</title>
+
+  <!-- 検索除外 -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont,
+                   "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
+        url("../../noise.png");
+      background-repeat: no-repeat, repeat;
+      background-size: cover, 220px 220px;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .verify-box {
+      position: relative;
+      max-width: 600px;
+      background: rgba(0,0,0,0.5);
+      padding: 32px;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      opacity: 0.85;
+      margin-bottom: 12px;
+    }
+ /* ===== VERIFY BOX INNER IMAGE ===== */
+.verify-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--work-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;        /* ← 透過の強さ（ここが調整ポイント） */
+  filter: blur(6px);    /* ← 鑑賞させないため */
+  z-index: 0;
+  pointer-events: none;
+}
+  </style>
+</head>
+<body class="verify" style="--work-image: url('../../images/LB-0003.jpg');">
+  <div class="verify-box">
+    <h1>Leather BONSAI Verification</h1>
+    <p>This page alone does not constitute proof of authenticity.</p>
+    <p>Authenticity is confirmed only when accessed via the embedded NFC tag.</p>
+    <p>このページ単体では真正性の証明にはなりません。</p>
+    <p>真正性はNFCタグを通してアクセスした場合にのみ確認できます。</p>
+    
+  　<!-- 作品情報 -->
+    <div class="info">
+      <p><strong>No.:</strong> LB-0003</p>
+      <p><strong>Created:</strong> 2026/01</p>
+      <p><strong>Materials:</strong> Leather/Brass wire</p>
+    </div>
+  </div>
+</body>
+</html>
