@@ -140,4 +140,15 @@ body.base-bg {
   background-attachment: fixed;  /* 背景を固定して高級感を出す */
   
   color: #ffffff;
+background-attachment: fixed;
+}
+
+/* スマホやタブレット（画面幅1024px以下）での修正 */
+@media (max-width: 1024px) {
+  body.base-bg {
+    /* 固定を解除して、背景がコンテンツと一緒に動くようにする */
+    background-attachment: scroll; 
+    /* 画像が引き伸ばされないようサイズを調整 */
+    background-size: cover;
+  }
 }
