@@ -144,7 +144,7 @@ body.base-bg {
   margin: 0;
   background-color: #000;
   background-image: 
-    radial-gradient(circle at top, rgba(20, 20, 20, 0.7) 0%, rgba(0, 0, 0, 0.95) 80%),
+    radial-gradient(circle at top, rgba(20, 20, 20, 0.9) 0%, rgba(0, 0, 0, 0.95) 80%),
     url("noise.png"); /* TOPと同じ階層 */
   
   background-repeat: no-repeat;
