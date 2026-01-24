@@ -1,17 +1,21 @@
 /* ===== 全ページ共通の背景設定 ===== */
 body.base-bg, body.verify {
   margin: 0;
-  background-color: #000;
+  /* 背景色を真っ黒にせず、少しだけ色を残す（ここが重要！） */
+  background-color: #111; 
   
-  /* ルートパス「/」を使うことでどの階層からでも同じ画像を見に行きます */
+  /* グラデーションと画像を重ねる */
   background-image: 
-    radial-gradient(circle at top, rgba(20, 20, 20, 0.7) 0%, rgba(0, 0, 0, 0.95) 80%),
+    radial-gradient(circle at top, rgba(30, 30, 30, 0.7) 0%, rgba(0, 0, 0, 0.9) 80%),
     url("noise.png");
     
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+
+  /* 画像と色を混ぜて暗くする */
   background-blend-mode: multiply;
+  
   color: #ffffff;
 }
