@@ -48,7 +48,10 @@ html, body {
   max-height: 75%;     /* ← 追加: 高さを半分に制限 */
   border-radius: 2px;
   overflow: hidden;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.05); /* 余白にうっすら色を付けると綺麗です */
+
   background-position: center;
   transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
