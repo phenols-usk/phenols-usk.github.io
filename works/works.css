@@ -137,61 +137,60 @@ html, body {
 /* スマホやタブレットでの修正 */
 @media (max-width: 1024px) {
 
-  /* 1. 全体を包む要素の左余白を消して中央に */
   .works-inner {
     margin-left: 0 !important;
-    padding: 0 20px; /* 左右に少しだけ隙間を作る */
+    padding: 0 20px;
     text-align: center;
   }
 
-  /* 2. グリッド自体を中央に寄せる */
   .works-grid {
-    justify-content: center; /* 中身を中央に配置 */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 幅を少し広げると安定します */
-    gap: 24px; /* スマホでは少し隙間を広げると見やすいです */
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px; /* 作品間の余白を広げてスッキリさせます */
   }
 
-  /* 3. 作品カード自体のマージンをオートにして中央へ */
   /* 3. 作品カード自体の調整 */
   .work-item {
     margin: 0 auto;
     width: 80%;
     max-width: 280px;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1; /* 正方形に固定 */
     
-    background-size: contain;
+    /* 正方形写真なので、枠にピッタリ吸い付かせます */
+    background-size: 100% 100% !important; 
     background-repeat: no-repeat;
     background-position: center;
     
-    /* 背景色を完全に透明化（これで「黒」や「濁り」が消えます） */
+    /* 背景色を完全に消す */
     background-color: transparent !important; 
-    
-    /* PC版の影やボーダーをリセット */
     box-shadow: none !important;
-    padding: 0; 
+    border: none !important;
   }
 
-  /* サムネイルを暗くしていたレイヤーを「完全に無効化」する */
+  /* 黒い帯の正体（レイヤー）を強制的に破壊します */
   .work-item::before,
   .work-item::after {
-    content: none !important; /* contentをnoneにすれば、レイヤー自体が消滅します */
     display: none !important;
+    content: none !important;
+    background: none !important; /* グラデーションを完全に消去 */
+    opacity: 0 !important;
   }
 
-  /* 作品番号（タイトル）の調整 */
- .work-title {
+  .work-title {
     width: 100%;
     left: 0;
-    text-align: center; /* 左ではなく、写真の真下に中央揃えにする */
-    bottom: 5px;
+    text-align: center;
+    bottom: -25px; /* 写真の外（下）に出すと帯の影響を受けません */
+    position: absolute;
+    color: rgba(255,255,255,0.8);
   }
 
-/* 個別ページ（詳細ページ）のメイン画像サイズをスマホで大きくする */
-@media (max-width: 1024px) {
+  /* 個別ページ（詳細ページ）の画像サイズ */
   .work-figure img {
-    max-width: 90vw !important;  /* 画面幅の90% */
-    max-height: 70vh !important; /* 画面高さの70%（縦長画像対策） */
+    max-width: 90vw !important;
+    max-height: 70vh !important;
     width: auto;
     height: auto;
+    box-shadow: none; /* 個別ページも影を消すとフラットで綺麗です */
   }
 }
