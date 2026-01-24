@@ -181,11 +181,9 @@ body.base-bg {
   }
 
   /* 作品番号（タイトル）の調整 */
-  .work-title {
-    position: absolute;
-    bottom: 12px;
-    left: 8%; /* 16px固定ではなく、左端からの％指定にすると写真に寄り添います */
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.8); /* 少し明るくして視認性をアップ */
-    text-shadow: 0 0 10px rgba(0,0,0,0.8); /* 画像と重なっても読めるように影を */
+ .work-title {
+    width: 100%;
+    left: 0;
+    text-align: center; /* 左ではなく、写真の真下に中央揃えにする */
+    bottom: 5px;
   }
