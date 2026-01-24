@@ -155,6 +155,7 @@ body.base-bg {
   .works-inner {
     margin-left: 0 !important;
     padding: 0 20px; /* 左右に少しだけ隙間を作る */
+    text-align: center;
   }
 
   /* 2. グリッド自体を中央に寄せる */
