@@ -1,27 +1,27 @@
 /* background.css */
 
-/* base-bg（TOP/Works一覧）と verify（認証ページ）の両方に適用 */
-body.base-bg, body.top, body.verify {
+body.base-bg, body.top, body {
   margin: 0;
-  /* 背景を少し明るくして、画像が見えるようにする */
-  background-color: #1a1a1a !important; 
+  /* 背景色は画像が読み込まれるまでの待機色として暗めに設定 */
+  background-color: #1a1a1a; 
   
-  background-image: 
-    radial-gradient(circle at top, rgba(45, 45, 45, 0.7) 0%, rgba(0, 0, 0, 0.9) 80%),
-    url("./noise.jpg") !important; /* 先頭に / をつけると、どの階層からでもルートを探しに行きます */
+  /* グラデーションやブレンドモードをすべて削除し、画像のみを指定 */
+  background-image: url("/noise.jpg") !important; 
     
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat; /* 小さなノイズ画像なら敷き詰め、大きな写真なら no-repeat */
+  background-size: auto;    /* 加工せずそのままのサイズで表示 */
   background-position: center;
   background-attachment: fixed;
-  background-blend-mode: multiply;
+  
+  /* 余計な加工（乗算など）を無効化 */
+  background-blend-mode: normal !important; 
   color: #ffffff;
 }
 
-/* スマホ用の背景固定解除（共通設定） */
+/* スマホ用設定 */
 @media (max-width: 1024px) {
-  body.base-bg, body.top, body.verify {
+  body.base-bg, body.top, body {
+    /* スマホでの表示崩れ（拡大・ボケ）を防ぐために固定を解除 */
     background-attachment: scroll !important;
-    background-size: cover;
   }
 }
