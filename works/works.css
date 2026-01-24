@@ -164,14 +164,28 @@ body.base-bg {
   /* 2. グリッド自体を中央に寄せる */
   .works-grid {
     justify-content: center; /* 中身を中央に配置 */
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* 幅を少し広げると安定します */
-    gap: 16px; /* スマホでは少し隙間を広げると見やすいです */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 幅を少し広げると安定します */
+    gap: 24px; /* スマホでは少し隙間を広げると見やすいです */
   }
 
   /* 3. 作品カード自体のマージンをオートにして中央へ */
   .work-item {
     margin: 0 auto;
-    width: 100%;
-    max-width: 300px; /* スマホで大きくなりすぎないよう制限 */
+    width: 90%;
+    max-width: 320px; /* スマホで大きくなりすぎないよう制限 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* ここが重要：文字の基準位置を写真の端に合わせるため padding を調整 */
+    padding: 0; 
   }
-}
+
+  /* 作品番号（タイトル）の調整 */
+  .work-title {
+    position: absolute;
+    bottom: 12px;
+    left: 8%; /* 16px固定ではなく、左端からの％指定にすると写真に寄り添います */
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.8); /* 少し明るくして視認性をアップ */
+    text-shadow: 0 0 10px rgba(0,0,0,0.8); /* 画像と重なっても読めるように影を */
+  }
