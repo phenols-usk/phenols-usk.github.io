@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LB-0003 | Leather BONSAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="works.css">
+</head>
+
+<body class="base-bg work-single">
+
+<main class="work-page">
+  <figure class="work-figure">
+    <img src="images/LB-0003.jpg" alt="Leather BONSAI LB-0003">
+
+    <figcaption class="work-caption">
+      AVAILABLE
+    </figcaption>
+  </figure>
+</main>
+
+</body>
+</html>
