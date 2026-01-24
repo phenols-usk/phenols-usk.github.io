@@ -154,9 +154,12 @@ html, body {
   /* 3. 作品カード自体のマージンをオートにして中央へ */
   .work-item {
     margin: 0 auto;
-    width: 90%;
+    width: 92%;
     max-width: 320px; /* スマホで大きくなりすぎないよう制限 */
+    /* 正方形(5/5)を解除して、写真本来の高さに合わせる */
+    aspect-ratio: auto;
     background-size: contain;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
     /* ここが重要：文字の基準位置を写真の端に合わせるため padding を調整 */
