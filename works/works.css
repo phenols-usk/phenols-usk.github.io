@@ -179,3 +179,13 @@ html, body {
     text-align: center; /* 左ではなく、写真の真下に中央揃えにする */
     bottom: 5px;
   }
+
+/* 個別ページ（詳細ページ）のメイン画像サイズをスマホで大きくする */
+@media (max-width: 1024px) {
+  .work-figure img {
+    max-width: 90vw !important;  /* 画面幅の90% */
+    max-height: 70vh !important; /* 画面高さの70%（縦長画像対策） */
+    width: auto;
+    height: auto;
+  }
+}
