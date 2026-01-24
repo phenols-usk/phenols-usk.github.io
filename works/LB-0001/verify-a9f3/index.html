@@ -13,15 +13,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
- <style>
-    /* 共通背景CSSがあるなら読み込みを追加し、ここはシンプルに */
+  <style>
     body {
       margin: 0;
       font-family: "Inter", -apple-system, BlinkMacSystemFont,
                    "Helvetica Neue", Arial, sans-serif;
-      background-color: #000;
-      /* background.cssを読み込んでいる場合は、ここの背景指定は削除してOKです */
-      
+      background:
+        radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
+        url("../../noise.png");
+      background-repeat: no-repeat, repeat;
+      background-size: cover, 220px 220px;
       color: #ffffff;
       display: flex;
       justify-content: center;
@@ -33,50 +34,37 @@
 
     .verify-box {
       position: relative;
-      z-index: 1;
       max-width: 600px;
-      /* 背景を透過させず、作品画像が見えるように半透明の黒を敷く */
-      background: rgba(0, 0, 0, 0.75); 
-      padding: 48px 32px;
+      background: rgba(0,0,0,0.5);
+      padding: 32px;
       border-radius: 4px;
-      /* 枠線を薄く入れると締まります */
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-    }
-
-    /* 作品画像を背景に配置（ぼかし無し） */
-    .verify-box::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: var(--work-image);
-      background-size: cover;
-      background-position: center;
-      opacity: 0.3;      /* 画像の濃さ（お好みで調整） */
-      z-index: -1;       /* 文字の背面に */
-      pointer-events: none;
-      /* filter: blur(10px);  ←これを削除しました */
     }
 
     h1 {
-      margin-bottom: 32px;
-      font-size: 1.4rem;
-      letter-spacing: 0.15em;
-      font-weight: 500;
+      margin-bottom: 24px;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
     }
 
     p {
-      font-size: 0.85rem;
-      line-height: 1.8;
-      opacity: 0.8;
-      margin-bottom: 16px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      opacity: 0.85;
+      margin-bottom: 12px;
     }
-
-    .info {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-    }
+ /* ===== VERIFY BOX INNER IMAGE ===== */
+.verify-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--work-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;        /* ← 透過の強さ（ここが調整ポイント） */
+  filter: blur(6px);    /* ← 鑑賞させないため */
+  z-index: 0;
+  pointer-events: none;
+}
   </style>
 </head>
 <body class="verify" style="--work-image: url('../../images/LB-0001.jpg');">
