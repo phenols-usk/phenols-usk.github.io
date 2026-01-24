@@ -6,7 +6,7 @@ body.base-bg, body.top, body {
   background-color: #1a1a1a; 
   
   /* グラデーションやブレンドモードをすべて削除し、画像のみを指定 */
-  background-image: url("/noise.jpg") !important; 
+  background-image: url("noise.jpg") !important; 
     
   background-repeat: repeat; /* 小さなノイズ画像なら敷き詰め、大きな写真なら no-repeat */
   background-size: auto;    /* 加工せずそのままのサイズで表示 */
