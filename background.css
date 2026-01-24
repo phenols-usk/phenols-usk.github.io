@@ -1,17 +1,7 @@
 /* ===== 全ページ共通の背景設定 ===== */
+/* background.css 内を一時的にこれだけにする */
 body.base-bg, body.verify {
-  margin: 0;
-  background-color: #000;
-  
-  /* ルートパス「/」を使うことでどの階層からでも同じ画像を見に行きます */
-  background-image: 
-    radial-gradient(circle at top, rgba(20, 20, 20, 0.8) 0%, rgba(0, 0, 0, 0.95) 80%),
-    url("./noise.png");
-    
-  background-repeat: no-repeat;
+  background-color: #222; /* 確認用に少し明るいグレーに */
+  background-image: url("noise.png");
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-blend-mode: multiply;
-  color: #ffffff;
 }
