@@ -8,7 +8,7 @@ body.base-bg, body.top, body.verify {
   
   background-image: 
     radial-gradient(circle at top, rgba(45, 45, 45, 0.7) 0%, rgba(0, 0, 0, 0.9) 80%),
-    url("/noise.jpg") !important; /* 先頭に / をつけると、どの階層からでもルートを探しに行きます */
+    url("./noise.jpg") !important; /* 先頭に / をつけると、どの階層からでもルートを探しに行きます */
     
   background-repeat: no-repeat;
   background-size: cover;
