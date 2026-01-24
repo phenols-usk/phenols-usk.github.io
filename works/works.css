@@ -15,9 +15,9 @@ html, body {
   width: 100%;
   padding: 50px 1vw;
   color: #ffffff;
-  overflow: hidden;
+  /* overflow: hidden;  ← これを削除、または visible に変更 */
+  overflow: visible; 
 }
-
 
 .works-inner { 
   position: relative; z-index: 2;
