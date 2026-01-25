@@ -189,7 +189,7 @@ html, body {
 }
 
 .logo-img {
-  height: 40px;      /* ロゴの高さ（ここで大きさを微調整してください） */
+  height: 11px;      /* ロゴの高さ（ここで大きさを微調整してください） */
   width: auto;
   display: block;
 }
@@ -201,7 +201,7 @@ html, body {
     left: 20px;
   }
   .logo-img {
-    height: 32px;    /* スマホではロゴを一回り小さく */
+    height: 10px;    /* スマホではロゴを一回り小さく */
   }
 }
   /* テキストの折り返しを調整（スマホで読みやすく） */
