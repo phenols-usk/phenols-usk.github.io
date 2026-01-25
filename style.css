@@ -102,10 +102,10 @@ html, body {
 
 /* Instagramリンクのデザイン */
 .link-instagram {
- /* display: block から変更して、左右 margin: auto を確実に効かせます */
-  display: table; 
-  margin: 24px auto 0 !important;
-  
+ display: block;      /* table から変更 */
+  width: fit-content;
+  /* View Worksと同じ 18vw に合わせることで、縦のラインを揃えます */
+  margin: 24px 0 0 18vw !important;
   /* 控えめな白 (0.4) で、作品の邪魔をしない */
   color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
@@ -133,6 +133,7 @@ html, body {
     margin: 20px auto 0 !important;
     font-size: 0.7rem;
     letter-spacing: 0.2em;
+    text-align: center;
   }
 }
 
