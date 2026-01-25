@@ -103,7 +103,7 @@ html, body {
 .link-biography {
   display: block;
   width: fit-content;
-  margin: 28px 0 0 18.5vw; 
+  margin: 24px auto 0;
   color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
   font-family: 'Inter', sans-serif;
