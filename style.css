@@ -100,24 +100,41 @@ html, body {
   transform: translateY(-2px);
 }
 
-.link-biography {
+/* Instagramリンクのデザイン */
+.link-instagram {
   display: block;
   width: fit-content;
-  margin: 24px auto 0;
+  /* View Worksの真下に配置 */
+  margin: 24px auto 0; 
+  
+  /* 控えめな白 (0.4) で、作品の邪魔をしない */
   color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
+  
+  /* 基準のInterフォント */
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.25em;
-  text-transform: uppercase;
+  text-transform: uppercase; /* 大文字でスタイリッシュに */
+  
   position: relative;
   z-index: 2;
   transition: all 0.4s ease;
 }
 
-.link-biography:hover {
+.link-instagram:hover {
+  /* ホバーした時だけ少し明るく、文字の間隔を広げる */
   color: rgba(255, 255, 255, 0.9);
   letter-spacing: 0.35em;
+}
+
+/* スマホ用の微調整 */
+@media (max-width: 1024px) {
+  .link-instagram {
+    margin: 20px auto 0 !important;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+  }
 }
 
 /* ===== FOOTER ===== */
