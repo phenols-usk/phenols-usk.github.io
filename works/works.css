@@ -145,7 +145,7 @@ html, body {
 
   .work-item {
     margin: 0 auto;
-    width: 90%;
+    width: 75%;
     max-width: 320px;
    /* 1. 高さを制限していた古い命令を解除する */
     max-height: none !important; 
