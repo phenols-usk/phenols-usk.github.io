@@ -42,22 +42,24 @@ document.addEventListener('DOMContentLoaded', () => {
     a.className = "work-item lb-" + work.id;
     a.href = work.link;
 
-    // 背景画像＋暗めグラデーション
-    a.style.backgroundImage = `
-      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-      url(${work.image})
-    `;
+    // 1. 画像パスだけをCSS変数で渡す
+  a.style.setProperty('--work-image', `url(${work.image})`);
 
-    // 作品タイトル
-    const title = document.createElement("span");
-    title.className = "work-title";
-    title.textContent = work.title;
-    a.appendChild(title);
+  // 2. 前面の「くっきりした画像」
+  const img = document.createElement("img");
+  img.src = work.image;
+  img.className = "work-main-img";
+  a.appendChild(img);
 
-    grid.appendChild(a);
-  });
+    // 3. 作品タイトル
+  const title = document.createElement("span");
+  title.className = "work-title";
+  title.textContent = work.title;
+  a.appendChild(title);
 
+  grid.appendChild(a);
 });
+   
 </script>
 
 </body>
