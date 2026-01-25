@@ -42,16 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
     a.className = "work-item lb-" + work.id;
     a.href = work.link;
 
-    // CSS変数に画像を渡す
-    a.style.setProperty('--work-image', `url(${work.image})`);
+    // 背景画像＋暗めグラデーション
+    a.style.backgroundImage = `
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+      url(${work.image})
+    `;
 
-    // 前面のくっきり画像
-    const img = document.createElement("img");
-    img.src = work.image;
-    img.className = "work-main-img";
-    a.appendChild(img);
-
-    // タイトル
+    // 作品タイトル
     const title = document.createElement("span");
     title.className = "work-title";
     title.textContent = work.title;
@@ -59,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     grid.appendChild(a);
   });
- 
+
+});
 </script>
 
 </body>
