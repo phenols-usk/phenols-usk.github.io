@@ -1,169 +1,97 @@
-/* ===== BODY & HTML ===== */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh; 
-  color: #ffffff;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-/* ===== WORKS SECTION ===== */
-.works {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  padding: 50px 1vw;
-  color: #ffffff;
-  overflow: visible; 
-}
-
-.works-inner { 
-  position: relative; z-index: 2;
-  margin-left: 5vw;
-}           
-
-.works-title {
-  font-size: 1.4rem;
-  letter-spacing: 0.20em;
-  margin-bottom: 50px;
-  font-weight: 400;
-}
-
-/* グリッド */
+/* ===== WORKS GRID ===== */
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
 }
 
-/* 作品カード */
+/* 作品カード本体 */
 .work-item {
   position: relative;
   display: block;
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  aspect-ratio: 1 / 1 !important; /* 絶対に正方形 */
+  background-color: #000;
   border-radius: 2px;
   overflow: hidden;
-  background-color: #000; /* 背景を黒に固定 */
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
   z-index: 1;
+  text-decoration: none;
 }
 
-/* --- 背景：ぼかし ＋ 暗めのグラデーション --- */
+/* 背景：ぼかし ＋ 暗めグラデーション (Verify風) */
 .work-item::before {
   content: "";
   position: absolute;
-  inset: -10px;
+  inset: -15px;
   background-image: 
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
     var(--work-image);
   background-size: cover;
   background-position: center;
   opacity: 0.4;
-  filter: blur(10px);
+  filter: blur(12px);
   z-index: 0;
-  pointer-events: none;
-  display: block !important; /* スマホでも強制表示 */
 }
-/* --- 前面画像の上にかける暗いレイヤー（追加） --- */
+
+/* 前面のメイン画像 (ここがサイズ感のキモです) */
+.work-main-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 枠の中で写真を歪ませず全体表示 */
+  z-index: 1;
+}
+
+/* 前面画像の上にかける暗いレイヤー */
 .work-item::after {
   content: "";
   position: absolute;
   inset: 0;
-  /* 写真を少し暗くして、文字を浮かび上がらせる */
-  background: rgba(0, 0, 0, 0.3); 
-  z-index: 2; /* 画像(z-index:2)と同じか、そのすぐ上に配置 */
-  pointer-events: none;
-}
-
-/* 前面画像自体のz-indexも一応確認 */
-.work-main-img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 1; /* 背景(0)より上、暗い幕(2)の下 */
-  display: block;
-}
-
-/* タイトルは一番上に */
-.work-title {
-  z-index: 3; /* 暗い幕(2)よりもさらに上に */
-}
-
-/* --- 前面の「くっきり」画像 --- */
-.work-main-img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  background: rgba(0, 0, 0, 0.25); /* サムネを少し暗く */
   z-index: 2;
-  display: block;
 }
 
-/* タイトル設定 (重複を統合) */
+/* 作品タイトル */
 .work-title {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.7rem;
   color: rgba(255,255,255,0.7);
-  z-index: 3;
-  pointer-events: none;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  z-index: 3; /* 最前面 */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
 }
 
-/* hover */
-.work-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+/* ===== 個別ページ (SINGLE WORK PAGE) の修正 ===== */
+.work-page {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* ステータスラベル */
-.work-status {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 4px 8px;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  border-radius: 2px;
-  color: #fff;
-  z-index: 3;
-  pointer-events: none;
+.work-figure img {
+  max-width: 85vw !important; /* 画面幅の85%までに */
+  max-height: 80vh !important; /* 画面高さの80%までに */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
 }
-.work-status.sold { background-color: rgba(255,0,0,0.85); }
-.work-status.archive { background-color: rgba(128,128,128,0.85); }
 
-/* スマホやタブレットでの修正 */
+/* スマホ用微調整 */
 @media (max-width: 1024px) {
-  .works-inner {
-    margin-left: 0 !important;
-    padding: 0 20px;
-    text-align: center;
-  }
-
   .works-grid {
-    justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px; 
+    gap: 30px;
   }
-
   .work-item {
-    margin: 0 auto;
     width: 90%;
-    max-width: 320px;
-    aspect-ratio: 1 / 1 !important; /* スマホでも正方形を死守 */
-  }
-
-  /* タイトルが写真に被らないように調整（お好みで） */
-  .work-title {
-    width: 100%;
-    left: 0;
-    text-align: center;
-    bottom: 10px;
+    margin: 0 auto;
   }
 }
