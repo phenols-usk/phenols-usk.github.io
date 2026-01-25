@@ -66,6 +66,31 @@ html, body {
   pointer-events: none;
   display: block !important; /* スマホでも強制表示 */
 }
+/* --- 前面画像の上にかける暗いレイヤー（追加） --- */
+.work-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* 写真を少し暗くして、文字を浮かび上がらせる */
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: 2; /* 画像(z-index:2)と同じか、そのすぐ上に配置 */
+  pointer-events: none;
+}
+
+/* 前面画像自体のz-indexも一応確認 */
+.work-main-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1; /* 背景(0)より上、暗い幕(2)の下 */
+  display: block;
+}
+
+/* タイトルは一番上に */
+.work-title {
+  z-index: 3; /* 暗い幕(2)よりもさらに上に */
+}
 
 /* --- 前面の「くっきり」画像 --- */
 .work-main-img {
