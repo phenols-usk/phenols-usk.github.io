@@ -3,11 +3,10 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  /* height: 100%; は絶対に書かない */
   min-height: 100vh; 
   color: #ffffff;
-  overflow-x: hidden; /* 横揺れだけ防止 */
-  overflow-y: auto;   /* 縦スクロールを明示的に許可 */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* ===== WORKS SECTION ===== */
@@ -17,13 +16,12 @@ html, body {
   width: 100%;
   padding: 50px 1vw;
   color: #ffffff;
-  /* overflow: hidden;  ← これを削除、または visible に変更 */
   overflow: visible; 
 }
 
 .works-inner { 
   position: relative; z-index: 2;
-   margin-left: 5vw; /* 左余白を増やして全体を右へ */
+  margin-left: 5vw;
 }           
 
 .works-title {
@@ -45,69 +43,57 @@ html, body {
   position: relative;
   display: block;
   aspect-ratio: 1 / 1;
-  max-height: 75%;     /* ← 追加: 高さを半分に制限 */
   border-radius: 2px;
   overflow: hidden;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.05); /* 余白にうっすら色を付けると綺麗です */
-
-  background-position: center;
+  background-color: #000; /* 背景を黒に固定 */
   transition: transform 0.6s ease, box-shadow 0.6s ease;
-z-index: 1;
+  z-index: 1;
 }
 
-/* --- 背景：ぼかし ＋ 暗めのグラデーション（ここがポイント） --- */
-/* --- 古い ::before や ::after はすべて消して、これ一つにします --- */
+/* --- 背景：ぼかし ＋ 暗めのグラデーション --- */
 .work-item::before {
   content: "";
   position: absolute;
   inset: -10px;
-  /* 背景画像とグラデーションを同時にかける */
   background-image: 
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), 
     var(--work-image);
   background-size: cover;
   background-position: center;
-  opacity: 0.4;        /* ここで背景の濃さを調整 */
+  opacity: 0.4;
   filter: blur(10px);
   z-index: 0;
   pointer-events: none;
+  display: block !important; /* スマホでも強制表示 */
 }
-
-/* --- 古い .work-item::after { ... } は削除してください --- */
 
 /* --- 前面の「くっきり」画像 --- */
 .work-main-img {
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* 盆栽の形を崩さず、はっきり表示 */
+  object-fit: contain;
   z-index: 2;
+  display: block;
 }
 
-/* タイトルを一番手前に */
-.work-title {
-  z-index: 3;
-}
-
-/* hover */
-.work-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-
-/* タイトル */
+/* タイトル設定 (重複を統合) */
 .work-title {
   position: absolute;
   bottom: 16px;
   left: 16px;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.55);
-  z-index: 2;
+  color: rgba(255,255,255,0.7);
+  z-index: 3;
   pointer-events: none;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* hover */
+.work-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 /* ステータスラベル */
@@ -124,64 +110,35 @@ z-index: 1;
   z-index: 3;
   pointer-events: none;
 }
-
 .work-status.sold { background-color: rgba(255,0,0,0.85); }
 .work-status.archive { background-color: rgba(128,128,128,0.85); }
 
-/* ===== SINGLE WORK PAGE ===== */
-.work-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-}
-
-/* 作品画像 */
-.work-figure img {
-  max-width: 54vw;   /* 横幅をブラウザの72%までに制限 */
-  max-height: 75vh;  /* 高さも100%までに制限 */
-  object-fit: contain; /* 縦横比を維持 *
-  /* 盆栽を浮かび上がらせるため、少し重厚な影を追加 */
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6); 
-  border-radius: 2px;
-}
-
-
-
 /* スマホやタブレットでの修正 */
 @media (max-width: 1024px) {
-
-  /* 1. 全体を包む要素の左余白を消して中央に */
   .works-inner {
     margin-left: 0 !important;
-    padding: 0 20px; /* 左右に少しだけ隙間を作る */
+    padding: 0 20px;
     text-align: center;
   }
 
-  /* 2. グリッド自体を中央に寄せる */
   .works-grid {
-    justify-content: center; /* 中身を中央に配置 */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 幅を少し広げると安定します */
-    gap: 24px; /* スマホでは少し隙間を広げると見やすいです */
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; 
   }
 
-  /* 3. 作品カード自体のマージンをオートにして中央へ */
   .work-item {
     margin: 0 auto;
     width: 90%;
-    max-width: 320px; /* スマホで大きくなりすぎないよう制限 */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* ここが重要：文字の基準位置を写真の端に合わせるため padding を調整 */
-    padding: 0; 
+    max-width: 320px;
+    aspect-ratio: 1 / 1 !important; /* スマホでも正方形を死守 */
   }
 
-  /* 作品番号（タイトル）の調整 */
- .work-title {
+  /* タイトルが写真に被らないように調整（お好みで） */
+  .work-title {
     width: 100%;
     left: 0;
-    text-align: center; /* 左ではなく、写真の真下に中央揃えにする */
-    bottom: 5px;
+    text-align: center;
+    bottom: 10px;
   }
+}
