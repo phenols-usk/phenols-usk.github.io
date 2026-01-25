@@ -102,10 +102,9 @@ html, body {
 
 /* Instagramリンクのデザイン */
 .link-instagram {
-  display: block;
-  width: fit-content;
-  /* View Worksの真下に配置 */
-  margin: 24px auto 0; 
+ /* display: block から変更して、左右 margin: auto を確実に効かせます */
+  display: table; 
+  margin: 24px auto 0 !important;
   
   /* 控えめな白 (0.4) で、作品の邪魔をしない */
   color: rgba(255, 255, 255, 0.4);
