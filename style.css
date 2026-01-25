@@ -104,7 +104,7 @@ html, body {
 .link-instagram {
  /* display: block から変更して、左右 margin: auto を確実に効かせます */
   display: table; 
-  margin: 24px auto 0 !important;
+  margin: 20px auto 0 !important;
   
   /* 控えめな白 (0.4) で、作品の邪魔をしない */
   color: rgba(255, 255, 255, 0.4);
@@ -173,13 +173,14 @@ html, body {
    ============================================================ */
 .site-header {
   position: fixed;   /* 画面の決まった位置に固定 */
-  top: 30px;         /* 上からの距離 */
-  left: 30px;        /* 左からの距離 */
+  top: 10px;         /* 上からの距離 */
+  left: 10px;        /* 左からの距離 */
   z-index: 9999;     /* 他の要素（画像など）より上に表示 */
+  line-height: 0; /* 予約された行間の余白をゼロに */
 }
 
 .logo-link {
-  display: block;
+  display: inline-block;
   text-decoration: none;
   transition: opacity 0.4s ease; /* ホバー時のふわっとした動き */
 }
@@ -189,19 +190,20 @@ html, body {
 }
 
 .logo-img {
-  height: 11px;      /* ロゴの高さ（ここで大きさを微調整してください） */
+  height: 5px;      /* ロゴの高さ（ここで大きさを微調整してください） */
   width: auto;
   display: block;
+  margin: 0;      /* 画像周りの余白を完全に除去 */
 }
 
 /* スマホ用の調整（画面幅が1024px以下の時） */
 @media (max-width: 1024px) {
   .site-header {
-    top: 20px;       /* スマホでは少し端に寄せる */
-    left: 20px;
+    top: 12px;       /* スマホでは少し端に寄せる */
+    left: 12px;
   }
   .logo-img {
-    height: 10px;    /* スマホではロゴを一回り小さく */
+    height: 5px;    /* スマホではロゴを一回り小さく */
   }
 }
   /* テキストの折り返しを調整（スマホで読みやすく） */
