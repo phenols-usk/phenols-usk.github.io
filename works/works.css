@@ -135,21 +135,63 @@ html, body {
 
 
 /* スマホやタブレットでの修正 */
-@media (max-width: 1024px) {
-
-  /* 1. 全体を包む要素の左余白を消して中央に */
+  @media (max-width: 1024px) {
   .works-inner {
     margin-left: 0 !important;
-    padding: 0 20px; /* 左右に少しだけ隙間を作る */
+    padding: 0 20px;
     text-align: center;
   }
 
-  /* 2. グリッド自体を中央に寄せる */
   .works-grid {
-    justify-content: center; /* 中身を中央に配置 */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 幅を少し広げると安定します */
-    gap: 24px; /* スマホでは少し隙間を広げると見やすいです */
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
   }
+
+  .work-item {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    background-color: #000 !important; /* ベースを黒に */
+    background-image: none !important; /* 元の背景画像を消す（にじみ防止） */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 1. 【背面】Verify風のぼかし背景 */
+  .work-item::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    background-image: var(--work-image);
+    background-size: cover;
+    background-position: center;
+    filter: blur(12px); /* 背景だけをぼかす */
+    opacity: 0.4;
+    z-index: 0; /* 一番奥 */
+  }
+
+  /* 2. 【前面】にじみのない、くっきりした盆栽（Verify風） */
+  .work-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--work-image);
+    background-size: contain; /* 写真全体を収める */
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1; /* ぼかし背景より手前 */
+  }
+
+  .work-title {
+    width: 100%;
+    left: 0;
+    text-align: center;
+    bottom: 5px;
+    z-index: 2; /* 文字を一番手前に */
+  }
+}
 
   /* 3. 作品カード自体のマージンをオートにして中央へ */
   .work-item {
