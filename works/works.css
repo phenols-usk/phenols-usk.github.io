@@ -177,6 +177,9 @@ html, body {
     letter-spacing: 0.15em;
     font-weight: 400; /* スマホで見やすいよう少しだけ太く */
     text-align: center;
+   　/* 修正：スマホでも馴染む色にする */
+    color: rgba(255, 255, 255, 0.7) !important; 
+    margin-left: 0 !important;
   }
 
 /* スマホ用の設定内 */
