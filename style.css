@@ -104,7 +104,7 @@ html, body {
 .link-instagram {
  /* display: block から変更して、左右 margin: auto を確実に効かせます */
   display: table; 
-  margin: 20px auto 0 !important;
+  margin: 24px auto 0 !important;
   
   /* 控えめな白 (0.4) で、作品の邪魔をしない */
   color: rgba(255, 255, 255, 0.4);
@@ -168,42 +168,10 @@ html, body {
     text-align: center;
     letter-spacing: 0.2em;
   }
-}
 
-/* ============================================================
-   SITE LOGO (左上固定ロゴの設定)
-   ============================================================ */
-.site-header {
-  position: fixed;
-  top: 10px !important;    /* !importantで強制適用 */
-  left: 10px !important;
-  z-index: 9999;
-  line-height: 0;
-  padding: 0 !important;   /* ヘッダー自体の余白を抹殺 */
-  margin: 0 !important;
-}
-
-.logo-link {
-  display: block;
-  line-height: 0;
-}
-
-.logo-img {
-  height: 8px;            /* 5pxは小さすぎる可能性があるので8pxで再試行 */
-  width: auto;
-  display: block;
-  padding: 0 !important;
-  margin: 0 !important;   /* 画像自体のマージンをゼロに */
-}
-
-/* スマホ用の調整（画面幅が1024px以下の時） */
-@media (max-width: 1024px) {
-  .site-header {
-    top: 12px;       /* スマホでは少し端に寄せる */
-    left: 12px;
-  }
-  .logo-img {
-    height: 5px;    /* スマホではロゴを一回り小さく */
+  /* テキストの折り返しを調整（スマホで読みやすく） */
+  .hero p br {
+    display: none; /* PC用の改行をスマホでは無視して、自然に折り返す */
   }
 }
   /* テキストの折り返しを調整（スマホで読みやすく） */
