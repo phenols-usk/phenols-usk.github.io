@@ -174,28 +174,26 @@ html, body {
    SITE LOGO (左上固定ロゴの設定)
    ============================================================ */
 .site-header {
-  position: fixed;   /* 画面の決まった位置に固定 */
-  top: 10px;         /* 上からの距離 */
-  left: 10px;        /* 左からの距離 */
-  z-index: 9999;     /* 他の要素（画像など）より上に表示 */
-  line-height: 0; /* 予約された行間の余白をゼロに */
+  position: fixed;
+  top: 10px !important;    /* !importantで強制適用 */
+  left: 10px !important;
+  z-index: 9999;
+  line-height: 0;
+  padding: 0 !important;   /* ヘッダー自体の余白を抹殺 */
+  margin: 0 !important;
 }
 
 .logo-link {
-  display: inline-block;
-  text-decoration: none;
-  transition: opacity 0.4s ease; /* ホバー時のふわっとした動き */
-}
-
-.logo-link:hover {
-  opacity: 0.6;      /* マウスを乗せた時に少し透けさせる */
+  display: block;
+  line-height: 0;
 }
 
 .logo-img {
-  height: 5px;      /* ロゴの高さ（ここで大きさを微調整してください） */
+  height: 8px;            /* 5pxは小さすぎる可能性があるので8pxで再試行 */
   width: auto;
   display: block;
-  margin: 0;      /* 画像周りの余白を完全に除去 */
+  padding: 0 !important;
+  margin: 0 !important;   /* 画像自体のマージンをゼロに */
 }
 
 /* スマホ用の調整（画面幅が1024px以下の時） */
