@@ -5,6 +5,11 @@ html, body {
   width: 100%;
   min-height: 100vh; 
   color: #ffffff;
+  
+  /* Interを最優先に指定 */
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300;
+  
   overflow-x: hidden;
   overflow-y: auto;
 }
