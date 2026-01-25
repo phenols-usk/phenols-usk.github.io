@@ -147,8 +147,14 @@ html, body {
     margin: 0 auto;
     width: 90%;
     max-width: 320px;
-    background-size: 100% 100% !important;
-    background-repeat: no-repeat;
+   /* 1. 高さを制限していた古い命令を解除する */
+    max-height: none !important; 
+    
+    /* 2. 縦横比を 1:1 (正方形) に固定する */
+    aspect-ratio: 1 / 1 !important; 
+    
+    /* 3. 画像を枠いっぱいに広げる */
+    background-size: cover !important;
     background-position: center;
     padding: 0; 
   }
