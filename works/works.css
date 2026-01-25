@@ -3,10 +3,11 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  /* height: 100%; は絶対に書かない */
   min-height: 100vh; 
   color: #ffffff;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-x: hidden; /* 横揺れだけ防止 */
+  overflow-y: auto;   /* 縦スクロールを明示的に許可 */
 }
 
 /* ===== WORKS SECTION ===== */
@@ -16,12 +17,13 @@ html, body {
   width: 100%;
   padding: 50px 1vw;
   color: #ffffff;
+  /* overflow: hidden;  ← これを削除、または visible に変更 */
   overflow: visible; 
 }
 
 .works-inner { 
   position: relative; z-index: 2;
-  margin-left: 5vw;
+   margin-left: 5vw; /* 左余白を増やして全体を右へ */
 }           
 
 .works-title {
@@ -35,45 +37,23 @@ html, body {
 .works-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px; /* 少し広げました */
+  gap: 8px;
 }
 
-/* --- 作品カード本体 (Verifyページ風にアップデート) --- */
+/* 作品カード */
 .work-item {
   position: relative;
   display: block;
-  /* PC・スマホ共通で正方形を維持 */
-  aspect-ratio: 1 / 1 !important; 
-  width: 100%;
-  border-radius: 4px;
+  aspect-ratio: 5 / 5;
+  max-height: 75%;     /* ← 追加: 高さを半分に制限 */
+  border-radius: 2px;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.6); /* Verifyボックスのような半透明黒 */
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
-  z-index: 1;
-}
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.05); /* 余白にうっすら色を付けると綺麗です */
 
-/* --- 【新設】Verifyページ風の「ぼかし背景」レイヤー --- */
-.work-item::before {
-  content: "";
-  position: absolute;
-  inset: -10%; /* ぼかしの縁が切れないよう広げる */
-  background-image: var(--bg-image); /* JSから画像を受け取る */
-  background-size: cover;
   background-position: center;
-  opacity: 0.15;       /* Verifyページと同じくらいの透過度 */
-  filter: blur(10px);  /* ぼかし */
-  z-index: 0;
-  display: block !important; /* 強制表示 */
-}
-
-/* --- メイン画像 (前面) --- */
-.work-item-img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* 正方形枠に収める。写真は歪みません */
-  z-index: 2;
-  display: block;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 /* hover */
@@ -82,16 +62,37 @@ html, body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* タイトル (Verifyページに合わせて少し調整) */
+/* サムネイル暗め */
+.work-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  pointer-events: none;
+}
+
+.work-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.55)
+  );
+  pointer-events: none;
+}
+
+/* タイトル */
 .work-title {
   position: absolute;
-  bottom: 12px;
-  left: 12px;
+  bottom: 16px;
+  left: 16px;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.8);
-  z-index: 3;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  color: rgba(255,255,255,0.55);
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* ステータスラベル */
@@ -102,12 +103,17 @@ html, body {
   padding: 4px 8px;
   font-size: 0.65rem;
   font-weight: 500;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  color: #fff;
   z-index: 3;
+  pointer-events: none;
 }
+
 .work-status.sold { background-color: rgba(255,0,0,0.85); }
 .work-status.archive { background-color: rgba(128,128,128,0.85); }
 
-/* ===== SINGLE WORK PAGE (個別ページ) ===== */
+/* ===== SINGLE WORK PAGE ===== */
 .work-page {
   min-height: 100vh;
   display: flex;
@@ -116,37 +122,51 @@ html, body {
   padding: 40px;
 }
 
+/* 作品画像 */
 .work-figure img {
-  max-width: 54vw;
-  max-height: 75vh;
-  object-fit: contain;
+  max-width: 54vw;   /* 横幅をブラウザの72%までに制限 */
+  max-height: 75vh;  /* 高さも100%までに制限 */
+  object-fit: contain; /* 縦横比を維持 *
+  /* 盆栽を浮かび上がらせるため、少し重厚な影を追加 */
   box-shadow: 0 30px 60px rgba(0,0,0,0.6); 
   border-radius: 2px;
 }
 
-/* ===== スマホ閲覧時の修正 ===== */
+
+
+/* スマホやタブレットでの修正 */
 @media (max-width: 1024px) {
+
+  /* 1. 全体を包む要素の左余白を消して中央に */
   .works-inner {
     margin-left: 0 !important;
-    padding: 0 20px;
+    padding: 0 20px; /* 左右に少しだけ隙間を作る */
     text-align: center;
   }
 
+  /* 2. グリッド自体を中央に寄せる */
   .works-grid {
-    justify-content: center;
-    /* スマホで横長にならないよう、幅を調整 */
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
+    justify-content: center; /* 中身を中央に配置 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 幅を少し広げると安定します */
+    gap: 24px; /* スマホでは少し隙間を広げると見やすいです */
   }
 
+  /* 3. 作品カード自体のマージンをオートにして中央へ */
   .work-item {
-    width: 85%; /* 画面に対して少し小さくして上品に */
-    max-width: 300px;
-    aspect-ratio: 1 / 1 !important; /* 絶対に正方形 */
+    margin: 0 auto;
+    width: 90%;
+    max-width: 320px; /* スマホで大きくなりすぎないよう制限 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* ここが重要：文字の基準位置を写真の端に合わせるため padding を調整 */
+    padding: 0; 
   }
 
-  .work-figure img {
-    max-width: 90vw !important;
-    max-height: 70vh !important;
+  /* 作品番号（タイトル）の調整 */
+ .work-title {
+    width: 100%;
+    left: 0;
+    text-align: center; /* 左ではなく、写真の真下に中央揃えにする */
+    bottom: 5px;
   }
-}
