@@ -34,6 +34,8 @@ html, body {
   letter-spacing: 0.20em;
   margin-bottom: 50px;
   font-weight: 400;
+  /* 修正：真っ白から少し透けた白へ（80%くらいの濃さ） */
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* グリッド */
