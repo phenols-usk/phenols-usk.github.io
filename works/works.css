@@ -157,7 +157,7 @@ html, body {
     aspect-ratio: 1 / 1; /* 正方形に固定 */
     
     /* 正方形写真なので、枠にピッタリ吸い付かせます */
-    background-size: 100% 100% !important; 
+    background-size: cover !important; 
     background-repeat: no-repeat;
     background-position: center;
     
@@ -165,6 +165,7 @@ html, body {
     background-color: transparent !important; 
     box-shadow: none !important;
     border: none !important;
+    outline: none !important;
   }
 
   /* 黒い帯の正体（レイヤー）を強制的に破壊します */
