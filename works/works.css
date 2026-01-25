@@ -58,21 +58,24 @@ z-index: 1;
 }
 
 /* --- 背景：ぼかし ＋ 暗めのグラデーション（ここがポイント） --- */
+/* --- 古い ::before や ::after はすべて消して、これ一つにします --- */
 .work-item::before {
   content: "";
   position: absolute;
   inset: -10px;
-  /* 下に画像、上にグラデーションを重ねて「暗いぼかし背景」を作ります */
+  /* 背景画像とグラデーションを同時にかける */
   background-image: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), /* 上から被せる暗み */
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), 
     var(--work-image);
   background-size: cover;
   background-position: center;
-  opacity: 0.3;         /* 少し濃いめにするとグラデーションが映えます */
+  opacity: 0.4;        /* ここで背景の濃さを調整 */
   filter: blur(10px);
   z-index: 0;
   pointer-events: none;
 }
+
+/* --- 古い .work-item::after { ... } は削除してください --- */
 
 /* --- 前面の「くっきり」画像 --- */
 .work-main-img {
@@ -94,26 +97,6 @@ z-index: 1;
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* サムネイル暗め */
-.work-item::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  pointer-events: none;
-}
-
-.work-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.55)
-  );
-  pointer-events: none;
-}
 
 /* タイトル */
 .work-title {
