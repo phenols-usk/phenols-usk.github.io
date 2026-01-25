@@ -5,7 +5,6 @@ html, body {
   width: 100%;
   min-height: 100vh; 
   color: #ffffff;
-  font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -26,11 +25,10 @@ html, body {
 }           
 
 .works-title {
-  font-family: 'Cormorant Garamond', serif; /* これを追加 */
-  font-size: 1.8rem;
-  letter-spacing: 0.3em;
+  font-size: 1.4rem;
+  letter-spacing: 0.20em;
   margin-bottom: 50px;
-  font-weight: 300; /* 400から300にして細くします */
+  font-weight: 400;
 }
 
 /* グリッド */
