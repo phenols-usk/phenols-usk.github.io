@@ -42,25 +42,23 @@ document.addEventListener('DOMContentLoaded', () => {
     a.className = "work-item lb-" + work.id;
     a.href = work.link;
 
-    // 1. 画像パスをCSS変数で渡す（ぼかし背景用）
+    // CSS変数に画像を渡す
     a.style.setProperty('--work-image', `url(${work.image})`);
 
-    // 2. 前面の「くっきり画像」を追加
+    // 前面のくっきり画像
     const img = document.createElement("img");
     img.src = work.image;
     img.className = "work-main-img";
     a.appendChild(img);
 
-    // 3. 作品タイトルを追加
+    // タイトル
     const title = document.createElement("span");
     title.className = "work-title";
     title.textContent = work.title;
     a.appendChild(title);
 
     grid.appendChild(a);
-  }); // ← ここに }); が必要でした
-
-}); // ← DomContentLoadedの閉じ
+  });
  
 </script>
 
