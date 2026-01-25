@@ -147,7 +147,7 @@ html, body {
     margin: 0 auto;
     width: 90%;
     max-width: 320px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 0; 
