@@ -100,6 +100,26 @@ html, body {
   transform: translateY(-2px);
 }
 
+.link-biography {
+  display: block;
+  width: fit-content;
+  margin: 28px 0 0 18.5vw; 
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.link-biography:hover {
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.35em;
+}
+
 /* ===== FOOTER ===== */
 .site-footer {
   position: relative;
@@ -126,6 +146,11 @@ html, body {
   .view-works {
     margin: 48px auto 0 !important; /* 左寄せの margin-left: 18vw を解除して中央へ */
     display: inline-block;          /* ボタンとして中央配置しやすくする */
+  }
+  .link-biography {
+    margin: 24px auto 0 !important;
+    text-align: center;
+    letter-spacing: 0.2em;
   }
 
   /* テキストの折り返しを調整（スマホで読みやすく） */
