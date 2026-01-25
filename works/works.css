@@ -1,64 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Works | Leather BONSAI</title>
+/* ===== BODY & HTML ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; 
+  color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
-  <!-- font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+/* ===== WORKS SECTION ===== */
+.works {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 50px 1vw;
+  color: #ffffff;
+  overflow: visible; 
+}
 
-  <!-- css -->
-  <link rel="stylesheet" href="works.css" />
-  <link rel="stylesheet" href="../background.css" />
-</head>
-<body class="base-bg works">
+.works-inner { 
+  position: relative; z-index: 2;
+  margin-left: 5vw;
+}           
 
-<section id="works" class="works">
-  <div class="works-inner">
-    <h2 class="works-title">Works</h2>
+.works-title {
+  font-size: 1.4rem;
+  letter-spacing: 0.20em;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
 
-    <!-- JSで自動生成 -->
-    <div class="works-grid" id="worksGrid"></div>
-  </div>
-</section>
+/* グリッド */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+}
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+/* 作品カード */
+.work-item {
+  position: relative;
+  display: block;
+  aspect-ratio: 5 / 5;
+  max-height: 75%;     /* ここが横長に見える原因として議論していた箇所です */
+  border-radius: 2px;
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.05);
 
-  const works = [
-    { id: "0000", title: "Leather BONSAI #0000", image: "images/LB-0000.jpg", link: "LB-0000.html", status: "archive" },
-    { id: "0001", title: "Leather BONSAI #0001", image: "images/LB-0001.jpg", link: "LB-0001.html", status: "available" },
-    { id: "0002", title: "Leather BONSAI #0002", image: "images/LB-0002.jpg", link: "LB-0002.html", status: "available" },
-    { id: "0003", title: "Leather BONSAI #0003", image: "images/LB-0003.jpg", link: "LB-0003.html", status: "available" }
-  ];
+  background-position: center;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
 
-  const grid = document.getElementById("worksGrid");
+/* hover */
+.work-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
 
-  works.forEach(work => {
-    const a = document.createElement("a");
-    a.className = "work-item lb-" + work.id;
-    a.href = work.link;
+/* サムネイル暗め */
+.work-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  pointer-events: none;
+}
 
-    // 背景画像＋暗めグラデーション
-    a.style.backgroundImage = `
-      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-      url(${work.image})
-    `;
+.work-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.55)
+  );
+  pointer-events: none;
+}
 
-    // 作品タイトル
-    const title = document.createElement("span");
-    title.className = "work-title";
-    title.textContent = work.title;
-    a.appendChild(title);
+/* タイトル */
+.work-title {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.55);
+  z-index: 2;
+  pointer-events: none;
+}
 
-    grid.appendChild(a);
-  });
+/* ステータスラベル */
+.work-status {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  color: #fff;
+  z-index: 3;
+  pointer-events: none;
+}
 
-});
-</script>
+.work-status.sold { background-color: rgba(255,0,0,0.85); }
+.work-status.archive { background-color: rgba(128,128,128,0.85); }
 
-</body>
-</html>
+/* ===== SINGLE WORK PAGE ===== */
+.work-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* 作品画像 */
+.work-figure img {
+  max-width: 54vw;
+  max-height: 75vh;
+  object-fit: contain;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6); 
+  border-radius: 2px;
+}
+
+/* スマホやタブレットでの修正 */
+@media (max-width: 1024px) {
+  .works-inner {
+    margin-left: 0 !important;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .works-grid {
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .work-item {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 320px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0; 
+  }
+
+ .work-title {
+    width: 100%;
+    left: 0;
+    text-align: center;
+    bottom: 5px;
+  }
+}
