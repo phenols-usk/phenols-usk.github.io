@@ -177,11 +177,19 @@ html, body {
     text-align: center;
   }
 
+/* スマホ用の設定内 */
   .work-title {
     font-family: 'Inter', sans-serif !important;
     font-size: 0.75rem;
     letter-spacing: 0.05em;
     font-weight: 300;
+
+    /* --- ここを追加 --- */
+    left: 0 !important;           /* 左固定を解除 */
+    width: 100% !important;      /* 幅をいっぱいにする */
+    text-align: center !important; /* 中央に寄せる */
+    bottom: 16px;                /* 下からの位置 */
+    /* ------------------ */
   }
 }
   /* 個別ページの画像を大きく表示する設定を追加 */
