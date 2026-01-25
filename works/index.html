@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const a = document.createElement("a");
     a.className = "work-item lb-" + work.id;
     a.href = work.link;
-　　a.style.setProperty('--work-image', `url(${work.image})`);
-    
+　　// 【追加】CSSでぼかし背景を作るための合言葉
+    a.style.setProperty('--work-image', `url(${work.image})`);
     // 背景画像＋暗めグラデーション
     a.style.backgroundImage = `
       linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
