@@ -164,12 +164,22 @@ html, body {
     padding: 0; 
   }
 
- .work-title {
-    width: 100%;
-    left: 0;
+ .works-title {
+    /* スマホでも確実にInterにする */
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.6rem;
+    letter-spacing: 0.15em;
+    font-weight: 400; /* スマホで見やすいよう少しだけ太く */
     text-align: center;
-    bottom: 5px;
   }
+
+  .work-title {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+  }
+}
   /* 個別ページの画像を大きく表示する設定を追加 */
   .work-figure img {
     max-width: 90vw !important;  /* 54% から 90% に拡大 */
