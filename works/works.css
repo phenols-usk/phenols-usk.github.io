@@ -90,7 +90,11 @@ html, body {
 .work-title {
   position: absolute;
   bottom: 16px;
-  left: 16px;
+  /* --- ここが重要 --- */
+  left: 0;        /* 16pxから0に変更 */
+  width: 100%;    /* 横幅をいっぱいまで広げる */
+  text-align: center; /* 広がった幅の中で中央に寄せる */
+  /* ------------------ */
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   color: rgba(255,255,255,0.55);
