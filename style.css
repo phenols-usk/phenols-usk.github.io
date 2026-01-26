@@ -233,11 +233,13 @@ html, body {
     display: none; /* PC用の改行をスマホでは無視して、自然に折り返す */
   }
 }
-/* --- Biography Page --- */
+/* =========================
+   BIOGRAPHY PAGE (FADE)
+========================= */
 .bio-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 120px 20px 80px;
+  padding: 100px 32px 80px;
   min-height: 100vh;
 }
 
@@ -246,53 +248,76 @@ html, body {
   margin-bottom: 60px;
 }
 
-.slider {
+/* フェードスライダーの土台 */
+.fade-slider {
   width: 100%;
+  aspect-ratio: 16 / 9; /* 写真・動画の比率を固定 */
+  position: relative;
   overflow: hidden;
-  border-radius: 2px; /* わずかに角を丸めて上品に */
+  background-color: rgba(0,0,0,0.1); /* 読み込み前の下地 */
 }
 
-.slider-inner {
-  display: flex;
-  transition: transform 1.2s cubic-bezier(0.45, 0, 0.55, 1); /* ゆっくり滑らかな動き */
+/* スライドの重なり設定 */
+.fade-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* 最初は透明 */
+  transition: opacity 2.5s ease-in-out; /* 2.5秒かけてじわっと切り替え */
+  z-index: 0;
 }
 
-.slide {
-  min-width: 100%;
-  aspect-ratio: 16 / 9; /* 写真・動画の比率を統一 */
+/* 表示中のスライド */
+.fade-slide.active {
+  opacity: 1;
+  z-index: 1;
 }
 
-.slide img, .slide video {
+.fade-slide img, .fade-slide video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* テキストエリア */
 .bio-name {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  margin-bottom: 30px;
+  letter-spacing: 0.15em;
+  margin-bottom: 40px;
+  color: #fff;
 }
 
 .bio-text p {
-  font-size: 0.95rem;
-  line-height: 1.8;
+  font-size: 0.9rem;
+  line-height: 2;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .back-link {
   display: inline-block;
-  margin-top: 40px;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  margin-top: 60px;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.4s ease;
 }
 
 .back-link:hover {
-  color: #fff;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* スマホ用調整 */
+@media (max-width: 1024px) {
+  .bio-container {
+    padding: 80px 24px 60px;
+  }
+  .fade-slider {
+    aspect-ratio: 4 / 3; /* スマホでは少し縦に厚みを持たせる */
+  }
 }
