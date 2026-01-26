@@ -104,7 +104,7 @@ html, body {
   display: block;
   width: fit-content;
   /* View Worksと同じ 18vw で縦のラインを統一 */
-  margin: 16px 0 0 18vw !important; 
+  margin: 16px 0 0 16vw !important; 
   color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
   font-family: 'Inter', sans-serif;
