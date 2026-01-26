@@ -239,13 +239,13 @@ html, body {
 .bio-container {
   max-width: 400px;
   margin: 0 auto;
-  padding: 100px 32px 80px;
+  padding: 100px 24px 80px;
   min-height: 100vh;
 }
 
 .bio-visual {
-  width: 100%;
-  margin-bottom: 80px;
+  width: 90%;
+  margin-bottom: 60px;
 }
 
 /* フェードスライダーの土台 */
