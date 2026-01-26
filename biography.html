@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Artist | Leather BONSAI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="background.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="base-bg">
+
+  <main class="bio-container">
+    <section class="bio-visual">
+      <div class="slider">
+        <div class="slider-inner">
+          <div class="slide"><img src="artist-1.jpg" alt="Process 1"></div>
+          <div class="slide"><video src="process.mp4" autoplay muted loop playsinline></video></div>
+          <div class="slide"><img src="artist-2.jpg" alt="Process 2"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bio-content">
+      <h1 class="bio-name">Artist Name / phenols</h1>
+      <div class="bio-text">
+        <p>I breathe life into leather through the ancient aesthetic of Bonsai.</p>
+        <p>Every leaf, branch, and grain of soil is crafted by hand, 
+           transforming a piece of hide into a timeless botanical form.</p>
+      </div>
+      <a href="index.html" class="back-link">Back to Home</a>
+    </section>
+  </main>
+
+  <script>
+    const inner = document.querySelector('.slider-inner');
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function showNextSlide() {
+      index = (index + 1) % slides.length;
+      inner.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // 4秒ごとに自動切り替え
+    setInterval(showNextSlide, 4000);
+  </script>
+</body>
+</html>
