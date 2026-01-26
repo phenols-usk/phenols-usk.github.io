@@ -237,39 +237,38 @@ html, body {
    BIOGRAPHY PAGE (FADE)
 ========================= */
 .bio-container {
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 400px;           /* ここで全体の横幅を決定 */
+  margin: 0 auto !important;  /* 強制的に中央へ */
   padding: 100px 24px 80px;
   min-height: 100vh;
 }
 
 .bio-visual {
-  width: 90%;
-  margin-bottom: 60px;
+  width: 100%;                /* containerの幅いっぱいに広げる */
+  margin: 0 auto 60px !important;
+  display: block;
 }
 
 /* フェードスライダーの土台 */
 .fade-slider {
   width: 100%;
-  aspect-ratio: 16 / 9; /* 写真・動画の比率を固定 */
+  aspect-ratio: 16 / 9; 
   position: relative;
   overflow: hidden;
-  background-color: rgba(255,255,255,0.03); /* 読み込み前の下地 */
+  background-color: rgba(255,255,255,0.03);
 }
 
-/* スライドの重なり設定 */
 .fade-slide {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0; /* 最初は透明 */
-  transition: opacity 2.5s ease-in-out; /* 2.5秒かけてじわっと切り替え */
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
   z-index: 0;
 }
 
-/* 表示中のスライド */
 .fade-slide.active {
   opacity: 1;
   z-index: 1;
@@ -281,8 +280,7 @@ html, body {
   object-fit: cover;
 }
 
-/* テキストエリア */
-./* アーティスト名 */
+/* アーティスト名 */
 .bio-name {
   font-size: 0.95rem;
   letter-spacing: 0.25em;
@@ -292,7 +290,7 @@ html, body {
 }
 
 .bio-text {
-  max-width: 440px; /* さらに少し絞って密度を上げる */
+  max-width: 100%; 
   margin: 0 auto;
 }
 
@@ -302,21 +300,21 @@ html, body {
 }
 
 .bio-lang-jp p {
-  font-size: 0.75rem; /* 日本語は少し小さめが洗練されて見えます */
+  font-size: 0.75rem;
   line-height: 2.2;
   color: rgba(255, 255, 255, 0.7);
-  text-align: justify; /* 両端揃えでブロックを綺麗に */
+  text-align: justify;
   margin-bottom: 15px;
 }
 
 /* 英語セクション */
 .bio-lang-en p {
-  font-size: 0.7rem;  /* 英語はさらに一段小さくして密度を出す */
+  font-size: 0.7rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.4); /* 英語は少し薄くして背景のように見せる */
+  color: rgba(255, 255, 255, 0.4);
   text-align: justify;
   margin-bottom: 12px;
-  font-style: italic; /* 翻訳らしく少し斜体に */
+  font-style: italic;
 }
 
 /* 戻るリンク */
@@ -326,6 +324,8 @@ html, body {
   margin-top: 60px;
   font-size: 0.65rem;
   color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  letter-spacing: 0.3em;
 }
 
 .back-link:hover {
@@ -335,9 +335,10 @@ html, body {
 /* スマホ用調整 */
 @media (max-width: 1024px) {
   .bio-container {
-    padding: 80px 24px 60px;
+    max-width: 85%; /* スマホでは画面に対して少しゆとりを持つ */
+    padding: 80px 0 60px;
   }
   .fade-slider {
-    aspect-ratio: 4 / 3; /* スマホでは少し縦に厚みを持たせる */
+    aspect-ratio: 4 / 3;
   }
 }
