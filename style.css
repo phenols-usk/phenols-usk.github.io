@@ -100,6 +100,59 @@ html, body {
   transform: translateY(-2px);
 }
 
+.link-biography {
+  display: block;
+  width: fit-content;
+  /* View Worksと同じ 18vw で縦のラインを統一 */
+  margin: 16px 0 0 18vw !important; 
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2px; /* ラインのための隙間 */
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1); /* 緩急のある動き */
+}
+
+/* ホバー時：文字の間隔を少し広げる */
+.link-biography:hover {
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.3em;
+}
+
+/* 下線のベース（最初は幅0） */
+.link-biography::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: width 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* ホバー時：下線をスッと伸ばす */
+.link-biography:hover::after {
+  width: 100%;
+}
+
+/* スマホ用の微調整 */
+@media (max-width: 1024px) {
+  .link-biography {
+    margin: 16px auto 0 !important;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  /* スマホではアンダーラインを中央から広げる */
+  .link-biography::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 /* Instagramリンクのデザイン */
 .link-instagram {
  display: block;      /* table から変更 */
