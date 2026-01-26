@@ -6,17 +6,23 @@
   <title>About Artist | Leather BONSAI</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="background.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body class="base-bg">
 
   <main class="bio-container">
     <section class="bio-visual">
-      <div class="slider">
-        <div class="slider-inner">
-          <div class="slide"><img src="artist-1.jpg" alt="Process 1"></div>
-          <div class="slide"><video src="process.mp4" autoplay muted loop playsinline></video></div>
-          <div class="slide"><img src="artist-2.jpg" alt="Process 2"></div>
+      <div class="fade-slider">
+        <div class="fade-slide active">
+          <img src="artist-1.jpg" alt="Process 1">
+        </div>
+        <div class="fade-slide">
+          <video src="process.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="fade-slide">
+          <img src="artist-2.jpg" alt="Process 2">
         </div>
       </div>
     </section>
@@ -33,17 +39,23 @@
   </main>
 
   <script>
-    const inner = document.querySelector('.slider-inner');
-    const slides = document.querySelectorAll('.slide');
-    let index = 0;
+    const slides = document.querySelectorAll('.fade-slide');
+    let currentIndex = 0;
 
-    function showNextSlide() {
-      index = (index + 1) % slides.length;
-      inner.style.transform = `translateX(-${index * 100}%)`;
+    function nextFadeSlide() {
+      // 現在のスライドを非表示に
+      slides[currentIndex].classList.remove('active');
+      
+      // 次のインデックスへ
+      currentIndex = (currentIndex + 1) % slides.length;
+      
+      // 次のスライドを表示
+      slides[currentIndex].classList.add('active');
     }
 
-    // 4秒ごとに自動切り替え
-    setInterval(showNextSlide, 4000);
+    // 5秒ごとにフェード切り替え
+    setInterval(nextFadeSlide, 5000);
   </script>
+
 </body>
 </html>
