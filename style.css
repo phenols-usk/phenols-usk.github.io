@@ -282,25 +282,50 @@ html, body {
 }
 
 /* テキストエリア */
+./* アーティスト名 */
 .bio-name {
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  margin-bottom: 40px;
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  margin-bottom: 50px;
   color: #fff;
-}
-
-.bio-text p {
-  font-size: 0.9rem;
-  line-height: 2;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 24px;
-}
-
-.back-link {
-  display: block;      /* blockにして中央寄せしやすく */
   text-align: center;
-  margin-top: 80px;
+}
+
+.bio-text {
+  max-width: 440px; /* さらに少し絞って密度を上げる */
+  margin: 0 auto;
+}
+
+/* 日本語セクション */
+.bio-lang-jp {
+  margin-bottom: 40px;
+}
+
+.bio-lang-jp p {
+  font-size: 0.75rem; /* 日本語は少し小さめが洗練されて見えます */
+  line-height: 2.2;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: justify; /* 両端揃えでブロックを綺麗に */
+  margin-bottom: 15px;
+}
+
+/* 英語セクション */
+.bio-lang-en p {
+  font-size: 0.7rem;  /* 英語はさらに一段小さくして密度を出す */
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.4); /* 英語は少し薄くして背景のように見せる */
+  text-align: justify;
+  margin-bottom: 12px;
+  font-style: italic; /* 翻訳らしく少し斜体に */
+}
+
+/* 戻るリンク */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .back-link:hover {
