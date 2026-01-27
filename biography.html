@@ -59,17 +59,23 @@
       color: #fff;
     }
 
-    .bio-text p {
+   /* 日本語文の行間調整 */
+    .bio-lang-jp p {
       font-size: 0.75rem;
-      line-height: 2.2;
+      line-height: 1.7; /* 2.2 から 1.7 に短縮（シュッと締まります） */
       color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 20px;
+      margin-bottom: 18px; /* 段落ごとの余白 */
       text-align: justify;
     }
 
+    /* 英文の行間調整 */
     .bio-lang-en p {
+      font-size: 0.65rem;
+      line-height: 1.5; /* 英文は少し詰まっている方がデザインとして美しく見えます */
       color: rgba(255, 255, 255, 0.35);
       font-style: italic;
+      margin-bottom: 15px;
+      text-align: justify;
     }
 
     .back-link {
