@@ -1,81 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Artist | Leather BONSAI</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="background.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
 <body class="base-bg">
-
   <main class="bio-container">
     <section class="bio-visual">
       <div class="fade-slider">
-        <div class="fade-slide active">
-          <img src="artist-1.jpg" alt="Process 1">
-        </div>
-        <div class="fade-slide">
-          <video src="process.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div class="fade-slide">
-          <img src="artist-2.jpg" alt="Process 2">
-        </div>
+        <div class="fade-slide active"><img src="artist-1.jpg" alt="Process 1"></div>
+        <div class="fade-slide"><video src="process.mp4" autoplay muted loop playsinline></video></div>
+        <div class="fade-slide"><img src="artist-2.jpg" alt="Process 2"></div>
       </div>
     </section>
 
-   <section class="bio-content">
-  <h1 class="bio-name"> Yusuke / phenols </h1>
-  
-  <div class="bio-text">
-    <div class="bio-lang-jp">
-      <p>
-        モノを作ることが好きで、レザークラフトに出会ってからは財布、グローブ、バッグ、革靴など、革で様々なものを作り続けてきた。<br>
-        すべてを革で表現した「革BONSAI」が、TLF革のデザインコンテスト2025にて最優秀賞を受賞。
-        革靴作りの過程で出る廃材（分厚い革の欠片や削りカス等）の活用を模索している中、趣味の盆栽をレザークラフト工具で剪定していて、
-        両者繋がったことが制作のきっかけに。
-      </p>
-      <p>
-       受賞後もなお、Leather BONSAIの新たな可能性を追求し続けている。
-      </p>
-    </div>
-
-    <div class="bio-lang-en">
-      <p>
-        Driven by a passion for craftsmanship, I have explored the vast possibilities of leather—from wallets and gloves to bags and footwear. 
-        The concept of "Leather BONSAI" was born from a serendipitous moment: while seeking a way to repurpose leather scraps from shoemaking, I found myself pruning a bonsai tree with leathercraft tools, and the two worlds merged.
-      </p>
-      <p>
-        This innovative fusion earned the Grand Prix at the TLF Leather Design Contest 2025. Even after this recognition, I continue to push the boundaries of Leather BONSAI, fueled by endless curiosity and a desire to experiment with new techniques.
-      </p>
-    </div>
-  </div>
-
-  <a href="index.html" class="back-link">Back to Home</a>
-</section>
+    <section class="bio-content">
+      <h1 class="bio-name">Yusuke / phenols</h1>
+      <div class="bio-text">
+        <div class="bio-lang-jp">
+          <p>モノを作ることが好きで、レザークラフトに出会ってからは財布、グローブ、バッグ、革靴など、革で様々なものを作り続けてきた。<br>
+          すべてを革で表現した「革BONSAI」が、TLF革のデザインコンテスト2025にて最優秀賞を受賞。革靴作りの過程で出る廃材（分厚い革の欠片や削りカス等）の活用を模索している中、趣味の盆栽をレザークラフト工具で剪定していて、両者繋がったことが制作のきっかけに。</p>
+          <p>受賞後もなお、Leather BONSAIの新たな可能性を追求し続けている。</p>
+        </div>
+        <div class="bio-lang-en">
+          <p>Driven by a passion for craftsmanship, I have explored the vast possibilities of leather—from wallets and gloves to bags and footwear. The concept of "Leather BONSAI" was born from a serendipitous moment: while seeking a way to repurpose leather scraps from shoemaking, I found myself pruning a bonsai tree with leathercraft tools, and the two worlds merged.</p>
+          <p>This innovative fusion earned the Grand Prix at the TLF Leather Design Contest 2025. Even after this recognition, I continue to push the boundaries of Leather BONSAI, fueled by endless curiosity and a desire to experiment with new techniques.</p>
+        </div>
+      </div>
+      <a href="index.html" class="back-link">Back to Home</a>
+    </section>
   </main>
-
-  <script>
-    const slides = document.querySelectorAll('.fade-slide');
-    let currentIndex = 0;
-
-    function nextFadeSlide() {
-      // 現在のスライドを非表示に
-      slides[currentIndex].classList.remove('active');
-      
-      // 次のインデックスへ
-      currentIndex = (currentIndex + 1) % slides.length;
-      
-      // 次のスライドを表示
-      slides[currentIndex].classList.add('active');
-    }
-
-    // 5秒ごとにフェード切り替え
-    setInterval(nextFadeSlide, 5000);
-  </script>
-
-</body>
-</html>
