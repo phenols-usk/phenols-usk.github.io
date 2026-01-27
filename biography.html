@@ -1,5 +1,91 @@
-<body class="base-bg">
-  <main class="bio-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Artist | Leather BONSAI</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="background.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 画像が縦に並ぶのを防ぎ、重なりを強制する設定 */
+    .bio-container {
+      width: 100%;
+      max-width: 350px !important;
+      margin: 0 auto !important;
+      padding: 100px 20px 80px !important;
+      position: relative;
+      z-index: 2; /* 背景より上に表示 */
+    }
+
+    .fade-slider {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      position: relative !important; /* 子要素を重ねる基準 */
+      overflow: hidden;
+      margin-bottom: 50px;
+      background: rgba(0,0,0,0.2); /* 読み込み前の薄い影 */
+    }
+
+    .fade-slide {
+      position: absolute !important; /* これで画像を同じ位置に重ねる */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 2.5s ease-in-out;
+    }
+
+    .fade-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .fade-slide img, .fade-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 文字周りの最終調整 */
+    .bio-name {
+      font-size: 0.9rem;
+      letter-spacing: 0.25em;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .bio-text p {
+      font-size: 0.75rem;
+      line-height: 2.2;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .bio-lang-en p {
+      color: rgba(255, 255, 255, 0.35);
+      font-style: italic;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      margin-top: 60px;
+      transition: color 0.3s;
+    }
+    .back-link:hover { color: #fff; }
+  </style>
+</head>
+<body class="base-bg"> <main class="bio-container">
     <section class="bio-visual">
       <div class="fade-slider">
         <div class="fade-slide active"><img src="artist-1.jpg" alt="Process 1"></div>
@@ -12,15 +98,36 @@
       <h1 class="bio-name">Yusuke / phenols</h1>
       <div class="bio-text">
         <div class="bio-lang-jp">
-          <p>モノを作ることが好きで、レザークラフトに出会ってからは財布、グローブ、バッグ、革靴など、革で様々なものを作り続けてきた。<br>
-          すべてを革で表現した「革BONSAI」が、TLF革のデザインコンテスト2025にて最優秀賞を受賞。革靴作りの過程で出る廃材（分厚い革の欠片や削りカス等）の活用を模索している中、趣味の盆栽をレザークラフト工具で剪定していて、両者繋がったことが制作のきっかけに。</p>
+          <p>モノを作ることが好きで、レザークラフトに出会ってからは財布、グローブ、バッグ、革靴など、
+            　革で様々なものを作り続けてきた。<br>
+         　　 すべてを革で表現した「革BONSAI」が、TLF革のデザインコンテスト2025にて最優秀賞を受賞。
+            　革靴作りの過程で出る廃材（分厚い革の欠片や削りカス等）の活用を模索している中、
+            　趣味の盆栽をレザークラフト工具で剪定していて、両者繋がったことが制作のきっかけに。</p>
           <p>受賞後もなお、Leather BONSAIの新たな可能性を追求し続けている。</p>
         </div>
         <div class="bio-lang-en">
-          <p>Driven by a passion for craftsmanship, I have explored the vast possibilities of leather—from wallets and gloves to bags and footwear. The concept of "Leather BONSAI" was born from a serendipitous moment: while seeking a way to repurpose leather scraps from shoemaking, I found myself pruning a bonsai tree with leathercraft tools, and the two worlds merged.</p>
-          <p>This innovative fusion earned the Grand Prix at the TLF Leather Design Contest 2025. Even after this recognition, I continue to push the boundaries of Leather BONSAI, fueled by endless curiosity and a desire to experiment with new techniques.</p>
+          <p>Driven by a passion for craftsmanship, I have explored the vast possibilities of leather—from wallets 
+            　and gloves to bags and footwear. The concept of "Leather BONSAI" was born from a serendipitous moment: 
+            　while seeking a way to repurpose leather scraps from shoemaking, 
+            　I found myself pruning a bonsai tree with leathercraft tools, and the two worlds merged.</p>
+          <p>This innovative fusion earned the Grand Prix at the TLF Leather Design Contest 2025. Even after this recognition, 
+            　I continue to push the boundaries of Leather BONSAI, fueled by endless curiosity and a desire to experiment with new techniques.</p>
         </div>
       </div>
       <a href="index.html" class="back-link">Back to Home</a>
     </section>
   </main>
+
+  <script>
+    const slides = document.querySelectorAll('.fade-slide');
+    let currentIndex = 0;
+    function nextFadeSlide() {
+      if(slides.length === 0) return;
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+    }
+    setInterval(nextFadeSlide, 5000);
+  </script>
+</body>
+</html>
