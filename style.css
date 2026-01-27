@@ -136,41 +136,55 @@ html, body {
 
 /* Instagramリンクのデザイン */
 .link-instagram {
- display: block;      /* table から変更 */
+  display: block;
   width: fit-content;
-  /* View Worksと同じ 18vw に合わせることで、縦のラインを揃えます */
   margin: 24px 0 0 18vw !important;
-  /* 控えめな白 (0.4) で、作品の邪魔をしない */
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4); /* Instagramは少し控えめな濃度 */
   text-decoration: none;
-  
-  /* 基準のInterフォント */
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.25em;
-  text-transform: uppercase; /* 大文字でスタイリッシュに */
-  
+  text-transform: uppercase;
   position: relative;
+  padding-bottom: 4px; /* 下線との隙間 */
   z-index: 2;
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
-
+  
+/* ホバー時：文字を少し明るく、間隔を広げる */
 .link-instagram:hover {
-  /* ホバーした時だけ少し明るく、文字の間隔を広げる */
   color: rgba(255, 255, 255, 0.9);
   letter-spacing: 0.35em;
+}
+
+/* 下線のベース（最初は幅0） */
+.link-instagram::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: width 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+/* ホバー時：下線を左からスッと伸ばす */
+.link-instagram:hover::after {
+  width: 100%;
 }
 
 /* スマホ用の微調整 */
 @media (max-width: 1024px) {
   .link-instagram {
     margin: 20px auto 0 !important;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
     text-align: center;
   }
+  /* スマホでは下線を中央から広げる */
+  .link-instagram::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
-
 /* ===== FOOTER ===== */
 .site-footer {
   position: relative;
