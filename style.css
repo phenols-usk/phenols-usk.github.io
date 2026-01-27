@@ -236,26 +236,25 @@ html, body {
 /* =========================
    BIOGRAPHY PAGE (FADE)
 ========================= */
+/* 一番下のBiography設定をこれだけに差し替える */
 .bio-container {
-  max-width: 400px;           /* ここで全体の横幅を決定 */
-  margin: 0 auto !important;  /* 強制的に中央へ */
-  padding: 100px 24px 80px;
+  width: 100% !important;
+  max-width: 320px !important; /* ←ここでサイズを強制固定 */
+  margin: 0 auto !important;
+  padding: 100px 20px 80px !important;
   min-height: 100vh;
 }
 
 .bio-visual {
-  width: 100%;                /* containerの幅いっぱいに広げる */
-  margin: 0 auto 60px !important;
-  display: block;
+  width: 100% !important;
+  margin-bottom: 50px !important;
 }
 
-/* フェードスライダーの土台 */
 .fade-slider {
-  width: 100%;
-  aspect-ratio: 16 / 9; 
+  width: 100% !important;
+  aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
-  background-color: rgba(255,255,255,0.03);
 }
 
 .fade-slide {
@@ -266,12 +265,10 @@ html, body {
   height: 100%;
   opacity: 0;
   transition: opacity 2.5s ease-in-out;
-  z-index: 0;
 }
 
 .fade-slide.active {
   opacity: 1;
-  z-index: 1;
 }
 
 .fade-slide img, .fade-slide video {
@@ -279,7 +276,6 @@ html, body {
   height: 100%;
   object-fit: cover;
 }
-
 /* アーティスト名 */
 .bio-name {
   font-size: 0.95rem;
