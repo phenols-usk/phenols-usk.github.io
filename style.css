@@ -109,7 +109,7 @@ html, body {
   color: rgba(255, 255, 255, 0.8); 
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;       /* サイズも View Works に合わせるなら 0.9rem */
+  font-size: 0.8rem;       /* サイズも View Works に合わせるなら 0.9rem */
   letter-spacing: 0.15em;  /* 間隔も共通化 */
   text-transform: uppercase;
   position: relative;
