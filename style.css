@@ -100,56 +100,37 @@ html, body {
   transform: translateY(-2px);
 }
 
+/* --- link-biography の修正 --- */
 .link-biography {
   display: block;
   width: fit-content;
-  /* View Worksと同じ 18vw で縦のラインを統一 */
   margin: 16px 0 0 17.2vw !important; 
-  color: rgba(255, 255, 255, 0.4);
+  /* 文字の濃さを View Works (0.8) と共通に */
+  color: rgba(255, 255, 255, 0.8); 
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.9rem;       /* サイズも View Works に合わせるなら 0.9rem */
+  letter-spacing: 0.15em;  /* 間隔も共通化 */
   text-transform: uppercase;
   position: relative;
-  padding-bottom: 2px; /* ラインのための隙間 */
-  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1); /* 緩急のある動き */
+  z-index: 2;
+  /* 動きを View Works と共通化 */
+  transition: color 0.3s ease, transform 0.3s ease; 
 }
 
-/* ホバー時：文字の間隔を少し広げる */
+/* ホバーエフェクトを View Works と完全に統一 */
 .link-biography:hover {
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
 }
 
-/* 下線のベース（最初は幅0） */
-.link-biography::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.6);
-  transition: width 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
 
-/* ホバー時：下線をスッと伸ばす */
-.link-biography:hover::after {
-  width: 100%;
-}
-
-/* スマホ用の微調整 */
+/* スマホ用の微調整（中央寄せを維持） */
 @media (max-width: 1024px) {
   .link-biography {
-    margin: 16px auto 0 !important;
-    font-size: 0.7rem;
+    margin: 24px auto 0 !important;
+    font-size: 0.9rem;
     text-align: center;
-  }
-  /* スマホではアンダーラインを中央から広げる */
-  .link-biography::after {
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
 
