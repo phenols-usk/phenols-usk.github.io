@@ -11,7 +11,6 @@ html, body {
   font-weight: 300;
   
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 /* ===== WORKS SECTION ===== */
@@ -211,7 +210,7 @@ html, body {
    SITE LOGO (LEFT TOP)
 ========================= */
 .site-logo {
-  position: fixed　!important;
+  position: fixed !important;
   top: 40px;      /* 上からの距離 */
   left: 5vw;      /* 左からの距離（少しゆとりを持たせました） */
   z-index: 1000;
