@@ -88,7 +88,8 @@ html, body {
 .view-works {
   display: block;
   width: fit-content;
-  margin: 48px 0 0 18vw;
+  margin: 48px auto 0 !important;
+  text-align: center;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   letter-spacing: 0.15em;
@@ -107,8 +108,8 @@ html, body {
 .link-biography {
   display: block;
   width: fit-content;
-  margin: 16px 0 0 17.2vw !important; 
-  /* 文字の濃さを View Works (0.8) と共通に */
+  margin: 16px auto 0 !important;
+  text-align: center;
   color: rgba(255, 255, 255, 0.8); 
   text-decoration: none;
   font-family: 'Inter', sans-serif;
@@ -141,7 +142,8 @@ html, body {
 .link-instagram {
   display: block;
   width: fit-content;
-  margin: 24px 0 0 18vw !important;
+  margin: 24px auto 0 !important;
+  text-align: center;
   color: rgba(255, 255, 255, 0.4); /* Instagramは少し控えめな濃度 */
   text-decoration: none;
   font-family: 'Inter', sans-serif;
