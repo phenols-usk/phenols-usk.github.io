@@ -41,10 +41,31 @@
       border-radius: 4px;
     }
 
+    /* タイトル全体の親要素 */
     h1 {
-      margin-bottom: 24px;
-      font-size: 1.6rem;
-      letter-spacing: 0.1em;
+      margin-bottom: 32px;
+      line-height: 1.1; /* 行の間隔を少し詰める */
+    }
+
+    /* 「Leather BONSAI」の部分（Vibesを適用） */
+    .brand-name {
+      display: block;
+      font-family: 'Vibes', cursive;
+      font-size: 3.5rem; /* 筆記体は大きく見せるのが正解です */
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: 0.02em;
+    }
+
+    /* 「Verification」の部分（Interでカッチリと） */
+    .verify-sub {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em; /* 文字を広げて高級感を出す */
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-top: -5px; /* 筆記体に少し近づける */
     }
 
     p {
