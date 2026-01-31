@@ -340,37 +340,37 @@ html, body {
     aspect-ratio: 4 / 3;
   }
 }
-
 /* =========================
    SITE LOGO (LEFT TOP)
 ========================= */
 .site-logo {
   position: fixed;
-  top: 45px;      /* 上からの距離 */
-  left: 4vw;      /* 右(right)から左(left)へ変更 */
+  top: 40px;      /* 上からの距離 */
+  left: 5vw;      /* 左からの距離（少しゆとりを持たせました） */
   z-index: 1000;
   text-decoration: none;
 }
 
 .site-logo img {
-  height: 2.5rem; /* 左上は少し控えめなサイズが上品です */
+  /* PC版：しっかりとした存在感が出るサイズ */
+  height: 3.8rem; 
   width: auto;
   display: block;
-  opacity: 0.7;   /* 背景の黒に馴染ませる */
+  opacity: 0.7;
   transition: opacity 0.3s ease;
 }
 
 .site-logo:hover img {
-  opacity: 1;     /* ホバーでくっきりさせる */
+  opacity: 1;
 }
 
-/* スマホ用の調整 */
+/* スマホ用：今のサイズ（2.0rem〜2.2rem想定）を維持 */
 @media (max-width: 1024px) {
   .site-logo {
     top: 20px;
     left: 20px;
   }
   .site-logo img {
-    height: 2.0rem;
+    height: 2.2rem; /* スマホ用は変更せずそのまま */
   }
 }
