@@ -340,3 +340,45 @@ html, body {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* =========================
+   SITE LOGO (NEW)
+========================= */
+.site-logo {
+  position: fixed;
+  top: 50px;      /* 画面上部からの位置 */
+  right: 4vw;     /* 画面右端からの位置 */
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.site-logo img {
+  height: 2.8rem; /* タイトルの一文字分程度の高さ */
+  width: auto;
+  display: block;
+  opacity: 0.7;   /* 少し透かして馴染ませる */
+  transition: opacity 0.3s ease;
+}
+
+.site-logo:hover img {
+  opacity: 1;
+}
+
+/* スマホ用のロゴ調整 */
+@media (max-width: 1024px) {
+  .site-logo {
+    top: 25px;
+    right: 20px;
+  }
+  .site-logo img {
+    height: 2.2rem; /* スマホでは一回り小さく */
+  }
+}
+
+/* =========================
+   CENTERING ADJUSTMENT
+========================= */
+.hero-inner {
+  padding-left: 0 !important; /* 左余白を消して中央を出す */
+  text-align: center;         /* テキストを中央揃えに */
+}
