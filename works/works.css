@@ -207,3 +207,36 @@ html, body {
     display: block;
   }
 }
+/* =========================
+   SITE LOGO (NEW)
+========================= */
+.site-logo {
+  position: fixed;
+  top: 40px;      /* TOPページと揃えるなら 50px に調整 */
+  right: 4vw;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.site-logo img {
+  height: 2.8rem;
+  width: auto;
+  display: block;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.site-logo:hover img {
+  opacity: 1;
+}
+
+/* スマホ用のロゴ調整 */
+@media (max-width: 1024px) {
+  .site-logo {
+    top: 20px;
+    right: 20px;
+  }
+  .site-logo img {
+    height: 2.2rem;
+  }
+}
