@@ -71,7 +71,7 @@ html, body {
   /* フォントを Vibes に変更 */
   font-family: 'Vibes', cursive;
   
-  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-size: clamp(3.2rem, 6vw, 5rem);
   letter-spacing: 0.02em;
   font-weight: 400;
 }
