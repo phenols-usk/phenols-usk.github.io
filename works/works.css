@@ -208,35 +208,35 @@ html, body {
   }
 }
 /* =========================
-   SITE LOGO (NEW)
+   SITE LOGO (LEFT TOP)
 ========================= */
 .site-logo {
   position: fixed;
-  top: 40px;      /* TOPページと揃えるなら 50px に調整 */
-  right: 4vw;
+  top: 45px;      /* 上からの距離 */
+  left: 4vw;      /* 右(right)から左(left)へ変更 */
   z-index: 1000;
   text-decoration: none;
 }
 
 .site-logo img {
-  height: 2.8rem;
+  height: 2.5rem; /* 左上は少し控えめなサイズが上品です */
   width: auto;
   display: block;
-  opacity: 0.7;
+  opacity: 0.7;   /* 背景の黒に馴染ませる */
   transition: opacity 0.3s ease;
 }
 
 .site-logo:hover img {
-  opacity: 1;
+  opacity: 1;     /* ホバーでくっきりさせる */
 }
 
-/* スマホ用のロゴ調整 */
+/* スマホ用の調整 */
 @media (max-width: 1024px) {
   .site-logo {
     top: 20px;
-    right: 20px;
+    left: 20px;
   }
   .site-logo img {
-    height: 2.2rem;
+    height: 2.0rem;
   }
 }
