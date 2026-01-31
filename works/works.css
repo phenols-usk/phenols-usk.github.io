@@ -207,36 +207,32 @@ html, body {
   }
 }
 /* =========================
-   SITE LOGO (LEFT TOP)
+   SITE LOGO (ALL PAGES)
 ========================= */
 .site-logo {
   position: fixed !important;
-  top: 40px;      /* 上からの距離 */
-  left: 5vw;      /* 左からの距離（少しゆとりを持たせました） */
-  z-index: 1000;
+  top: 45px !important; /* TOPと同じ高さに */
+  left: 5vw !important; /* ここが 5vw であればTOPと同じ位置になります */
+  z-index: 9999 !important;
   text-decoration: none;
+  display: block;
 }
 
 .site-logo img {
-  /* PC版：しっかりとした存在感が出るサイズ */
-  height: 3.8rem; 
+  height: 3.5rem; /* TOPのサイズに合わせる */
   width: auto;
   display: block;
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
 
-.site-logo:hover img {
-  opacity: 1;
-}
-
-/* スマホ用：今のサイズ（2.0rem〜2.2rem想定）を維持 */
+/* スマホ用：画面端から20pxに固定 */
 @media (max-width: 1024px) {
   .site-logo {
-    top: 20px;
-    left: 20px;
+    top: 20px !important;
+    left: 20px !important;
   }
   .site-logo img {
-    height: 2.2rem; /* スマホ用は変更せずそのまま */
+    height: 2.2rem;
   }
 }
