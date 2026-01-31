@@ -211,7 +211,7 @@ html, body {
    SITE LOGO (LEFT TOP)
 ========================= */
 .site-logo {
-  position: fixed;
+  position: fixed　!important;
   top: 40px;      /* 上からの距離 */
   left: 5vw;      /* 左からの距離（少しゆとりを持たせました） */
   z-index: 1000;
