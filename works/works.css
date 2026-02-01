@@ -1,18 +1,23 @@
-/* ===== BODY & HTML ===== */
-html{
-  overflow-y: scroll; /* 常にスクロールバーの領域を確保 */
-}
-  body {
+/* ===== BODY & HTML (固定解除の絶対条件) ===== */
+html {
   margin: 0;
   padding: 0;
-  min-height: 100vh; 
-  color: #ffffff;
-  
-  /* Interを最優先に指定 */
-  font-family: 'Inter', sans-serif !important;
-  font-weight: 300;
+  overflow-y: scroll !important; /* スクロールはブラウザ側に任せる */
+  height: auto !important;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300;
+  /* 以下の3つは絶対に書かない、あるいは削除してください */
+  width: auto !important;
+  overflow-x: visible !important;
+  position: static !important; 
+}
 /* ===== WORKS SECTION ===== */
 .works {
   position: relative;
@@ -207,46 +212,42 @@ html{
   }
 }
 /* =========================
-   SITE LOGO (位置とホバーの復元)
+   SITE LOGO (TOP/Aboutと完全一致版)
 ========================= */
 .site-logo {
-  position: fixed !important;
+  position: fixed !important; /* 画面にピン留め */
   top: 50px !important;
-  
-  /* 位置の調整 */
-  left: 8vw !important;  /* PC版：5vwから8vwへ（少し右へ） */
-  
+  left: 8vw !important;      /* TOPと位置を合わせる */
   z-index: 9999 !important;
   text-decoration: none;
   display: block;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  
+  /* PCでの固定を安定させるための「浮遊レイヤー」設定 */
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+  will-change: transform;
 }
 
 .site-logo img {
-  height: 4.5rem; /* サイズは以前の「大きくした時」のまま */
-  width: auto;
+  height: 4.5rem !important; 
+  width: auto !important;
   display: block;
-  opacity: 0.8;   /* 以前の設定を維持 */
-  transition: all 0.3s ease; /* 以前の速さを維持 */
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
-/* 消えていたホバー設定を再定義 */
 .site-logo:hover img {
   opacity: 1 !important;
-  transform: scale(1.02); /* 以前の「わずかに大きく」を維持 */
+  transform: scale(1.02) !important;
 }
 
-/* スマホ用設定 */
+/* スマホ用（ここも他ページと完全一致） */
 @media (max-width: 1024px) {
   .site-logo {
-    position: fixed !important;
     top: 20px !important;
-    
-    /* 位置の調整 */
-    left: 12px !important; /* スマホ版：20pxから12pxへ（少し左へ） */
+    left: 12px !important;
   }
   .site-logo img {
-    height: 2.6rem; /* スマホのサイズを維持 */
+    height: 2.6rem !important;
   }
 }
