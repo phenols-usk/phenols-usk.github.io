@@ -5,7 +5,6 @@ html{
   body {
   margin: 0;
   padding: 0;
-  width: 100%;
   min-height: 100vh; 
   color: #ffffff;
   
@@ -215,8 +214,12 @@ html{
   position: fixed !important;
   top: 50px !important;    /* 40pxから50pxに下げて「上すぎる」を解消 */
   left: 5vw !important;
-  z-index: 99999 !important;
+  z-index: 9999 !important;
  /* これを追加（PCでの挙動を安定させます） */
+  text-decoration: none;
+  display: block;
+  /* PCでの描画バグを防ぐためのおまじない */
+  -webkit-backface-visibility: hidden;
   transform: translateZ(0); 
   backface-visibility: hidden;
 }
