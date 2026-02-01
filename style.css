@@ -349,38 +349,28 @@ html, body {
   }
 }
 /* =========================
-   SITE LOGO (POWER UP)
+   SITE LOGO (Position Adjusted)
 ========================= */
 .site-logo {
   position: fixed !important;
-  top: 40px !important;    /* 少しだけ上に詰め、余白の美しさを出します */
-  left: 5vw !important;
+  top: 50px !important;
+  
+  /* PC版：左端からもう少し内側（右）へ移動 (5vw → 8vw) */
+  left: 8vw !important; 
+  
   z-index: 9999 !important;
   text-decoration: none;
   display: block;
+  transform: translateZ(0);
 }
 
-.site-logo img {
-  /* PC版：3.5rem〜3.8rem から 4.5rem へ大幅にアップ */
-  height: 4.5rem; 
-  width: auto;
-  display: block;
-  opacity: 0.8;      /* 少しだけ濃くして存在感を強めます */
-  transition: all 0.3s ease;
-}
-
-.site-logo:hover img {
-  opacity: 1;
-  transform: scale(1.02); /* ホバー時にわずかに大きくして高級感を演出 */
-}
-
-/* スマホ用：2.2rem から 2.6rem へ少しだけサイズアップ */
+/* スマホ用設定 */
 @media (max-width: 1024px) {
   .site-logo {
+    position: fixed !important;
     top: 20px !important;
-    left: 20px !important;
-  }
-  .site-logo img {
-    height: 2.6rem; 
+    
+    /* スマホ版：左端へもう少し寄せる (20px → 12px) */
+    left: 12px !important; 
   }
 }
