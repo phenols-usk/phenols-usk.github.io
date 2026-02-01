@@ -208,38 +208,38 @@ html, body {
   }
 }
 /* =========================
-   SITE LOGO (WORKS PAGE)
+   SITE LOGO (POWER UP)
 ========================= */
 .site-logo {
   position: fixed !important;
-  top: 45px !important;
-  /* calcをやめて、画面左端からの固定距離にします */
-  left: 6vw !important; 
+  top: 40px !important;    /* 少しだけ上に詰め、余白の美しさを出します */
+  left: 5vw !important;
   z-index: 9999 !important;
   text-decoration: none;
   display: block;
 }
 
 .site-logo img {
-  /* 高さを 3.8rem から 3.0rem に下げて、上品な大きさにします */
-  height: 3.0rem; 
+  /* PC版：3.5rem〜3.8rem から 4.5rem へ大幅にアップ */
+  height: 4.5rem; 
   width: auto;
   display: block;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  opacity: 0.8;      /* 少しだけ濃くして存在感を強めます */
+  transition: all 0.3s ease;
 }
 
 .site-logo:hover img {
   opacity: 1;
+  transform: scale(1.02); /* ホバー時にわずかに大きくして高級感を演出 */
 }
 
-/* スマホ用は今のバランスを維持 */
+/* スマホ用：2.2rem から 2.6rem へ少しだけサイズアップ */
 @media (max-width: 1024px) {
   .site-logo {
-    left: 20px !important;
     top: 20px !important;
+    left: 20px !important;
   }
   .site-logo img {
-    height: 2.2rem;
+    height: 2.6rem; 
   }
 }
