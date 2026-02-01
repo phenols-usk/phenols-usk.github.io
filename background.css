@@ -1,32 +1,39 @@
-/* background.css - 修正版 */
+/* background.css */
 
+/* 1. body 自体の背景固定を解除（これがロゴ固定を邪魔していた原因） */
 body.base-bg, body.top, body {
   margin: 0;
   background-color: #1a1a1a;
   color: #ffffff;
-  /* body自体に背景を固定するのをやめます（ロゴ固定を優先するため） */
+  /* 背景画像の設定を body から削除します */
+  background-image: none !important; 
 }
 
-/* 背景を別の固定レイヤーとして定義 */
+/* 2. 背景専用の「動かない層」を新しく作る（見た目は変わりません） */
 body::before {
   content: "";
-  position: fixed;
+  position: fixed; /* 画面全体に固定 */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* コンテンツの背後に配置 */
+  z-index: -1; /* コンテンツ（ロゴや作品）の背後に配置 */
+  
+  /* 今までのノイズ画像の設定をそのままここに移動 */
   background-image: url("noise.jpg") !important;
   background-repeat: repeat;
   background-size: auto;
   background-position: center;
+  
+  /* クリック操作などを邪魔しない設定 */
   pointer-events: none;
 }
 
 /* スマホ用設定 */
 @media (max-width: 1024px) {
   body::before {
-    /* スマホでの負荷を考慮し、固定ではなくスクロールに合わせる */
+    /* スマホでは固定を解除して挙動を安定させる */
     position: absolute;
+    background-attachment: scroll !important;
   }
 }
