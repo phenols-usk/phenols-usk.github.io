@@ -241,12 +241,16 @@ body {
   transform: scale(1.02) !important;
 }
 
-/* スマホ用（ここも他ページと完全一致） */
+/* スマホ用（ここも他ページと完全一致させる） */
 @media (max-width: 1024px) {
   .site-logo {
+    position: fixed !important;
     top: 20px !important;
-    left: 12px !important;
+    
+    /* 12px から 5px へ変更（もっと左へ寄せ、TOPと合わせる） */
+    left: 5px !important; 
   }
+  
   .site-logo img {
     height: 2.6rem !important;
   }
