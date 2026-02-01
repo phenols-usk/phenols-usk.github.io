@@ -17,16 +17,15 @@ html{
 .works {
   position: relative;
   min-height: 100vh;
-  width: 100%;
   padding: 50px 1vw;
   color: #ffffff;
-  overflow: visible; 
+  /* overflow も visible なら書かなくてOKです */
 }
 
 .works-inner { 
   position: relative; 
   z-index: 2;
-  margin-left: 10vw; /* 5vw から 10vw に増やして、ロゴとの間に空間を作る */
+  margin-left: 15vw; /* 5vw から 10vw に増やして、ロゴとの間に空間を作る */
 }           
 
 .works-title {
