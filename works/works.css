@@ -24,8 +24,9 @@ html, body {
 }
 
 .works-inner { 
-  position: relative; z-index: 2;
-  margin-left: 5vw;
+  position: relative; 
+  z-index: 2;
+  margin-left: 10vw; /* 5vw から 10vw に増やして、ロゴとの間に空間を作る */
 }           
 
 .works-title {
