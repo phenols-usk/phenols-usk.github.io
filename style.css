@@ -349,19 +349,34 @@ html, body {
   }
 }
 /* =========================
-   SITE LOGO (Position Adjusted)
+   SITE LOGO (位置とホバーの復元)
 ========================= */
 .site-logo {
   position: fixed !important;
   top: 50px !important;
   
-  /* PC版：左端からもう少し内側（右）へ移動 (5vw → 8vw) */
-  left: 8vw !important; 
+  /* 位置の調整 */
+  left: 8vw !important;  /* PC版：5vwから8vwへ（少し右へ） */
   
   z-index: 9999 !important;
   text-decoration: none;
   display: block;
   transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.site-logo img {
+  height: 4.5rem; /* サイズは以前の「大きくした時」のまま */
+  width: auto;
+  display: block;
+  opacity: 0.8;   /* 以前の設定を維持 */
+  transition: all 0.3s ease; /* 以前の速さを維持 */
+}
+
+/* 消えていたホバー設定を再定義 */
+.site-logo:hover img {
+  opacity: 1 !important;
+  transform: scale(1.02); /* 以前の「わずかに大きく」を維持 */
 }
 
 /* スマホ用設定 */
@@ -370,7 +385,10 @@ html, body {
     position: fixed !important;
     top: 20px !important;
     
-    /* スマホ版：左端へもう少し寄せる (20px → 12px) */
-    left: 12px !important; 
+    /* 位置の調整 */
+    left: 12px !important; /* スマホ版：20pxから12pxへ（少し左へ） */
+  }
+  .site-logo img {
+    height: 2.6rem; /* スマホのサイズを維持 */
   }
 }
