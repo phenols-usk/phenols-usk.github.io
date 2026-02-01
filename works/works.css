@@ -1,22 +1,21 @@
-/* ===== BODY & HTML (固定解除の絶対条件) ===== */
-html {
+/* ===== BODY & HTML (PCの固定ブレーキを解除) ===== */
+html, body {
   margin: 0;
   padding: 0;
-  overflow-y: scroll !important; /* スクロールはブラウザ側に任せる */
-  height: auto !important;
+  /* 固定（fixed）を正常に動かすため、高さをブラウザに委ねます */
+  height: auto !important; 
+  /* 横幅を制限すると固定が外れるため、自由な状態にします */
+  width: auto !important;
+  /* 常にスクロールバーを表示してカクつきを防止 */
+  overflow-y: scroll;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   min-height: 100vh;
   color: #ffffff;
   font-family: 'Inter', sans-serif !important;
   font-weight: 300;
-  /* 以下の3つは絶対に書かない、あるいは削除してください */
-  width: auto !important;
-  overflow-x: visible !important;
-  position: static !important; 
+  /* position: relative; がもしあれば削除してください。これがあるとロゴが流れます。 */
 }
 /* ===== WORKS SECTION ===== */
 .works {
