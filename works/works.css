@@ -212,7 +212,7 @@ html, body {
 ========================= */
 .site-logo {
   position: fixed !important;
-  top: 40px !important;    /* 少しだけ上に詰め、余白の美しさを出します */
+  top: 50px !important;    /* 少しだけ上に詰め、余白の美しさを出します */
   left: 5vw !important;
   z-index: 9999 !important;
   text-decoration: none;
