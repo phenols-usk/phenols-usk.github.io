@@ -191,22 +191,27 @@ html, body {
   }
 }
 /* ===== FOOTER ===== */
+/* フッター全体を画面の真ん中に強制固定 */
 .site-footer {
-  position: relative;
-  padding: 80px 0 40px;
-  text-align: center;
-  color: #ffffff;
-  width: 100%;        /* 幅を確保 */
-  display: flex;      /* フレックスボックスで中央配置を確実に */
-  justify-content: center;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 80px 0 40px !important; /* 上下の余白 */
+  text-align: center !important;
+  display: block !important;
+  clear: both;
 }
 
+/* コピーライトの文字を中央へ */
 .copyright {
-  display: block;
+  display: inline-block !important;
+  width: 100%;
+  text-align: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important; /* 余計な余白をリセット */
+  
   font-size: 0.7rem;
   letter-spacing: 0.3em;
   opacity: 0.45;
-  margin: 0;          /* footer側で中央寄せするので 0 でOK */
 }
 /* スマホ・タブレット用の文字中央寄せ設定 */
 @media (max-width: 1024px) {
