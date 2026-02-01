@@ -1,5 +1,8 @@
 /* ===== BODY & HTML ===== */
-html, body {
+html{
+  overflow-y: scroll; /* 常にスクロールバーの領域を確保 */
+}
+  body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -9,8 +12,6 @@ html, body {
   /* Interを最優先に指定 */
   font-family: 'Inter', sans-serif !important;
   font-weight: 300;
-  
-  overflow-x: hidden;
 }
 
 /* ===== WORKS SECTION ===== */
@@ -214,9 +215,10 @@ html, body {
   position: fixed !important;
   top: 50px !important;    /* 40pxから50pxに下げて「上すぎる」を解消 */
   left: 5vw !important;
-  z-index: 9999 !important;
-  text-decoration: none;
-  display: block;
+  z-index: 99999 !important;
+ /* これを追加（PCでの挙動を安定させます） */
+  transform: translateZ(0); 
+  backface-visibility: hidden;
 }
 
 .site-logo img {
