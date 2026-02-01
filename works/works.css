@@ -141,7 +141,7 @@ body.work-page {
   justify-content: center;
   align-items: center;
   /* ロゴと被らないよう、上部の余白を確保。画像サイズには影響しません */
-  padding: 75px 40px 40px; 
+  padding: 60px 40px 40px; 
 }
 /* 作品画像 */
 .work-figure img {
