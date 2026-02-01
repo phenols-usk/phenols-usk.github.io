@@ -208,11 +208,11 @@ html, body {
   }
 }
 /* =========================
-   SITE LOGO (POWER UP)
+   SITE LOGO (POWER UP & FIXED)
 ========================= */
 .site-logo {
   position: fixed !important;
-  top: 50px !important;    /* 少しだけ上に詰め、余白の美しさを出します */
+  top: 50px !important;    /* 40pxから50pxに下げて「上すぎる」を解消 */
   left: 5vw !important;
   z-index: 9999 !important;
   text-decoration: none;
@@ -220,26 +220,26 @@ html, body {
 }
 
 .site-logo img {
-  /* PC版：3.5rem〜3.8rem から 4.5rem へ大幅にアップ */
-  height: 4.5rem; 
+  height: 4.5rem; /* 大きさは維持 */
   width: auto;
   display: block;
-  opacity: 0.8;      /* 少しだけ濃くして存在感を強めます */
+  opacity: 0.8;
   transition: all 0.3s ease;
 }
 
 .site-logo:hover img {
   opacity: 1;
-  transform: scale(1.02); /* ホバー時にわずかに大きくして高級感を演出 */
+  transform: scale(1.02);
 }
 
-/* スマホ用：2.2rem から 2.6rem へ少しだけサイズアップ */
+/* スマホ用ロゴ調整 */
 @media (max-width: 1024px) {
   .site-logo {
+    position: fixed !important; /* スマホでも確実に固定 */
     top: 20px !important;
     left: 20px !important;
   }
   .site-logo img {
-    height: 2.6rem; 
+    height: 2.6rem;
   }
 }
