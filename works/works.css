@@ -130,9 +130,10 @@ body {
 /* bodyにこの設定を入れることで、個別ページでも
    ロゴが一覧ページと同じ場所（画面基準）に固定されます。
 */
-body.work-page {
+body.work-single {
   position: static !important;
   width: auto !important;
+  overflow-x: visible !important;
 }
 
 .work-page {
