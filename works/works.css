@@ -126,15 +126,23 @@ body {
 .work-status.sold { background-color: rgba(255,0,0,0.85); }
 .work-status.archive { background-color: rgba(128,128,128,0.85); }
 
-/* ===== SINGLE WORK PAGE ===== */
+/* ===== SINGLE WORK PAGE (個別作品ページ) ===== */
+/* bodyにこの設定を入れることで、個別ページでも
+   ロゴが一覧ページと同じ場所（画面基準）に固定されます。
+*/
+body.work-page {
+  position: static !important;
+  width: auto !important;
+}
+
 .work-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 40px 40px; /* 上パディングを 40px から 120px に増やしてロゴとの隙間を作る */
+  /* ロゴと被らないよう、上部の余白を確保。画像サイズには影響しません */
+  padding: 120px 40px 40px; 
 }
-
 /* 作品画像 */
 .work-figure img {
   max-width: 54vw;
@@ -203,7 +211,7 @@ body {
 }
   /* 個別ページの画像を大きく表示する設定を追加 */
   .work-figure img {
-    max-width: 90vw !important;  /* 54% から 90% に拡大 */
+    max-width: 75vw !important;  /* 54% から 90% に拡大 */
     max-height: 70vh;            /* 縦長になりすぎないよう高さも調整 */
     width: auto;
     height: auto;
