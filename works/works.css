@@ -207,31 +207,38 @@ html, body {
   }
 }
 /* =========================
-   SITE LOGO (Adjusted)
+   SITE LOGO (WORKS PAGE)
 ========================= */
 .site-logo {
   position: fixed !important;
   top: 45px !important;
-  
-  /* 左端固定(5vw)をやめて、中央から左に300px(タイトルの半分)寄せる */
-  left: calc(50% - 300px) !important; 
-  
+  /* calcをやめて、画面左端からの固定距離にします */
+  left: 6vw !important; 
   z-index: 9999 !important;
   text-decoration: none;
   display: block;
 }
 
-/* スマホでは画面端から20pxのまま（中央寄せだと狭いため） */
+.site-logo img {
+  /* 高さを 3.8rem から 3.0rem に下げて、上品な大きさにします */
+  height: 3.0rem; 
+  width: auto;
+  display: block;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.site-logo:hover img {
+  opacity: 1;
+}
+
+/* スマホ用は今のバランスを維持 */
 @media (max-width: 1024px) {
   .site-logo {
     left: 20px !important;
     top: 20px !important;
   }
-}
-
-/* 画面幅が小さい時にロゴがはみ出さないための処理 */
-@media (max-width: 640px) {
-  .site-logo {
-    left: 20px !important;
+  .site-logo img {
+    height: 2.2rem;
   }
 }
