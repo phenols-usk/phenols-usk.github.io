@@ -58,8 +58,8 @@ html, body {
   z-index: 2;
   max-width: 600px;
   margin: 0 auto;
-  padding-left: 4vw;
-  text-align: left;
+  padding: 0 20px;     /* 左右均等に余白を持たせる */
+  text-align: center;  /* テキストを中央揃えに */
   color: rgba(255,255,255,0.6);
 }
 
@@ -196,14 +196,17 @@ html, body {
   padding: 80px 0 40px;
   text-align: center;
   color: #ffffff;
+  width: 100%;        /* 幅を確保 */
+  display: flex;      /* フレックスボックスで中央配置を確実に */
+  justify-content: center;
 }
 
 .copyright {
-  display: inline-block; /* 確実に中央配置するため */
+  display: block;
   font-size: 0.7rem;
   letter-spacing: 0.3em;
   opacity: 0.45;
-  margin: 0 auto;
+  margin: 0;          /* footer側で中央寄せするので 0 でOK */
 }
 /* スマホ・タブレット用の文字中央寄せ設定 */
 @media (max-width: 1024px) {
