@@ -250,31 +250,33 @@ body.work-single {
   transform: scale(1.02) !important;
 }
 
-/* スマホ用（ここも他ページと完全一致させる） */
+/* ===== スマホ用：TOP(style.css)と完全に同一化させる ===== */
 @media (max-width: 1024px) {
-  /* 1. 土台をTOPと一致させる（これは今のままでOK） */
+  /* 1. 土台の強制リセット：これを追加します */
   html, body {
-    width: 100% !important;
-    overflow-x: hidden;
+    width: 100vw !important; /* width: auto を捨て、画面幅 100% に固定 */
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important; /* 横揺れによるロゴのズレを封印 */
+    position: relative; /* 固定要素の基準を画面全体に戻す */
   }
 
-  /* 2. ロゴの位置：TOPと完全に重ねる */
+  /* 2. ロゴの設定：TOP(style.css)と完全に一致 */
   .site-logo {
     position: fixed !important;
     top: 20px !important;
-    left: 12px !important; /* TOP(style.css)と同じ数値 */
-  }
-
-  /* 3. 【重要】コンテンツ側の余白をロゴより「外」に出さない */
-  .works-inner {
-    margin-left: 0 !important;
-    /* 左右の余白を 12px（ロゴと同じ）か、それ以下に設定します */
-    padding: 0 12px !important; 
-    text-align: center;
+    left: 12px !important; /* TOPと同じ数値 */
+    margin: 0 !important;
   }
 
   .site-logo img {
     height: 2.6rem !important;
     width: auto !important;
+  }
+
+  /* 3. コンテンツ側の余白調整：ロゴに干渉しないよう */
+  .works-inner, .work-page {
+    padding-left: 12px !important; 
+    padding-right: 12px !important;
   }
 }
