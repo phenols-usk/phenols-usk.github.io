@@ -252,20 +252,29 @@ body.work-single {
 
 /* スマホ用（ここも他ページと完全一致させる） */
 @media (max-width: 1024px) {
+  /* 1. 土台をTOPと一致させる（これは今のままでOK） */
   html, body {
-    width: 100% !important; /* スマホのみTOPと同じ基準線に切り替え */
+    width: 100% !important;
     overflow-x: hidden;
   }
 
+  /* 2. ロゴの位置：TOPと完全に重ねる */
   .site-logo {
     position: fixed !important;
     top: 20px !important;
-    left: 12px !important; /* TOP(style.css)の12pxと一致 */
+    left: 12px !important; /* TOP(style.css)と同じ数値 */
   }
 
-  /* 私が書き漏らしていた重要な一節です */
+  /* 3. 【重要】コンテンツ側の余白をロゴより「外」に出さない */
+  .works-inner {
+    margin-left: 0 !important;
+    /* 左右の余白を 12px（ロゴと同じ）か、それ以下に設定します */
+    padding: 0 12px !important; 
+    text-align: center;
+  }
+
   .site-logo img {
-    height: 2.6rem !important; /* サイズもTOPと一致 */
+    height: 2.6rem !important;
     width: auto !important;
   }
 }
