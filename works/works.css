@@ -251,38 +251,44 @@ body.work-single {
 }
 
 /* ===== スマホ用：TOP(style.css)と完全に同一化させる ===== */
-/* スマホ・タブレット用：TOPページと位置を完全に一致させる */
 @media (max-width: 1024px) {
-  
-  /* 1. PC用の設定（width: autoなど）をすべて解除し、TOPと同じ土台にする */
+  /* 1. 全ての要素の計算方式をTOPページと統一 */
+  * {
+    box-sizing: border-box !important;
+  }
+
+  /* 2. 土台をTOPページ(style.css)と完全に一致させる */
   html, body {
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
-    position: relative !important;
+    position: relative !important; /* fixedの基準をリセット */
   }
 
-  /* 2. ロゴの位置：TOPページ(12px)と寸分違わず一致させる */
+  /* 3. ロゴの位置：TOPページと寸分違わず一致させる */
   .site-logo {
     position: fixed !important;
     top: 20px !important;
     left: 12px !important; 
     margin: 0 !important;
-    transform: none !important;
+    /* TOPページと同じチラつき防止設定を入れる */
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
   }
 
-  /* 3. ロゴのサイズ：TOPページ(2.6rem)と一致させる */
+  /* 4. ロゴのサイズ：TOPページと一致させる */
   .site-logo img {
     height: 2.6rem !important;
     width: auto !important;
+    opacity: 0.8; /* style.cssの初期透明度と一致 */
   }
 
-  /* 4. コンテンツ側の余白もロゴの基準(12px)に合わせる */
+  /* 5. コンテンツをロゴの基準線(12px)に強制的に合わせる */
   .works-inner, .work-page {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
     margin: 0 !important;
+    padding-left: 12px !important; 
+    padding-right: 12px !important;
     width: 100% !important;
   }
 }
