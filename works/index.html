@@ -42,11 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     a.className = "work-item lb-" + work.id;
     a.href = work.link;
 
-    // 背景画像＋暗めグラデーション
-    a.style.backgroundImage = `
-      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-      url(${work.image})
-    `;
+  // 背景画像のみを指定（外側の暗さはCSSのradial-gradientに任せる）
+a.style.backgroundImage = `url(${work.image})`;
 
     // 作品タイトル
     const title = document.createElement("span");
