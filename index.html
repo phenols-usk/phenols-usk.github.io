@@ -4,7 +4,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vibes&display=swap" rel="stylesheet">
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,35 +12,23 @@
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="background.css" />
-</head>
-  <script>
-  const heroInner = document.querySelector('.hero-inner');
-
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const max = 300;
-
-    const progress = Math.min(scrollY / max, 1);
-
-    heroInner.style.transform = `translateY(${progress * 40}px)`;
-    heroInner.style.opacity = `${1 - progress * 0.35}`;
-  });
-</script>
+  </head>
 
 <body class="base-bg top">
+
   <div id="opening-overlay">
-  <video id="opening-video" muted playsinline>
-    <source src="opening-logo.mp4" type="video/mp4">
-  </video>
-</div>
-   <a href="index.html" class="site-logo">
+    <video id="opening-video" muted playsinline>
+      <source src="opening-logo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <a href="index.html" class="site-logo">
     <img src="logo.png" alt="Leather BONSAI">
   </a>
 
   <section class="hero">
     <div class="hero-inner">
       <h1>Leather BONSAI</h1>
-
       <p>
         I made everything entirely from leather<br>
         —the leaves, branches, trunk, soil, and even the pot.<br>
@@ -54,72 +42,71 @@
     </div>
   </section>
 
+  <footer class="site-footer">
+    <p class="copyright">©phenols</p>
+  </footer>
 
-<footer class="site-footer">
-  <p class="copyright">©phenols</p>
-　  
-</footer>
-<script>
-  // ==========================================
-  // 1. オープニングムービーの制御
-  // ==========================================
-  document.addEventListener('DOMContentLoaded', () => {
-    const overlay = document.getElementById('opening-overlay');
-    const video = document.getElementById('opening-video');
+  <script>
+    // 全ての処理を DOMContentLoaded の中にまとめました
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. オープニングムービーの制御
+      const overlay = document.getElementById('opening-overlay');
+      const video = document.getElementById('opening-video');
 
-    if (sessionStorage.getItem('logoPlayed')) {
-      // 2回目以降は表示しない
-      if (overlay) overlay.style.display = 'none';
-    } else {
-      // 初めての訪問：動画再生
-      if (video) {
-        video.play().catch(() => finishOpening());
-        video.onended = finishOpening;
+      if (sessionStorage.getItem('logoPlayed')) {
+        if (overlay) overlay.style.display = 'none';
+      } else {
+        if (video) {
+          // 動画の再生を開始
+          video.play().catch(() => {
+            console.log("Autoplay blocked or video not found");
+            finishOpening();
+          });
+          video.onended = finishOpening;
+        }
+        // 万が一のための保険（8秒後に強制フェードアウト）
+        setTimeout(finishOpening, 8000);
       }
-      // 保険のタイマー（8秒）
-      setTimeout(finishOpening, 8000);
-    }
 
-    function finishOpening() {
-      if (overlay) overlay.classList.add('fade-out');
-      sessionStorage.setItem('logoPlayed', 'true');
-    }
-  });
+      function finishOpening() {
+        if (overlay) {
+          overlay.classList.add('fade-out');
+        }
+        sessionStorage.setItem('logoPlayed', 'true');
+      }
 
-  // ==========================================
-  // 2. スクロール演出（パララックス ＆ つや）
-  // ==========================================
-  let lastScrollY = window.scrollY;
-  let lastTime = performance.now();
+      // 2. スクロール演出（パララックス ＆ つや）
+      let lastScrollY = window.scrollY;
+      let lastTime = performance.now();
+      const hero = document.querySelector('.hero');
+      const heroInner = document.querySelector('.hero-inner');
 
-  const hero = document.querySelector('.hero');
-  const heroInner = document.querySelector('.hero-inner');
+      window.addEventListener('scroll', () => {
+        const now = performance.now();
+        const scrollY = window.scrollY;
 
-  window.addEventListener('scroll', () => {
-    const now = performance.now();
-    const scrollY = window.scrollY;
+        // パララックス
+        if (heroInner) {
+          const max = 300;
+          const progress = Math.min(scrollY / max, 1);
+          heroInner.style.transform = `translateY(${progress * 40}px)`;
+          heroInner.style.opacity = `${1 - progress * 0.35}`;
+        }
 
-    // --- パララックス（文字がゆっくり動く） ---
-    if (heroInner) {
-      const max = 300;
-      const progress = Math.min(scrollY / max, 1);
-      heroInner.style.transform = `translateY(${progress * 40}px)`;
-      heroInner.style.opacity = `${1 - progress * 0.35}`;
-    }
+        // つや
+        if (hero) {
+          const deltaTime = now - lastTime;
+          const deltaScroll = Math.abs(scrollY - lastScrollY);
+          const speed = deltaScroll / (deltaTime || 1);
+          const shine = Math.min(speed * 6, 0.35);
+          hero.style.setProperty('--leather-shine', shine);
+        }
 
-    // --- つや（スクロール速度で光る） ---
-    if (hero) {
-      const deltaTime = now - lastTime;
-      const deltaScroll = Math.abs(scrollY - lastScrollY);
-      const speed = deltaScroll / (deltaTime || 1); // 0除算防止
-      const shine = Math.min(speed * 6, 0.35);
-      hero.style.setProperty('--leather-shine', shine);
-    }
-
-    lastScrollY = scrollY;
-    lastTime = now;
-  });
-</script>
-
+        lastScrollY = scrollY;
+        lastTime = now;
+      });
+    });
+  </script>
 </body>
 </html>
