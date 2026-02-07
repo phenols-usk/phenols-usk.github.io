@@ -409,8 +409,10 @@ html, body {
   height: auto;
 }
 
+
 /* 非表示にするためのクラス */
 .fade-out {
   opacity: 0;
-  visibility: hidden;
+  visibility: hidden; /* これを追加 */
+  pointer-events: none; /* 念のためこれも追加 */
 }
