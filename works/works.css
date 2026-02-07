@@ -90,23 +90,28 @@ body {
 .work-item::before {
   content: "";
   position: absolute;
- inset: 0;
-  /* 単なる黒ではなく、中心から外に向かって暗くなるグラデーションに変更 */
+  inset: 0;
+  
+  /* グラデーションの数値を調整 */
   background: radial-gradient(
     circle at center, 
-    rgba(0, 0, 0, 0.2) 0%,   /* 中心は薄く（画像が見える） */
-    rgba(0, 0, 0, 0.65) 80%   /* 外側に向かって深く暗く */
+    transparent 0%,           /* 中心は完全に透明 */
+    rgba(0, 0, 0, 0.2) 40%,    /* 中間からじわじわ暗くし始める */
+    rgba(0, 0, 0, 0.8) 100%    /* 四隅は80%の濃い黒で締める */
   );
-  z-index: 1; /* z-indexを明示 */
+  
+  z-index: 1;
   pointer-events: none;
-  transition: background 0.4s ease; /* ホバー時の変化を滑らかに */
+  transition: background 0.4s ease;
 }
-/* ホバー時に少し明るくして、中の画像を見えやすくする演出 */
+
+/* ホバー時に少しだけ明るくして見やすくする演出（お好みで） */
 .work-item:hover::before {
   background: radial-gradient(
     circle at center, 
-    rgba(0, 0, 0, 0.1) 0%, 
-    rgba(0, 0, 0, 0.5) 90%
+    transparent 0%, 
+    rgba(0, 0, 0, 0.1) 50%, 
+    rgba(0, 0, 0, 0.6) 100%
   );
 }
 
