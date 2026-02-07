@@ -60,24 +60,63 @@
 　  
 </footer>
 <script>
+  // ==========================================
+  // 1. オープニングムービーの制御
+  // ==========================================
+  document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('opening-overlay');
+    const video = document.getElementById('opening-video');
+
+    if (sessionStorage.getItem('logoPlayed')) {
+      // 2回目以降は表示しない
+      if (overlay) overlay.style.display = 'none';
+    } else {
+      // 初めての訪問：動画再生
+      if (video) {
+        video.play().catch(() => finishOpening());
+        video.onended = finishOpening;
+      }
+      // 保険のタイマー（8秒）
+      setTimeout(finishOpening, 8000);
+    }
+
+    function finishOpening() {
+      if (overlay) overlay.classList.add('fade-out');
+      sessionStorage.setItem('logoPlayed', 'true');
+    }
+  });
+
+  // ==========================================
+  // 2. スクロール演出（パララックス ＆ つや）
+  // ==========================================
   let lastScrollY = window.scrollY;
   let lastTime = performance.now();
 
   const hero = document.querySelector('.hero');
+  const heroInner = document.querySelector('.hero-inner');
 
   window.addEventListener('scroll', () => {
     const now = performance.now();
-    const deltaTime = now - lastTime;
-    const deltaScroll = Math.abs(window.scrollY - lastScrollY);
+    const scrollY = window.scrollY;
 
-    const speed = deltaScroll / deltaTime; // px per ms
+    // --- パララックス（文字がゆっくり動く） ---
+    if (heroInner) {
+      const max = 300;
+      const progress = Math.min(scrollY / max, 1);
+      heroInner.style.transform = `translateY(${progress * 40}px)`;
+      heroInner.style.opacity = `${1 - progress * 0.35}`;
+    }
 
-    // つやの強さ（上限を厳しく）
-    const shine = Math.min(speed * 6, 0.35);
+    // --- つや（スクロール速度で光る） ---
+    if (hero) {
+      const deltaTime = now - lastTime;
+      const deltaScroll = Math.abs(scrollY - lastScrollY);
+      const speed = deltaScroll / (deltaTime || 1); // 0除算防止
+      const shine = Math.min(speed * 6, 0.35);
+      hero.style.setProperty('--leather-shine', shine);
+    }
 
-    hero.style.setProperty('--leather-shine', shine);
-
-    lastScrollY = window.scrollY;
+    lastScrollY = scrollY;
     lastTime = now;
   });
 </script>
