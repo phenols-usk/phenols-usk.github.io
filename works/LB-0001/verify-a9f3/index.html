@@ -87,9 +87,39 @@
   z-index: 0;
   pointer-events: none;
 }
+    /* ロゴの位置とサイズ設定 */
+    .site-logo {
+      position: fixed !important;
+      top: 50px !important;
+      left: 8vw !important;
+      z-index: 9999 !important;
+      text-decoration: none;
+    }
+
+    .site-logo img {
+      height: 4.5rem !important;
+      width: auto !important;
+      opacity: 0.8;
+      display: block;
+    }
+
+    /* スマホ・タブレット用調整 */
+    @media (max-width: 1024px) {
+      .site-logo {
+        position: fixed !important;
+        top: 20px !important;
+        left: 9px !important;
+      }
+      .site-logo img {
+        height: 2.6rem !important;
+      }
+    }
   </style>
 </head>
 <body class="verify" style="--work-image: url('../../images/LB-0001.jpg');">
+  <a href="/" class="site-logo">
+  <img src="/logo.png" alt="Leather BONSAI">
+</a>
   <div class="verify-box">
    
     <h1>
