@@ -1,3 +1,10 @@
+/* works.css の冒頭 */
+.site-logo {
+  position: fixed !important;
+  top: 50px !important;
+  left: 8vw !important; /* これでPC版は元の位置に戻ります */
+  z-index: 9999 !important;
+}
 /* ===== BODY & HTML (固定解除の絶対条件) ===== */
 html {
   margin: 0;
