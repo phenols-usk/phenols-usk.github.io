@@ -392,3 +392,25 @@ html, body {
     height: 2.6rem; /* スマホのサイズを維持 */
   }
 }
+#opening-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000; /* 動画の背景色 */
+  z-index: 10000;   /* 他の要素より一番上に */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease; /* 消える時のフェード */
+}
+
+#opening-video {
+  width: 100%;
+  max-width: 600px; /* ロゴ動画なので全画面より少し絞った方が綺麗です */
+  height: auto;
+}
+
+/* 非表示にするためのクラス */
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
