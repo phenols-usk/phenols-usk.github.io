@@ -277,7 +277,7 @@ body.work-single {
   .site-logo {
     position: fixed !important;
     top: 20px !important;
-    left: 12px !important; 
+    left: 9px !important; 
     margin: 0 !important;
     /* TOPページと同じチラつき防止設定を入れる */
     transform: translateZ(0) !important;
@@ -294,8 +294,8 @@ body.work-single {
   /* 5. コンテンツをロゴの基準線(12px)に強制的に合わせる */
   .works-inner, .work-page {
     margin: 0 !important;
-    padding-left: 12px !important; 
-    padding-right: 12px !important;
+    padding-left: 9px !important; 
+    padding-right: 9px !important;
     width: 100% !important;
   }
 }
