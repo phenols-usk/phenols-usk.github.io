@@ -90,13 +90,24 @@ body {
 .work-item::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.55)
+ inset: 0;
+  /* 単なる黒ではなく、中心から外に向かって暗くなるグラデーションに変更 */
+  background: radial-gradient(
+    circle at center, 
+    rgba(0, 0, 0, 0.2) 0%,   /* 中心は薄く（画像が見える） */
+    rgba(0, 0, 0, 0.65) 80%   /* 外側に向かって深く暗く */
   );
+  z-index: 1; /* z-indexを明示 */
   pointer-events: none;
+  transition: background 0.4s ease; /* ホバー時の変化を滑らかに */
+}
+/* ホバー時に少し明るくして、中の画像を見えやすくする演出 */
+.work-item:hover::before {
+  background: radial-gradient(
+    circle at center, 
+    rgba(0, 0, 0, 0.1) 0%, 
+    rgba(0, 0, 0, 0.5) 90%
+  );
 }
 
 /* タイトル */
