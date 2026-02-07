@@ -418,10 +418,31 @@ html, body {
 
 #opening-video {
   width: 100%;
-  max-width: 600px; /* ロゴ動画なので全画面より少し絞った方が綺麗です */
+  max-width: 800px;
   height: auto;
+  
+  /* 1. 動画の「黒」を背後の漆黒と混ぜる設定 */
+  mix-blend-mode: screen; 
+  
+  /* 2. 黒い部分をより深く沈め、明るい部分を際立たせる */
+  filter: contrast(1.2) brightness(0.8);
+  
+  /* 動画自体の背景を黒に固定 */
+  background-color: #000; 
 }
 
+/* もし「境目」がまだ気になるなら、前の radial-gradient も併用します */
+#opening-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle, 
+    transparent 30%, 
+    rgba(0, 0, 0, 1) 90%
+  );
+  pointer-events: none;
+}
 
 /* 非表示にするためのクラス */
 .fade-out {
