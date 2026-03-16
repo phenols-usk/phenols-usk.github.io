@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- 検索除外 -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vibes&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont,
+                   "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 70%),
+        url("/noise.jpg");
+      background-repeat: no-repeat, repeat;
+      background-size: cover, 220px 220px;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .verify-box {
+      position: relative;
+      max-width: 600px;
+      background: rgba(0,0,0,0.5);
+      padding: 32px;
+      border-radius: 4px;
+    }
+
+    /* タイトル全体の親要素 */
+    h1 {
+      margin-bottom: 32px;
+      line-height: 1.1; /* 行の間隔を少し詰める */
+    }
+
+    /* 「Leather BONSAI」の部分（Vibesを適用） */
+    .brand-name {
+      display: block;
+      font-family: 'Vibes', cursive;
+      font-size: 3.5rem; /* 筆記体は大きく見せるのが正解です */
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: 0.02em;
+    }
+
+    /* 「Verification」の部分（Interでカッチリと） */
+    .verify-sub {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em; /* 文字を広げて高級感を出す */
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-top: -5px; /* 筆記体に少し近づける */
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      opacity: 0.85;
+      margin-bottom: 12px;
+    }
+ /* ===== VERIFY BOX INNER IMAGE ===== */
+.verify-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--work-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.09;        /* ← 透過の強さ（ここが調整ポイント） */
+  filter: blur(3px);    /* ← 鑑賞させないため */
+  z-index: 0;
+  pointer-events: none;
+}
+    /* ロゴの位置とサイズ設定 */
+    .site-logo {
+      position: fixed !important;
+      top: 50px !important;
+      left: 8vw !important;
+      z-index: 9999 !important;
+      text-decoration: none;
+    }
+
+    .site-logo img {
+      height: 4.5rem !important;
+      width: auto !important;
+      opacity: 0.8;
+      display: block;
+    }
+
+    /* スマホ・タブレット用調整 */
+    @media (max-width: 1024px) {
+      .site-logo {
+        position: fixed !important;
+        top: 20px !important;
+        left: 9px !important;
+      }
+      .site-logo img {
+        height: 2.6rem !important;
+      }
+    }
+  </style>
+</head>
+<body class="verify" style="--work-image: url('../../images/LB-0004.jpg');">
+  <a href="/" class="site-logo">
+  <img src="/logo.png" alt="Leather BONSAI">
+</a>
+  <div class="verify-box">
+   
+    <h1>
+  <span class="brand-name">Leather BONSAI</span>
+  <span class="verify-sub">Verification</span>
+</h1>
+    <p>This page alone does not constitute proof of authenticity.</p>
+    <p>Authenticity is confirmed only when accessed via the embedded NFC tag.</p>
+    <p>このページ単体では真正性の証明にはなりません。</p>
+    <p>真正性はNFCタグを通してアクセスした場合にのみ確認できます。</p>
+    
+  　<!-- 作品情報 -->
+    <div class="info">
+      <p><strong>No.:</strong> LB-0004</p>
+      <p><strong>Created:</strong> 2026/03</p>
+      <p><strong>Materials:</strong> Leather/Brass wire</p>
+    </div>
+  </div>
+</body>
+</html>
