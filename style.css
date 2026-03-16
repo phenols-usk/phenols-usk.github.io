@@ -82,6 +82,30 @@ html, body {
   line-height: 2;
 }
 
+/* 日本語メッセージのスタイル */
+.jp-message {
+  font-family: "Noto Serif JP", serif; /* 以前導入した明朝体を使用 */
+  font-size: 0.85rem !important; /* 英語より一回り小さく */
+  line-height: 2.2 !important;
+  letter-spacing: 0.1em !important;
+  opacity: 0.6; /* 少し透かして馴染ませる */
+  margin-top: 24px !important;
+}
+
+/* スマホで不自然な改行を防ぐための設定 */
+.sp-only {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .jp-message {
+    font-size: 0.75rem !important;
+    padding: 0 10px;
+  }
+  .sp-only {
+    display: block; /* スマホの時だけ改行を入れる */
+  }
+}
 /* =========================
    VIEW WORKS
 ========================= */
