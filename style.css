@@ -64,43 +64,47 @@ html, body {
 }
 
 /* =========================
-   TEXT
+   TEXT (TOP HERO)
 ========================= */
 .hero h1 {
   margin: 0 0 32px;
-  /* フォントを Vibes に変更 */
   font-family: 'Vibes', cursive;
-  
   font-size: clamp(3.2rem, 6vw, 3.5rem);
   letter-spacing: 0.02em;
   font-weight: 400;
+  color: #fff;
 }
 
-.hero p {
-  margin: 0 0 56px;
-  font-size: 1rem;
-  line-height: 2;
-}
+/* 英語メッセージ：Bioの英文スタイルに統一 */
 .en-message {
   font-family: "Inter", sans-serif;
   font-size: 0.7rem;
-  line-height: 1.6;
+  line-height: 1.8;
   color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 25px;
+  margin: 0 auto 24px;
   font-style: italic;
-  text-align: center;
+  text-align: justify; /* 端を揃える */
+  max-width: 480px;    /* 読みやすい幅に制限 */
 }
 
+/* 日本語メッセージ：Bioの日本語スタイルと完全に一致させる */
 .jp-message p {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.75rem;
-  line-height: 1.7; 
-  color: rgba(255, 255, 255, 0.7); 
-  margin-bottom: 40px;
-  text-align: center;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 0.75rem !important;
+  line-height: 2.2 !important; /* Bioの日本語設定 2.2 に合わせる */
+  color: rgba(255, 255, 255, 0.7) !important; 
+  margin-bottom: 15px !important;
+  text-align: justify; /* Bioと同じ両端揃え */
   letter-spacing: 0.05em;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* 以前の古い指定が干渉しないように上書き */
+.hero-inner > p {
+  display: none; 
+}
 /* =========================
    VIEW WORKS
 ========================= */
