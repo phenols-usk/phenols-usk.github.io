@@ -68,7 +68,7 @@ html, body {
    TEXT (TOP HERO)
 ========================= */
 .hero h1 {
-  margin: 0 0 40px;
+  margin: 0 0 48px; /* 下との余白を広げてスッキリさせます */
   font-family: 'Vibes', cursive;
   font-size: clamp(3.2rem, 6vw, 3.8rem);
   letter-spacing: 0.05em;
@@ -76,28 +76,31 @@ html, body {
   color: #fff;
 }
 
-/* 英語：Biographyの英文スタイルに統一 */
+/* 英語：Biographyの英文スタイル(0.7rem / 0.4濃度 / イタリック) */
 .en-message {
-  display: block !important; 
+  display: block !important;
   font-family: "Inter", sans-serif !important;
   font-size: 0.7rem !important;
   line-height: 1.8 !important;
-  color: rgba(255, 255, 255, 0.4) !important;
+  color: rgba(255, 255, 255, 0.4) !important; /* かなり薄く */
   margin: 0 auto 32px !important;
   font-style: italic;
   text-align: center;
+  max-width: 450px;
 }
 
-/* 日本語：Biographyの日本語スタイルに統一 */
+/* 日本語：Biographyの日本語スタイル(0.75rem / 0.7濃度 / 行間2.2) */
 .jp-message p {
   display: block !important;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
-  font-size: 0.75rem !important;
-  line-height: 2.2 !important; 
-  color: rgba(255, 255, 255, 0.7) !important; 
+  font-size: 0.75rem !important; /* 小さく */
+  line-height: 2.2 !important;  /* Biographyと同一のゆったりした行間 */
+  color: rgba(255, 255, 255, 0.7) !important; /* 白すぎず、背景に馴染む薄さ */
   margin: 0 auto 15px !important;
   text-align: center;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.08em; /* 文字の間隔をわずかに広げて空気感を出す */
+  font-weight: 300 !important; /* 細いウェイトを指定 */
+  max-width: 450px;
 }
 /* =========================
    VIEW WORKS
