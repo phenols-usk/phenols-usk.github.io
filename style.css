@@ -25,7 +25,7 @@ html, body {
 }
 
 /* =========================
-   HERO
+   HERO (全体を真ん中に配置 + つやレイヤー)
 ========================= */
 .hero {
   position: relative;
@@ -33,10 +33,11 @@ html, body {
   width: 100%;
   background: transparent !important; 
   display: flex;
-  align-items: center;
+  justify-content: center; 
+  align-items: center;     
 }
 
-/* 革のつやレイヤー */
+/* 革のつやレイヤー（ここを復活させる） */
 .hero::after {
   content: "";
   position: absolute;
@@ -47,7 +48,9 @@ html, body {
     rgba(255,255,255,0.04),
     rgba(0,0,0,0.0)
   );
-  opacity: var(--leather-shine, 0);
+  /* JavaScriptでの制御が生きているなら 0 のまま、
+     もし常に光らせたいなら 1 に変えてもOKです */
+  opacity: var(--leather-shine, 1); 
   transition: opacity 0.2s ease;
   pointer-events: none;
   z-index: 1;
@@ -55,53 +58,47 @@ html, body {
 
 .hero-inner {
   position: relative;
-  z-index: 2;
-  max-width: 600px;
+  z-index: 2; /* つやレイヤー(z-index: 1)よりも上に文字を出す */
+  width: 100%;
+  max-width: 480px; 
   margin: 0 auto;
-  padding: 0 20px;     /* 左右均等に余白を持たせる */
-  text-align: center;  /* テキストを中央揃えに */
-  color: rgba(255,255,255,0.6);
+  padding: 0 24px;
+  text-align: center;
 }
-
 /* =========================
    TEXT (TOP HERO)
 ========================= */
 .hero h1 {
-  margin: 0 0 32px;
+  margin: 0 0 40px;
   font-family: 'Vibes', cursive;
-  font-size: clamp(3.2rem, 6vw, 3.5rem);
-  letter-spacing: 0.02em;
+  font-size: clamp(3.2rem, 6vw, 3.8rem);
+  letter-spacing: 0.05em;
   font-weight: 400;
   color: #fff;
+  text-align: center;
 }
 
-/* 英語メッセージ：Biographyの英文スタイル(0.7rem / 1.8)に統一 */
+/* 英語：Biographyの英文スタイルに統一 */
 .en-message {
-  display: block !important; /* 強制表示 */
   font-family: "Inter", sans-serif !important;
   font-size: 0.7rem !important;
   line-height: 1.8 !important;
   color: rgba(255, 255, 255, 0.4) !important;
   margin: 0 auto 32px !important;
   font-style: italic;
-  text-align: center; /* TOPは中央揃えがバランス良いため */
-  max-width: 500px;
+  text-align: center; /* センター寄せで統一感を出す */
 }
 
-/* 日本語メッセージ：Biographyの日本語スタイル(0.75rem / 2.2 / 濃度0.7)に統一 */
+/* 日本語：Biographyの日本語スタイルに統一 */
 .jp-message p {
-  display: block !important; /* 強制表示 */
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
   font-size: 0.75rem !important;
   line-height: 2.2 !important; 
   color: rgba(255, 255, 255, 0.7) !important; 
   margin: 0 auto 15px !important;
   text-align: center;
-  letter-spacing: 0.05em;
-  max-width: 500px;
+  letter-spacing: 0.08em;
 }
-
-/* もし古い <p> が残って二重に見える場合は、HTML側でクラスのない <p> を削除してください */
 /* =========================
    VIEW WORKS
 ========================= */
