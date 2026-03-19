@@ -486,3 +486,70 @@ html, body {
   visibility: hidden; /* これを追加 */
   pointer-events: none; /* 念のためこれも追加 */
 }
+/* ============================================================
+   FINAL FIX: 中央配置と日本語の質感を強制修正
+   ============================================================ */
+
+/* 全画面で中央に配置する */
+.hero {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.hero-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  padding: 0 24px !important;
+  /* 左寄せを誘発する古い指定をすべて解除 */
+  left: auto !important;
+  transform: none !important;
+}
+
+/* 日本語：Biographyの極薄・小文字スタイルを再現 */
+.jp-message p {
+  display: block !important;
+  font-size: 0.75rem !important;
+  line-height: 2.4 !important;
+  color: rgba(255, 255, 255, 0.45) !important; /* 0.7からさらに薄くしてBioに合わせる */
+  font-weight: 300 !important;
+  letter-spacing: 0.12em !important;
+  margin: 0 0 24px 0 !important;
+}
+
+/* 3行に分けるための設定 */
+.jp-message .line {
+  display: block !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+}
+
+/* 英語：さらに奥へ引かせる薄さ */
+.en-message {
+  font-size: 0.7rem !important;
+  line-height: 1.8 !important;
+  color: rgba(255, 255, 255, 0.25) !important; /* 英語は極限まで薄く */
+  margin: 0 0 40px 0 !important;
+  font-style: italic !important;
+}
+
+/* スマホで横幅からはみ出さないための処理 */
+@media (max-width: 480px) {
+  .jp-message p {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.05em !important;
+  }
+}
+
+/* 古いスマホ用メディアクエリの干渉を無効化 */
+@media (max-width: 1024px) {
+  .hero-inner {
+    margin-left: 0 !important;
+    padding: 0 24px !important;
+  }
+}
