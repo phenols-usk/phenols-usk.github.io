@@ -79,23 +79,30 @@ html, body {
 /* 日本語メッセージの器自体を中央に固定 */
 .jp-message {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  display: block; /* flexから修正：縦並びを保証 */
   margin-bottom: 24px;
+  text-align: center; /* 追加：中身を中央寄せ */
 }
-
 /* 日本語：Biographyの日本語スタイルに完全準拠 */
 .jp-message p {
   display: block !important;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
-  font-size: 0.75rem !important; /* Bioと同じサイズ */
-  line-height: 2.2 !important;  /* Bioと同じ行間 */
-  color: rgba(255, 255, 255, 0.5) !important; /* 0.7から0.5へ。より薄く馴染ませる */
+  font-size: 0.75rem !important;
+  line-height: 2.4 !important; /* 2.2から2.4へ：よりゆったりと */
+  color: rgba(255, 255, 255, 0.45) !important; /* 0.5から0.45へ：さらに馴染ませる */
   margin: 0 auto !important;
-  text-align: center;
-  letter-spacing: 0.1em; /* 少し広げて高級感を */
+  text-align: center !important; /* 強制的に中央揃え */
+  letter-spacing: 0.12em; 
   font-weight: 300 !important;
   max-width: 450px;
+}
+
+/* 3. 1行ずつ独立させ、中央揃えを維持しながら改行させる魔法 */
+.jp-message .line {
+  display: block !important;    /* 縦に並べる（改行させる） */
+  width: 100%;                  /* 横幅いっぱい使う */
+  text-align: center !important; /* 各行を中央に寄せる */
+  white-space: nowrap;          /* 勝手な場所で改行させない */
 }
 
 /* 英語：Biographyの英文スタイル */
