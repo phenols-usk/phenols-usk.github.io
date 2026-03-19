@@ -68,7 +68,7 @@ html, body {
    TEXT (TOP HERO)
 ========================= */
 .hero h1 {
-  margin: 0 0 48px; /* 下との余白を広げてスッキリさせます */
+  margin: 0 0 48px;
   font-family: 'Vibes', cursive;
   font-size: clamp(3.2rem, 6vw, 3.8rem);
   letter-spacing: 0.05em;
@@ -76,30 +76,38 @@ html, body {
   color: #fff;
 }
 
-/* 英語：Biographyの英文スタイル(0.7rem / 0.4濃度 / イタリック) */
+/* 日本語メッセージの器自体を中央に固定 */
+.jp-message {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* 日本語：Biographyの日本語スタイルに完全準拠 */
+.jp-message p {
+  display: block !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 0.75rem !important; /* Bioと同じサイズ */
+  line-height: 2.2 !important;  /* Bioと同じ行間 */
+  color: rgba(255, 255, 255, 0.5) !important; /* 0.7から0.5へ。より薄く馴染ませる */
+  margin: 0 auto !important;
+  text-align: center;
+  letter-spacing: 0.1em; /* 少し広げて高級感を */
+  font-weight: 300 !important;
+  max-width: 450px;
+}
+
+/* 英語：Biographyの英文スタイル */
 .en-message {
   display: block !important;
   font-family: "Inter", sans-serif !important;
   font-size: 0.7rem !important;
   line-height: 1.8 !important;
-  color: rgba(255, 255, 255, 0.4) !important; /* かなり薄く */
-  margin: 0 auto 32px !important;
+  color: rgba(255, 255, 255, 0.3) !important; /* 英語はさらに薄く */
+  margin: 0 auto 40px !important;
   font-style: italic;
   text-align: center;
-  max-width: 450px;
-}
-
-/* 日本語：Biographyの日本語スタイル(0.75rem / 0.7濃度 / 行間2.2) */
-.jp-message p {
-  display: block !important;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
-  font-size: 0.75rem !important; /* 小さく */
-  line-height: 2.2 !important;  /* Biographyと同一のゆったりした行間 */
-  color: rgba(255, 255, 255, 0.7) !important; /* 白すぎず、背景に馴染む薄さ */
-  margin: 0 auto 15px !important;
-  text-align: center;
-  letter-spacing: 0.08em; /* 文字の間隔をわずかに広げて空気感を出す */
-  font-weight: 300 !important; /* 細いウェイトを指定 */
   max-width: 450px;
 }
 /* =========================
