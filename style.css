@@ -54,73 +54,75 @@ html, body {
   z-index: 1;
 }
 
-/* =========================
-   HERO INNER (縦に並べる設定)
-========================= */
 .hero-inner {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 500px; 
+  max-width: 500px; /* Biographyのサイズ感に合わせる */
   margin: 0 auto;
   padding: 0 24px;
   text-align: center;
-  
-  /* 追加：中身を強制的に縦に並べ、中央に寄せる */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* =========================
    TEXT (TOP HERO)
 ========================= */
 .hero h1 {
-  margin: 0 0 48px; /* タイトルと文字の間隔 */
+  margin: 0 0 48px;
   font-family: 'Vibes', cursive;
   font-size: clamp(3.2rem, 6vw, 3.8rem);
   letter-spacing: 0.05em;
   font-weight: 400;
   color: #fff;
-  text-align: center;
 }
 
-/* 日本語メッセージ：Biographyのスタイル(0.75rem / 0.5濃度) */
+/* 日本語メッセージ全体の箱 */
 .jp-message {
   width: 100%;
-  display: block; /* 縦に並べる */
+  display: flex;
+  justify-content: center;
   margin-bottom: 32px;
 }
 
+/* 日本語テキストの設定（Biography準拠） */
 .jp-message p {
   display: block !important;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
-  font-size: 0.75rem !important; 
-  line-height: 2.4 !important; 
+  font-size: 0.75rem !important; /* Biographyと同じサイズ */
+  line-height: 2.4 !important;  /* 行間を少し広げて3行の独立感を出す */
   color: rgba(255, 255, 255, 0.5) !important; /* Biographyのような薄さ */
   margin: 0 auto !important;
   text-align: center;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.12em; /* 文字間隔を広げて高級感を */
   font-weight: 300 !important;
 }
 
-/* 1行ずつ独立させる */
+/* 1行ずつ独立させる設定 */
 .jp-message .line {
-  display: block; 
+  display: block; /* これで必ず改行されます */
   width: 100%;
-  white-space: nowrap; 
+  white-space: nowrap; /* 勝手な途中改行を防ぐ */
 }
 
-/* 英語メッセージ：Biographyのスタイル(0.7rem / 0.3濃度) */
+/* スマホで文字がはみ出る場合の微調整 */
+@media (max-width: 480px) {
+  .jp-message p {
+    font-size: 0.7rem !important; /* スマホでは少しだけ小さくして1行に収める */
+    letter-spacing: 0.05em;
+  }
+}
+
+/* 英語：Biographyの英文スタイル */
 .en-message {
   display: block !important;
   font-family: "Inter", sans-serif !important;
   font-size: 0.7rem !important;
   line-height: 1.8 !important;
-  color: rgba(255, 255, 255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.3) !important; /* 英語はさらに薄く */
   margin: 0 auto 40px !important;
   font-style: italic;
   text-align: center;
+  max-width: 450px;
 }
 /* =========================
    VIEW WORKS
@@ -485,71 +487,4 @@ html, body {
   opacity: 0;
   visibility: hidden; /* これを追加 */
   pointer-events: none; /* 念のためこれも追加 */
-}
-/* ============================================================
-   FINAL FIX: 中央配置と日本語の質感を強制修正
-   ============================================================ */
-
-/* 全画面で中央に配置する */
-.hero {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-.hero-inner {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  margin: 0 auto !important;
-  width: 100% !important;
-  max-width: 500px !important;
-  padding: 0 24px !important;
-  /* 左寄せを誘発する古い指定をすべて解除 */
-  left: auto !important;
-  transform: none !important;
-}
-
-/* 日本語：Biographyの極薄・小文字スタイルを再現 */
-.jp-message p {
-  display: block !important;
-  font-size: 0.75rem !important;
-  line-height: 2.4 !important;
-  color: rgba(255, 255, 255, 0.45) !important; /* 0.7からさらに薄くしてBioに合わせる */
-  font-weight: 300 !important;
-  letter-spacing: 0.12em !important;
-  margin: 0 0 24px 0 !important;
-}
-
-/* 3行に分けるための設定 */
-.jp-message .line {
-  display: block !important;
-  width: 100% !important;
-  white-space: nowrap !important;
-}
-
-/* 英語：さらに奥へ引かせる薄さ */
-.en-message {
-  font-size: 0.7rem !important;
-  line-height: 1.8 !important;
-  color: rgba(255, 255, 255, 0.25) !important; /* 英語は極限まで薄く */
-  margin: 0 0 40px 0 !important;
-  font-style: italic !important;
-}
-
-/* スマホで横幅からはみ出さないための処理 */
-@media (max-width: 480px) {
-  .jp-message p {
-    font-size: 0.7rem !important;
-    letter-spacing: 0.05em !important;
-  }
-}
-
-/* 古いスマホ用メディアクエリの干渉を無効化 */
-@media (max-width: 1024px) {
-  .hero-inner {
-    margin-left: 0 !important;
-    padding: 0 24px !important;
-  }
 }
