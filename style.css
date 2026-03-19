@@ -76,26 +76,40 @@ html, body {
   color: #fff;
 }
 
-/* 日本語メッセージの器自体を中央に固定 */
+/* 日本語メッセージ全体の箱 */
 .jp-message {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
-/* 日本語：Biographyの日本語スタイルに完全準拠 */
+/* 日本語テキストの設定（Biography準拠） */
 .jp-message p {
   display: block !important;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
-  font-size: 0.75rem !important; /* Bioと同じサイズ */
-  line-height: 2.2 !important;  /* Bioと同じ行間 */
-  color: rgba(255, 255, 255, 0.5) !important; /* 0.7から0.5へ。より薄く馴染ませる */
+  font-size: 0.75rem !important; /* Biographyと同じサイズ */
+  line-height: 2.4 !important;  /* 行間を少し広げて3行の独立感を出す */
+  color: rgba(255, 255, 255, 0.5) !important; /* Biographyのような薄さ */
   margin: 0 auto !important;
   text-align: center;
-  letter-spacing: 0.1em; /* 少し広げて高級感を */
+  letter-spacing: 0.12em; /* 文字間隔を広げて高級感を */
   font-weight: 300 !important;
-  max-width: 450px;
+}
+
+/* 1行ずつ独立させる設定 */
+.jp-message .line {
+  display: block; /* これで必ず改行されます */
+  width: 100%;
+  white-space: nowrap; /* 勝手な途中改行を防ぐ */
+}
+
+/* スマホで文字がはみ出る場合の微調整 */
+@media (max-width: 480px) {
+  .jp-message p {
+    font-size: 0.7rem !important; /* スマホでは少しだけ小さくして1行に収める */
+    letter-spacing: 0.05em;
+  }
 }
 
 /* 英語：Biographyの英文スタイル */
